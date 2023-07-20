@@ -1,0 +1,14 @@
+ <% @talks.each do |talk| %>
+      <p>
+        <%= talk.title %>
+      </p>
+      <p>
+        <%= talk.description %>
+      </p>
+      <p>
+        <% talk.speakers.each do |s| %>
+          <%= s.name %>
+          <% end %>
+      </p>
+      
+      <% end %>

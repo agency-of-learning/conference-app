@@ -10,9 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_16_173207) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_232241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "speaker_talks", force: :cascade do |t|
+    t.bigint "speaker_id", null: false
+    t.bigint "talk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["speaker_id"], name: "index_speaker_talks_on_speaker_id"
+    t.index ["talk_id"], name: "index_speaker_talks_on_talk_id"
+  end
+
+  create_table "speakers", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "bio"
+    t.string "image_filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "talks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "start_time"
+    t.string "location"
+    t.integer "talk_format"
+    t.integer "talk_track"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_173207) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "speaker_talks", "speakers"
+  add_foreign_key "speaker_talks", "talks"
 end
