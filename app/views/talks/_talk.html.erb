@@ -1,0 +1,42 @@
+<div id="<%= dom_id talk %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= talk.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= talk.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Start time:</strong>
+    <%= talk.start_time %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Location:</strong>
+    <%= talk.location %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Talk format:</strong>
+    <%= talk.talk_format %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Talk track:</strong>
+    <%= talk.talk_track %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Duration:</strong>
+    <%= talk.duration %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this talk", talk, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this talk', edit_talk_path(talk), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
