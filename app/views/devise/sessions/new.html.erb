@@ -1,10 +1,4 @@
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img class="mx-auto h-24 w-auto" src="https://rubyonrails.org/assets/images/logo-railsworld.svg" alt="Rails World">
-        <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Rails World Conference!</h2>
-    </div>
-
+ <%= turbo_frame_tag "registration-sign-in" do %>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-around">
       <div class="">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,10 +20,11 @@
         <% end %>
 
         <div class="actions">
-          <%= f.submit "Log in", :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+          <%= f.submit "Log in",  data: { turbo_frame: "_top" }, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
         </div>
       <% end %>
     </div>
     <%= button_to("Go Back", root_path, method: :get, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
   </div>
 </div>
+<% end %>
