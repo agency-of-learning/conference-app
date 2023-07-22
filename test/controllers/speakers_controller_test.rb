@@ -17,7 +17,7 @@ class SpeakersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create speaker" do
     assert_difference("Speaker.count") do
-      post speakers_url, params: { speaker: { bio: @speaker.bio, image_filename: @speaker.image_filename, name: @speaker.name, title: @speaker.title } }
+      post speakers_url, params: {speaker: {bio: @speaker.bio, image_filename: @speaker.image_filename, name: @speaker.name, title: @speaker.title}}
     end
 
     assert_redirected_to speaker_url(Speaker.last)
@@ -34,7 +34,7 @@ class SpeakersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update speaker" do
-    patch speaker_url(@speaker), params: { speaker: { bio: @speaker.bio, image_filename: @speaker.image_filename, name: @speaker.name, title: @speaker.title } }
+    patch speaker_url(@speaker), params: {speaker: {bio: @speaker.bio, image_filename: @speaker.image_filename, name: @speaker.name, title: @speaker.title}}
     assert_redirected_to speaker_url(@speaker)
   end
 

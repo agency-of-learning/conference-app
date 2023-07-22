@@ -1,10 +1,9 @@
 class TalksController < ApplicationController
-  before_action :set_talk, only: %i[ show edit update destroy ]
+  before_action :set_talk, only: %i[show edit update destroy]
 
   # GET /talks
   def index
     @talks = Talk.all
-    @speakers = Speaker.all
   end
 
   # GET /talks/1
@@ -14,6 +13,7 @@ class TalksController < ApplicationController
   # GET /talks/new
   def new
     @talk = Talk.new
+    @speakers = Speaker.all
   end
 
   # GET /talks/1/edit
@@ -24,21 +24,17 @@ class TalksController < ApplicationController
   def create
     @talk = Talk.new(talk_params)
 
-    respond_to do |format|
-      if @talk.save
-        format.html { redirect_to talk_url(@talk), notice: "Talk was successfully created." }
-        format.json { render :show, status: :created, location: @talk }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @talk.errors, status: :unprocessable_entity }
-      end
+    if @talk.save
+      redirect_to @talk, notice: "Talk was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /talks/1
   def update
     if @talk.update(talk_params)
-      redirect_to talk_url(@talk), notice: "Talk was successfully updated."
+      redirect_to @talk, notice: "Talk was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -47,17 +43,18 @@ class TalksController < ApplicationController
   # DELETE /talks/1
   def destroy
     @talk.destroy
-    redirect_to talks_url, notice: "Talk was successfully destroyed."
+    redirect_to talks_url, status: :see_other, notice: "Talk was successfully deleted."
   end
 
   private
-    # Use with before_action callback for shared use.
-    def set_talk
-      @talk = Talk.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters.
-    def talk_params
-      params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration)
-    end
+  # Use with before_action callback for shared use.
+  def set_talk
+    @talk = Talk.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters.
+  def talk_params
+    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, speaker_ids: [])
+  end
 end

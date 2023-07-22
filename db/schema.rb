@@ -10,36 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_232241) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_20_193415) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "speaker_talks", force: :cascade do |t|
+  create_table "speakers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title"
+    t.text "bio"
+    t.string "image_filename", default: "placeholder.png"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "speakers_talks", force: :cascade do |t|
     t.bigint "speaker_id", null: false
     t.bigint "talk_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["speaker_id"], name: "index_speaker_talks_on_speaker_id"
-    t.index ["talk_id"], name: "index_speaker_talks_on_talk_id"
-  end
-
-  create_table "speakers", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "bio"
-    t.string "image_filename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["speaker_id"], name: "index_speakers_talks_on_speaker_id"
+    t.index ["talk_id"], name: "index_speakers_talks_on_talk_id"
   end
 
   create_table "talks", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
-    t.datetime "start_time"
-    t.string "location"
+    t.datetime "start_time", null: false
+    t.string "location", null: false
     t.integer "talk_format"
     t.integer "talk_track"
-    t.integer "duration"
+    t.integer "duration", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,10 +52,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_232241) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "speaker_talks", "speakers"
-  add_foreign_key "speaker_talks", "talks"
+  add_foreign_key "speakers_talks", "speakers"
+  add_foreign_key "speakers_talks", "talks"
 end

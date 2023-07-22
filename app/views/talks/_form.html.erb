@@ -33,16 +33,18 @@
 
   <div class="my-5">
     <%= form.label :talk_format %>
-    <%= form.text_field :talk_format, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :talk_format, Talk.talk_formats.keys.map {|key| [key.humanize, key] },
+    class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :talk_trak %>
-    <%= form.text_field :talk_trak, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :talk_track %>
+    <%= form.select :talk_track, Talk.talk_tracks.keys.map {|key| [key.humanize, key] }, 
+    class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :duration %>
+    <%= form.label :duration %> (in minutes):
     <%= form.number_field :duration, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
