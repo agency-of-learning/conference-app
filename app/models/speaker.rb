@@ -1,10 +1,10 @@
 class Speaker < ApplicationRecord
-  has_many :speaker_talks, dependent: :destroy
-  has_many :talks, through: :speaker_talks
+  has_many :speakers_talks, dependent: :destroy, class_name: "SpeakerTalk"
+  has_many :talks, through: :speakers_talks
 
   validates :name, presence: true
   validates :image_filename, format: {
-    with: /\w+\.(jpg|png)\z/i,
-    message: "must be a JPG or PNG image"
+    with: /\w+\.(jpg|png|heic|heics)\z/i,
+    message: "must be a JPG, PNG or HEIC image"
   }
 end
