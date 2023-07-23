@@ -2,8 +2,10 @@
   <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
     <div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
+      <div class="mb-4">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+      
       <div class="field mb-4">
         <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
