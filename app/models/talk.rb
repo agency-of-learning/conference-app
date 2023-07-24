@@ -20,4 +20,8 @@ class Talk < ApplicationRecord
     community: 1,
     career: 2
   }
+
+  def self.talks_in_order
+    Talk.all.order("start_time")
+  end
 end
