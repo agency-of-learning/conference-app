@@ -1,7 +1,7 @@
-<nav class="navbar bg-base-100 p-4 bg-red-600 flex justify-between">
+<nav class="navbar bg-base-100 p-4 bg-red-600 flex justify-between items-center">
   <div class="mb-2 sm:mb-0  items-center">
     <a href="/" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">
-    <img class="h-4 w-full grow "src="https://rubyonrails.org/assets/world/rails-world-logo.png">
+    <img class="lg:h-8 h-4 w-full  "src="https://rubyonrails.org/assets/world/rails-world-logo.png">
     </a>
   </div>
 
@@ -11,24 +11,39 @@
             <li><span class="text-lg no-underline text-white font-extrabold italic mx-2 py-2 px-4">Welcome <%= "#{current_user.role}" %>!</span>
             </li>
             <li>
-            <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-pink-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
+                <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>
+            </li>
+            <li>
+                <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>   
+            </li>
+            <li>
+            <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded")%>
             </li>
         <% end %>
     </ul>
 
-    <div class="dropdown dropdown-end flex lg:hidden">
-     <% if current_user %>
-      <label tabindex="0" class="btn btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-      </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-            <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-pink-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
-            </li>
-       
-      </ul>
-       <% end %>
-    </div>
+
   </div>
+ <%if current_user%>
+    <div class="inline-block bg-white text-sm px-4 py-2 lg:hidden leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white lg:mt-0">
   
+        <div class="relative" data-controller="dropdown">
+            
+            <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
+                <span class="appearance-none flex items-center inline-block text-gray-700">
+                <img src="https://rubyonrails.org/assets/images/logo-railsworld.svg" class="rounded-full h-8 w-8 align-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+                </span>
+            </div>
+
+            <div data-dropdown-target="menu" class="absolute right-0 mt-4 hidden text-center w-16">
+                <div class="bg-white shadow rounded border overflow-hidden w-fit">
+                        <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                        <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                        <%= button_to "Logout", destroy_user_session_path, data: {action: "click->dropdown#toggle"}, method: :delete, class: "no-underline block px-4 py-3 text-gray-900 bg-pink-100 hover:bg-gray-300 whitespace-nowrap"%>
+                </div>
+            </div>
+        </div>
+    </div>
+   <%end%>
 </nav>
