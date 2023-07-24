@@ -40,7 +40,6 @@
   <div class="my-5">
     <%= form.label :talk_track %>
     <%= form.select :talk_track, Talk.talk_tracks.keys.map {|key| [key.titleize, key] } %>
-    <%#=> class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
