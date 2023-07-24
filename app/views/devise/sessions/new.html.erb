@@ -1,7 +1,8 @@
- <%= turbo_frame_tag "registration-sign-in" do %>
+ <%#= turbo_frame_tag "registration-sign-in" do %>
     <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
       <div class="">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
+       <h1 class="text-4xl font-extrabold dark:text-white">Login</h1>
           <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
             <%= render "shared/flash_messages" %>
          </div>
@@ -32,4 +33,4 @@
     <%= button_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
   </div>
 </div>
-<% end %>
+<%# end %>
