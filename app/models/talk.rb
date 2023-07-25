@@ -5,7 +5,6 @@ class Talk < ApplicationRecord
   validates :title, :location, :start_time, presence: true
   validates :duration, numericality: {greater_than_or_equal_to: 0}
 
-
   enum :talk_format, {
     keynote: 0,
     session: 1,
@@ -23,5 +22,4 @@ class Talk < ApplicationRecord
   def self.by_start_time
     Talk.all.order("start_time")
   end
-
 end

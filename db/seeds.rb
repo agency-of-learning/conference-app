@@ -350,6 +350,7 @@ puts "Creating Speaker List"
              React, so I had the opportunity to solve complex problems with Hotwire, Kredis, ViewComponent, StimulusJS, RequestJS.
               Since then I have worked as a “Frontend owner” with different companies, where my role was to create complex UI’s with Hotwire.
                While working with this technology, I identified multiple common-use patterns and best practices, that I want to share!
+
           
           BTW, I never got a CS degree. I am self-taught! Initially I tried out Ruby on Rails, because I needed a “School Management app” 
           for my business. I did not find a good one on the market, so I decided to build one. With no prior experience, Rails was very fast 
@@ -391,8 +392,19 @@ puts "Finished creating speakers_talks relationships"
 puts "Creating Admin User"
 
 User.create!(
-  email: 'admin@example.com',
-  password: '123456789',
+  email: "admin@example.com",
+  password: "123456789",
   role: 1
 )
 puts "Admin user created!"
+
+puts "Creating Attendee User"
+
+User.create!(
+  email: "user@example.com",
+  password: "123456789",
+  role: 0
+)
+
+puts "Attendee Created!"
+

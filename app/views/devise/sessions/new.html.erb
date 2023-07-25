@@ -1,32 +1,35 @@
- <%= turbo_frame_tag "registration-sign-in" do %>
-    <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
-      <div class="">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
-        <div class="field mb-4">
-          <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-        </div>
+<div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
+  <div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
+      <h1 class="text-4xl font-extrabold dark:text-white">Login</h1>
 
-        <div class="field mb-6">
-          <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
-          <%= f.password_field :password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-        </div>
+      <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
+        <%= render "shared/flash_messages" %>
+      </div>
+      
+      <div class="field mb-4">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="field flex md:flex md:items-center lg:items-start mb-6">
-            <span class="text-sm">
-               <%= f.check_box :remember_me,  class: "mr-2 leading-tight" %>
-            </span>
-            <%= f.label :remember_me, class: "md:w-2/3 block text-gray-500 font-bold" %>
-          </div>
-        <% end %>
+      <div class="field mb-6">
+        <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+        <%= f.password_field :password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
 
-        <div class="actions">
-          <%= f.submit "Log in",  data: { turbo_frame: "_top" }, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      <% if devise_mapping.rememberable? %>
+        <div class="field flex md:flex md:items-center lg:items-start mb-6">
+          <span class="text-sm">
+              <%= f.check_box :remember_me,  class: "mr-2 leading-tight" %>
+          </span>
+          <%= f.label :remember_me, class: "md:w-2/3 block text-gray-500 font-bold" %>
         </div>
       <% end %>
-    </div>
-    <%= button_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
+
+      <div class="actions">
+        <%= f.submit "Log in",  data: { turbo_frame: "_top" }, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      </div>
+    <% end %>
   </div>
+<%= button_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
 </div>
-<% end %>
