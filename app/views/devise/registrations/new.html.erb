@@ -1,4 +1,3 @@
-<%#= turbo_frame_tag "registration-sign-in" do %>
   <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
     <div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
@@ -32,5 +31,5 @@
       <%= button_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
     </div>
   </div>
-<%#end%>
+
 
