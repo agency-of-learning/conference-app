@@ -395,3 +395,13 @@ User.create!(
   role: 1
 )
 puts "Admin user created!"
+
+puts "Creating Attendee User"
+
+User.create!(
+  email: "user@example.com",
+  password: "123456789",
+  role: 0
+)
+
+puts "Attendee Created!"
