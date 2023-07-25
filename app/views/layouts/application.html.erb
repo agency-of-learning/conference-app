@@ -12,8 +12,18 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+      <%= render "shared/navbar" %>
+    <div class="container mx-auto px-6">
+      <div class="flex min-h-full flex-col justify-center px-6 py-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <img class="mx-auto h-20 w-auto" src="https://rubyonrails.org/assets/images/logo-railsworld.svg" alt="Rails World">
+            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Rails World Conference!</h2>
+        </div>
+         <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
+          <%= render "shared/flash_messages" %>
+         </div>
       <%= yield %>
-    </main>
+      </div>
+    </div>
   </body>
 </html>

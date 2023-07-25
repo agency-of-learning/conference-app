@@ -1,29 +1,35 @@
-<h2>Sign up</h2>
+<%= turbo_frame_tag "registration-sign-in" do %>
+  <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
+    <div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |f| %>
+      <div class="mb-4">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+      
+      <div class="field mb-4">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field mb-4">
+        <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" , class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"%>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field mb-4">
+        <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="actions mb-4">
+        <%= f.submit "Sign up",  data: { turbo_frame: "_top" },:class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      </div>
+      <% end %>
+      <%= button_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded")%>
+    </div>
   </div>
+<%end%>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
