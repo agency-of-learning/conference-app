@@ -3,6 +3,10 @@
     <%= render "talks/index" %>
 
 <% else %>
+        <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
+            <%= render "shared/flash_messages" %>
+         </div>
+         
        <%= render "sign_up_login" %>
 <%end%>
 
