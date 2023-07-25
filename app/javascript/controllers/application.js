@@ -1,5 +1,4 @@
 import { Application } from "@hotwired/stimulus"
-import '@hotwired/turbo-rails';
 const application = Application.start()
 
 import { Alert, Autosave, Dropdown, Modal, Tabs, Popover, Toggle, Slideover } from "tailwindcss-stimulus-components"
