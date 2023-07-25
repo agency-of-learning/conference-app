@@ -4,8 +4,6 @@ class Talk < ApplicationRecord
 
   validates :title, :location, :start_time, presence: true
   validates :duration, numericality: {greater_than_or_equal_to: 0}
-  # validates :talk_format, inclusion: { in: :talk_format }
-  # validates :talk_track, inclusion: { in: :talk_track }
 
   enum :talk_format, {
     keynote: 0,
@@ -20,4 +18,8 @@ class Talk < ApplicationRecord
     community: 1,
     career: 2
   }
+
+  def self.by_start_time
+    Talk.all.order("start_time")
+  end
 end

@@ -4,7 +4,7 @@ class Speaker < ApplicationRecord
 
   validates :name, presence: true
   validates :image_filename, format: {
-    with: /\w+\.(jpg|png|heic|heics)\z/i,
+    with: /\w+\.(jpg|jpeg|png|heic|heics)\z/i,
     message: "must be a JPG, PNG or HEIC image"
   }
 end

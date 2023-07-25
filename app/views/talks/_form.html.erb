@@ -33,14 +33,13 @@
 
   <div class="my-5">
     <%= form.label :talk_format %>
-    <%= form.select :talk_format, Talk.talk_formats.keys.map {|key| [key.humanize, key] },
+    <%= form.select :talk_format, Talk.talk_formats.keys.map {|key| [key.titleize, key] },
     class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
     <%= form.label :talk_track %>
-    <%= form.select :talk_track, Talk.talk_tracks.keys.map {|key| [key.humanize, key] }, 
-    class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :talk_track, Talk.talk_tracks.keys.map {|key| [key.titleize, key] } %>
   </div>
 
   <div class="my-5">
