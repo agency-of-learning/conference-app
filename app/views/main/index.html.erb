@@ -1,11 +1,9 @@
-<% if current_user %>
+<% if !current_user %>
 
-    <%= render "talks/index" %>
+    <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
+        <%= render "shared/flash_messages" %>
+    </div>
 
-<% else %>
-        <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
-            <%= render "shared/flash_messages" %>
-         </div>
-         
-       <%= render "sign_up_login" %>
+    <%= render "sign_up_login" %>
 <%end%>
+
