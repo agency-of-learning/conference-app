@@ -10,7 +10,7 @@
       <%= @speaker.bio %>
     </p>
 
-    <% if current_user && current_user.admin? %> <%# temporary fix %>
+    <% if current_user&.admin? %> <%# temporary fix %>
       <%= link_to 'Edit this speaker', edit_speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <div class="inline-block ml-2">
         <%= link_to 'Delete', speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium",
