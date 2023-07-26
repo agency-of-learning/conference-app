@@ -201,7 +201,7 @@ Speaker.create!([
     name: "Julia López",
     title: "Senior Software Engineer, Harvest",
     bio:
-      %( I am Julia López from Barcelona! I’ve been a Rails developer since 2011 and I love it.
+      %( I am Julia López from Barcelona! I've been a Rails developer since 2011 and I love it.
           I am currently working as a Senior Software Engineer at Harvest where I had the chance to participate in many Rails upgrades
           - I am obsessed with upgrading things so I **never** miss those opportunities - After the conference talks,
           you can find me at the Karaoke events!
@@ -237,9 +237,9 @@ Speaker.create!([
     name: "Mike Dalessio",
     title: "Director of Engineering, Shopify",
     bio:
-      %{ Mike Dalessio is the Engineering Director for Shopify’s Ruby and Rails Infrastructure team.
+      %{ Mike Dalessio is the Engineering Director for Shopify's Ruby and Rails Infrastructure team.
           He maintains commonly-used gems like Nokogiri, SQLite3, and Rails::HTML::Sanitizer, and has
-          contributed to many more. He’s a member of the Rails Triage and Rails Security teams and has
+          contributed to many more. He's a member of the Rails Triage and Rails Security teams and has
           developed a very particular set of skills around C extensions, HTML sanitization, and debugging segfaults.
           Previously he led the Cloud Foundry open source PaaS project for VMware and Pivotal.
           In 2009 he coined the phrase “WWSMD?” (IYKYK). He likes coffee, intimate chats, and long walks, and has been known to combine all three.
@@ -251,9 +251,9 @@ Speaker.create!([
     name: "Miles McGuire",
     title: "Staff Engineer, Intercom",
     bio:
-      %{ I’m a Staff Engineer on Intercom’s Datastores team (which owns all core technologies, including Rails)
-          and have worked here for 6 years as of June 2023. In that time I’ve seen a lot of big and exciting changes,
-          and long the way I’ve become Intercom’s expert on ActiveRecord. In recent times I lead a project to ensure the
+      %{ I'm a Staff Engineer on Intercom’s Datastores team (which owns all core technologies, including Rails)
+          and have worked here for 6 years as of June 2023. In that time I've seen a lot of big and exciting changes,
+          and long the way I've become Intercom’s expert on ActiveRecord. In recent times I lead a project to ensure the
           long term scalability of our MySQL databases with horizontal sharding with lots of low level work at the
           application layer to make it as seamless as possible for engineers.
       }.squish,
@@ -348,21 +348,21 @@ Speaker.create!([
            of Hotwire, and we completely rewrote our app into a Rails monolith with server-side rendering with Hotwire
             & ViewComponent for the design system. The frontend had complex UI interactions that were previously done with
              React, so I had the opportunity to solve complex problems with Hotwire, Kredis, ViewComponent, StimulusJS, RequestJS.
-              Since then I have worked as a “Frontend owner” with different companies, where my role was to create complex UI’s with Hotwire.
+              Since then I have worked as a “Frontend owner” with different companies, where my role was to create complex UI's with Hotwire.
                While working with this technology, I identified multiple common-use patterns and best practices, that I want to share!
 
           BTW, I never got a CS degree. I am self-taught! Initially I tried out Ruby on Rails, because I needed a “School Management app”
           for my business. I did not find a good one on the market, so I decided to build one. With no prior experience, Rails was very fast
-            to learn. I was amazed by scaffolds, associations, devise and Heroku - it’s all I really needed to worry about when building my app!
-            That’s what I call Rails magic - being able to jump in and build something that provides business value with minimal experience!
+            to learn. I was amazed by scaffolds, associations, devise and Heroku - it's all I really needed to worry about when building my app!
+            That's what I call Rails magic - being able to jump in and build something that provides business value with minimal experience!
       ).squish,
-    image_filename: "x-noria.jpeg"
+    image_filename: "y-shmarov.jpg"
   }
 ])
 
 puts "Finished creating speakers"
 
-puts "Creating 25 talks"
+puts "Creating talks list"
 
 29.times {
   Talk.create!(
@@ -377,14 +377,15 @@ puts "Creating 25 talks"
 }
 puts "Finished creating talks"
 
-puts "Creating 25 speakers_talks relationships"
+puts "Creating speakers_talks relationships"
 
-25.times {
+Talk.all.each do |talk|
   SpeakerTalk.create!(
     speaker_id: Speaker.ids.sample,
-    talk_id: Talk.ids.sample
+    talk_id: talk.id
   )
-}
+end
+
 puts "Finished creating speakers_talks relationships"
 
 puts "Creating Admin User"

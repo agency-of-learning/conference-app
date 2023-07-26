@@ -7,10 +7,15 @@
     <%= render @talk %>
 
     <p class="my-5">
+      <% @talk.speakers.each do |s| %>
+        <strong class="block font-medium mb-1"><%= link_to s.name, s %></strong>
+      <% end %>
+    </p>
+
+    <p class="my-5">
     <strong class="block font-medium mb-1">Description:</strong>
     <%= @talk.description %>
   </p>
-
 
     <% if current_user.admin? %> <%# temporary fix %>
       <%= link_to 'Edit this talk', edit_talk_path(@talk), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

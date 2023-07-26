@@ -6,11 +6,32 @@
 
     <%= render @speaker %>
 
-    <%= link_to 'Edit this speaker', edit_speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= link_to 'Delete', speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium",
-           data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this speaker?" } %>
-    </div>
+    <p class="my-5">
+      <%= @speaker.bio %>
+    </p>
+
+    <% if current_user && current_user.admin? %> <%# temporary fix %>
+      <%= link_to 'Edit this speaker', edit_speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <div class="inline-block ml-2">
+        <%= link_to 'Delete', speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium",
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this speaker?" } %>
+      </div>
+    <% end %>
+
     <%= link_to 'Back to speakers', speakers_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <hr class="mt-6">
+
+    <div class="mx-auto">
+      <p class="my-5">
+      <strong class="block font-heavy mb-1"><%= @speaker.name %>'s Sessions</strong>
+      </p>
+      <p class="my-5">
+      <% @speaker.talks.each do |t| %>
+        <%= render t %>
+      <% end %>
+      </p>
+    </div>
   </div>
 </div>
+
