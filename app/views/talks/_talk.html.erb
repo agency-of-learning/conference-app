@@ -6,12 +6,12 @@
   </p>
 
   <p class="my-5">
-    <strong class="block font-large mb-1"><%= link_to talk.title, talk %></strong>
+    <strong class="block font-bold mb-1"><%= link_to talk.title, talk %></strong>
   </p>
 
   <p class="my-5">
     <% talk.speakers.each do |s| %>
-      <strong class="block font-medium mb-1"><%= s.name %></strong>
+      <strong class="block font-medium mb-1"><%= link_to s.name, s %></strong>
     <% end %>
   </p>
 
@@ -20,6 +20,7 @@
     <%= talk.talk_format.titleize %> - <%= talk.talk_track.titleize %>
     </strong>
   </p>
+
 
   <hr class="mt-6">
 </div>
