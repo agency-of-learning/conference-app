@@ -1,27 +1,11 @@
 <div id="<%= dom_id speaker %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= speaker.name %>
+  <p class="my-5 h-auto max-w-xs">
+    <%= link_to image_tag(speaker.image_filename), speaker %>
   </p>
-
   <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= speaker.title %>
+    <strong class="block font-medium mb-1"><%= link_to speaker.name, speaker %></strong>
   </p>
-
   <p class="my-5">
-    <strong class="block font-medium mb-1">Bio:</strong>
-    <%= speaker.bio %>
+    <strong class="block font-medium mb-1"><%= speaker.title %></strong>
   </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Image filename:</strong>
-    <%= speaker.image_filename %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this speaker", speaker, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this speaker', edit_speaker_path(speaker), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
 </div>
