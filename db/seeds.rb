@@ -406,4 +406,3 @@ User.create!(
 )
 
 puts "Attendee Created!"
-
