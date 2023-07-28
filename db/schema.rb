@@ -38,7 +38,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_144335) do
     t.datetime "start_time", null: false
     t.string "location", null: false
     t.integer "talk_format"
-    t.integer "talk_track"
     t.integer "duration", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

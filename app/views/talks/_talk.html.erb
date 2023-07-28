@@ -1,26 +1,28 @@
 <div id="<%= dom_id talk %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">
-    <%= day_and_time(talk) %> - <%= talk.duration %> mins. - <%= talk.location %> 
+    <%= day_and_time(talk) %> - <%= talk.duration %> mins.
     </strong>
   </p>
 
   <p class="my-5">
-    <strong class="block font-bold mb-1"><%= link_to talk.title, talk %></strong>
+    <strong class="block font-bold mb-1"><%= talk.talk_format.titleize %>: <%= link_to talk.title, talk %></strong>
   </p>
 
   <p class="my-5">
     <% talk.speakers.each do |s| %>
-      <strong class="block font-medium mb-1"><%= link_to s.name, s %></strong>
+      <strong class="block font-medium mb-1"><%= link_to s.name, s %>, <%= s.title %></strong>
     <% end %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">
-    <%= talk.talk_format.titleize %> - <%= talk.talk_track.titleize %>
-    </strong>
+    <strong class="block font-medium mb-1"><%= talk.location %></strong>
   </p>
 
+  <p class="my-5">
+    <strong class="block font-bold mb-1"><%= button_to "Add", talk_user_path(talk), method: :patch %></strong>
+  </p>
 
   <hr class="mt-6">
+
 </div>
