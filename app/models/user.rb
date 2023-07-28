@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :notifications, as: :recipient
   
-  enum :role, attendee: 0, admin: 1
+  has_many :talks_users, dependent: :destroy, class_name: "TalkUser"
+  has_many :talks, through: :talks_users
 
+  enum :role, attendee: 0, admin: 1
 
 end

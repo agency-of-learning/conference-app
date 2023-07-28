@@ -1,6 +1,9 @@
 class Talk < ApplicationRecord
   has_many :speakers_talks, dependent: :destroy, class_name: "SpeakerTalk"
   has_many :speakers, through: :speakers_talks
+  
+  has_many :talks_users, dependent: :destroy, class_name: "TalkUser"
+  has_many :users, through: :talks_users
 
   validates :title, :location, :start_time, presence: true
   validates :duration, numericality: {greater_than_or_equal_to: 0}
