@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :talks, through: :talks_users
 
   enum :role, attendee: 0, admin: 1
+
 end
