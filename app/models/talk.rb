@@ -25,4 +25,16 @@ class Talk < ApplicationRecord
   def self.by_start_time
     Talk.all.order("start_time")
   end
+
+  def selected_by?(user)
+    talks_users.where(user: user).any?
+  end
+
+  def select(user)
+    talks_users.where(user: user).first_or_create
+  end
+
+  def un_select(user)
+    talks_users.where(user: user).destroy_all
+  end
 end

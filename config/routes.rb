@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  
+  resources :talks do
+    resource :talk_user, module: :talks, only: [:update]
+  end
+
   resources :speakers
-  resources :talks
+
   devise_for :users
 
   authenticated :user do
@@ -8,8 +13,5 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+ 
 end

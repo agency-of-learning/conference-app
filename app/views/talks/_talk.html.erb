@@ -19,10 +19,13 @@
     <strong class="block font-medium mb-1"><%= talk.location %></strong>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-bold mb-1"><%= button_to "Add", talk_user_path(talk), method: :patch %></strong>
-  </p>
+  <%= turbo_frame_tag talk, :talks_users do %>
+    <p class="my-5">
+      <strong class="block font-bold mb-1">
+        <%= button_to talk_select_text(talk), talk_talk_user_path(talk), method: :patch %>
+    </strong>
+    </p>
+  <% end %>
 
   <hr class="mt-6">
-
 </div>
