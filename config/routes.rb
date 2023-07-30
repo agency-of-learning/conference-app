@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :talks
-
+  
   resources :speakers
 
   devise_for :users

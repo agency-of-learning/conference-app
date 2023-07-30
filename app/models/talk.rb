@@ -27,4 +27,3 @@ class Talk < ApplicationRecord
     talks_users.where(user: user).any?
   end
 
-end
