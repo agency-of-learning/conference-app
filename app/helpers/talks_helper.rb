@@ -4,6 +4,6 @@ module TalksHelper
   end
 
   def talk_select_text(record)
-    record.selected_by?(current_user) ? t("Remove") : t("Add")
+    record.selected_by?(current_user) ? "Remove" : "Add"
   end
 end

@@ -404,5 +404,3 @@ User.create!(
   role: 0
 )
 puts "Attendee Created!"
-
-
