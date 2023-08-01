@@ -23,5 +23,4 @@ class Talks::TalksUsersController < ApplicationController
   def set_talk
     @talk = Talk.find(params[:talk_id])
   end
-
 end
