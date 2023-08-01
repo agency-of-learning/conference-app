@@ -22,8 +22,6 @@
   <%= turbo_frame_tag talk, :talks_users do %>
      <p class="my-5">
       <strong class="block font-bold mb-1">
-        <% if talk.selected_by?(current_user) %>
-          <%= button_to "Remove", talks_user_path(talk.talks_users.where(user: current_user).first), method: :delete %>
         <% else %>
           <%= button_to "Add", talks_users_path(talk_id: talk) %>
         <% end %>
