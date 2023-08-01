@@ -1,8 +1,8 @@
-class Talks::TalkUsersController < ApplicationController
+class Talks::TalksUsersController < ApplicationController
   include ActionView::RecordIdentifier
 
   before_action :authenticate_user!
-  before_action :set_talk
+  before_action :set_talk, only: %i[update]
 
   def update
     if @talk.selected_by?(current_user)
@@ -12,6 +12,10 @@ class Talks::TalkUsersController < ApplicationController
     end
 
     render partial: "talks/talk", locals: {talk: @talk}
+  end
+
+  def my_schedule
+    @talks = Talk.my_schedule(current_user)
   end
 
   private

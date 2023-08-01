@@ -26,6 +26,10 @@ class Talk < ApplicationRecord
     Talk.all.order("start_time")
   end
 
+  def self.my_schedule(user)
+    User.find(user.id).talks
+  end
+
   def selected_by?(user)
     talks_users.where(user: user).any?
   end

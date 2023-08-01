@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
   resources :talks do
-    resource :talk_user, module: :talks, only: [:update]
+    resource :talks_users, module: :talks, controller: 'talks_users'
   end
+
+  get '/my_schedule', to: 'talks/talks_users#my_schedule'
 
   resources :speakers
 
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root to: "talks#index", as: :user_root
+    get '/my_schedule', to: 'talks/talks_users#my_schedule'
   end
 
   root to: "main#index"

@@ -22,7 +22,7 @@
   <%= turbo_frame_tag talk, :talks_users do %>
     <p class="my-5">
       <strong class="block font-bold mb-1">
-        <%= button_to talk_select_text(talk), talk_talk_user_path(talk), method: :patch %>
+        <%= button_to talk_select_text(talk), talk_talks_users_path(talk), method: :patch %>
     </strong>
     </p>
   <% end %>
