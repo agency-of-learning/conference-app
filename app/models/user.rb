@@ -11,6 +11,4 @@ class User < ApplicationRecord
 
 
   enum :role, attendee: 0, admin: 1
-
-
 end
