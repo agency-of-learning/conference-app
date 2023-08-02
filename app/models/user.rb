@@ -5,8 +5,6 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
 
   has_many :notifications, as: :recipient
-  
+
   enum :role, attendee: 0, admin: 1
-
-
 end
