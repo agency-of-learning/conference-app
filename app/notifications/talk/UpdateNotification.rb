@@ -8,8 +8,8 @@ class Talk::UpdateNotification < Noticed::Base
   #
   deliver_by :database
   deliver_by :action_cable,
-  if: :app_notifications?
-    
+    if: :app_notifications?
+
   deliver_by :email,
     mailer: "TalkMailer",
     method: :update_for_talk,
@@ -33,7 +33,7 @@ class Talk::UpdateNotification < Noticed::Base
 
   def app_notifications?
     recipient.receive_app_notifications
-  end 
+  end
 
   def email_notifications?
     recipient.receive_email_notifications

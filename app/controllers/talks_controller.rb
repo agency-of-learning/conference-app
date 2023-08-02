@@ -23,9 +23,10 @@ class TalksController < ApplicationController
   # POST /talks
   def create
     @talk = Talk.new(talk_params)
-
     if @talk.save
-      # ScheduleTodaysReminderJob  will be moved!!! TODO: Schedule Reminder Notification Here FOR NOW
+      id = @talk.id
+      send_time = 20.minutes.before(@talk.start_time)
+      TalkReminderNotificationJob.set(wait_until: send_time).perform_later(id) # will be moved!!! TODO: update once Users have Talk association
       redirect_to @talk, notice: "Talk was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -35,8 +36,8 @@ class TalksController < ApplicationController
   # PATCH/PUT /talks/1
   def update
     if @talk.update(talk_params)
-      #id = @talk.id
-      # TalksJob.perform_later(id) TODO: Schedule UpdateReminder here FOR NOW 
+       id = @talk.id
+       TalkUpdateNotificationJob.perform_later(id) #TODO: update TalkUpdateNotification once Users have Talk association
       redirect_to @talk, notice: "Talk was successfully updated."
     else
       render :edit, status: :unprocessable_entity
