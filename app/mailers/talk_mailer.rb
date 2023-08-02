@@ -1,5 +1,6 @@
 class TalkMailer < ApplicationMailer
   before_action :set_talk, :set_changes
+  before_action :set_talk, :set_changes
 
   layout "mailer"
 
