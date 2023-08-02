@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "world@rubyonrails.org", to: -> { @recipient.email } # get clarification
+  default from: "world@rubyonrails.org", to: -> { @recipient.email }
 
   before_action :set_recipient
 

@@ -1,7 +1,7 @@
 class TalkReminderNotificationJob < ApplicationJob
   queue_as :default
 
-  def perform(id) # This Job needs
+  def perform(id)
     # Note: Do something later You could call a service object for talks here
     talk = Talk.find(id)
     puts talk.title
