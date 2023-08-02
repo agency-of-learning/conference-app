@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :notifications, as: :recipient
 
   enum :role, attendee: 0, admin: 1
+
+
 end

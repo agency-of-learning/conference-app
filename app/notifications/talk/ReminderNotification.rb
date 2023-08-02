@@ -1,7 +1,3 @@
-# To deliver this notification:
-#
-# Talk.with(post: @post).deliver_later(current_user)
-# Talk.with(post: @post).deliver(current_user)
 # Talk::ReminderNotification.with(talk: Talk.last).deliver(User.last)
 class Talk::ReminderNotification < Noticed::Base
   # Add your delivery methods
@@ -14,11 +10,7 @@ class Talk::ReminderNotification < Noticed::Base
     mailer: "TalkMailer",
     method: :remind_for_upcoming_talk,
     if: :email_notifications?
-  # deliver_by :slack
-  # deliver_by :custom, class: "MyDeliveryMethod"
 
-  # Add required params
-  #
   param :talk
 
   # Define helper methods to make rendering easier.
@@ -37,4 +29,5 @@ class Talk::ReminderNotification < Noticed::Base
   def email_notifications?
     recipient.receive_email_notifications
   end
+
 end
