@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
   resources :speakers
   resources :talks
   devise_for :users
@@ -12,4 +13,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
