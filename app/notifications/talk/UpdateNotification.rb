@@ -13,8 +13,7 @@ class Talk::UpdateNotification < Noticed::Base
   # deliver_by :custom, class: "MyDeliveryMethod"
 
   # Add required params
-  param :talk
-
+  param :talk, :changes
   # Define helper methods to make rendering easier.
   #
   def message

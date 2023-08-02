@@ -37,7 +37,8 @@ class TalksController < ApplicationController
   def update
     if @talk.update(talk_params)
        id = @talk.id
-       TalkUpdateNotificationJob.perform_later(id) #TODO: update TalkUpdateNotification once Users have Talk association
+       changes = @talk.saved_changes
+       TalkUpdateNotificationJob.perform_now(id, changes) #TODO: update TalkUpdateNotification once Users have Talk association
       redirect_to @talk, notice: "Talk was successfully updated."
     else
       render :edit, status: :unprocessable_entity

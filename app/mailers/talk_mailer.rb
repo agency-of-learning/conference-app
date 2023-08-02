@@ -1,5 +1,5 @@
 class TalkMailer < ApplicationMailer
-  before_action :set_talk
+  before_action :set_talk, :set_changes
 
   layout "mailer"
 
@@ -16,4 +16,10 @@ class TalkMailer < ApplicationMailer
   def set_talk
     @talk = params[:talk]
   end
+
+  def set_changes 
+    if params[:changes]
+        @changes = params[:changes]
+    end 
+  end 
 end
