@@ -20,7 +20,7 @@ class Talk < ApplicationRecord
     Talk.all.order("start_time")
   end
 
-  def self.my_schedule(user)
+  def self.user_talks(user)
     User.find(user.id).talks
   end
 
