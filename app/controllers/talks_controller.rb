@@ -25,8 +25,8 @@ class TalksController < ApplicationController
     @talk = Talk.new(talk_params)
     if @talk.save
       id = @talk.id
-      send_time = 20.minutes.before(@talk.start_time)
-      TalkReminderNotificationJob.set(wait_until: send_time).perform_later(id) # will be moved!!! TODO: update once Users have Talk association
+      #send_time = 20.minutes.before(@talk.start_time) -> Needs to be moved to a cron job
+      #TalkReminderNotificationJob.set(wait_until: send_time).perform_later(id) # will be moved!!! TODO: update once Users have Talk association
       redirect_to @talk, notice: "Talk was successfully created."
     else
       render :new, status: :unprocessable_entity
