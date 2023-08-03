@@ -5,7 +5,7 @@ class TalksUsersController < ApplicationController
   before_action :set_talk, only: %i[create]
 
   def index
-    @talks = Talk.user_talks(current_user).by_start_time
+    @talks = User.my_schedule(current_user).by_start_time
   end
 
   def create
