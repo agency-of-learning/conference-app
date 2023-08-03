@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  resources :talks do
-    resource :talks_users, module: :talks, controller: "talks_users", only: [:update]
-  end
-
-  get "/my_schedule", to: "talks/talks_users#my_schedule"
+  resources :talks
 
   resources :speakers
 
   devise_for :users
+
+  resources :talks_users
 
   authenticated :user do
     root to: "talks#index", as: :user_root

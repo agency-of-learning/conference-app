@@ -16,12 +16,6 @@ class Talk < ApplicationRecord
     social: 4
   }
 
-  enum :talk_track, {
-    technical: 0,
-    community: 1,
-    career: 2
-  }
-
   def self.by_start_time
     Talk.all.order("start_time")
   end
@@ -34,11 +28,4 @@ class Talk < ApplicationRecord
     talks_users.where(user: user).any?
   end
 
-  def select(user)
-    talks_users.where(user: user).first_or_create
-  end
-
-  def un_select(user)
-    talks_users.where(user: user).destroy_all
-  end
 end

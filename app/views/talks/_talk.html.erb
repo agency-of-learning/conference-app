@@ -1,7 +1,7 @@
 <div id="<%= dom_id talk %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">
-    <%= day_and_time(talk) %> - <%= talk.duration %> mins.
+    <%= talk.start_time.to_fs(:day_and_hour) %> - <%= talk.duration %> mins.
     </strong>
   </p>
 
@@ -20,12 +20,17 @@
   </p>
 
   <%= turbo_frame_tag talk, :talks_users do %>
-    <p class="my-5">
+     <p class="my-5">
       <strong class="block font-bold mb-1">
-        <%= button_to talk_select_text(talk), talk_talks_users_path(talk), method: :patch %>
-    </strong>
+        <% if talk.selected_by?(current_user) %>
+          <%= button_to "Remove", talks_user_path(talk.talks_users.where(user: current_user).first), method: :delete %>
+        <% else %>
+          <%= button_to "Add", talks_users_path(talk_id: talk) %>
+        <% end %>
+      </strong>
     </p>
   <% end %>
 
   <hr class="mt-6">
 </div>
+
