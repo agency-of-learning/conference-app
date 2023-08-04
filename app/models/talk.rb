@@ -20,10 +20,6 @@ class Talk < ApplicationRecord
     Talk.all.order("start_time")
   end
 
-  def self.user_talks(user)
-    User.find(user.id).talks
-  end
-
   def selected_by?(user)
     talks_users.where(user: user).any?
   end
