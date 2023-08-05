@@ -4,7 +4,6 @@
 
 <div id="notifications">
   <% @notifications.each do |notification| %>
-    <%= render notification %>
     <p>
       <%= link_to "#{notification.to_notification.message}: #{notification.talk_title} at #{notification.talk_start_time}", talk_path(notification.talk)%>
     </p>
