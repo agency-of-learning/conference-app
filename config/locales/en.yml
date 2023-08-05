@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  notifications:
+    talk:
+      reminder_notification:
+        message: "Upcoming Talk Is Happening!"
+      update_notification:
+        message: "Update on one of your Talks!"
