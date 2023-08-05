@@ -19,7 +19,7 @@ class Talk::ReminderNotification < Noticed::Base
   end
 
   def url
-    post_path(params[:talk])
+    talk_path(params[:talk])
   end
 
   def app_notifications?
