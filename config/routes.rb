@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   resources :speakers
   resources :talks
-  resources :notifications
+
+  resource :user do 
+    resources :notifications 
+  end 
+
   devise_for :users
 
   authenticated :user do
