@@ -13,7 +13,7 @@ class Talk < ApplicationRecord
 
   enum :talk_format, {
     keynote: 0,
-    session: 1,
+    talk: 1,
     workshop: 2,
     panel: 3,
     social: 4
@@ -26,5 +26,7 @@ class Talk < ApplicationRecord
   def selected_by?(user)
     talks_users.where(user: user).any?
   end
+  
+  
 
 end
