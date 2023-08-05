@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Notifications</h1>
+<h1>Your Notifications!</h1>
 
 <div id="notifications">
   <% @notifications.each do |notification| %>
     <%= render notification %>
     <p>
-      <%= link_to notification.to_notification.message, notification.to_notification.url%>
+      <%= link_to "#{notification.to_notification.message}: #{notification.talk_title} at #{notification.talk_start_time}", talk_path(notification.talk)%>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New notification", new_notification_path %>
