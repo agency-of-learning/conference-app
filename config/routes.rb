@@ -9,11 +9,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :talks_users
+
   authenticated :user do
     root to: "talks#index", as: :user_root
   end
 
   root to: "main#index"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -22,4 +25,5 @@ Rails.application.routes.draw do
   authenticate :user do
     mount Sidekiq::Web => '/sidekiq'
   end
+
 end

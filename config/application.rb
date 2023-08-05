@@ -16,8 +16,9 @@ module RailsWorldConf
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    #TODO -> If testing notifications locally, uncomment and put your timezone in here
-    #config.time_zone = 'Eastern Time (US & Canada)' #To give me sanity while I try to work this out 
+
+    config.time_zone = "Europe/Amsterdam"
+
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :sidekiq
   end

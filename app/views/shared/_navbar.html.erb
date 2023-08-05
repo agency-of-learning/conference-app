@@ -11,10 +11,13 @@
             <li><span class="text-lg no-underline text-white font-extrabold italic mx-2 py-2 px-4">Welcome <%= "#{current_user.role}" %>!</span>
             </li>
             <li>
-                <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>
+                <%= link_to 'Home', root_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>
             </li>
             <li>
-                <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>   
+                <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>   
+            </li>
+            <li>
+                <%= link_to 'Profile', edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>   
             </li>
             <li>
                 <%= link_to 'Notifications',  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'hover:bg-pink-700 text-white font-bold py-2 px-4 rounded' %>   
@@ -44,7 +47,7 @@
                         <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
                         <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
                         <%= link_to 'Notifications',  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   
-                        <%= button_to "Logout", destroy_user_session_path, data: {action: "click->dropdown#toggle"}, method: :delete, class: "no-underline block px-4 py-3 text-gray-900 bg-pink-100 hover:bg-gray-300 whitespace-nowrap w-full"%>
+                        <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
                 </div>
             </div>
         </div>

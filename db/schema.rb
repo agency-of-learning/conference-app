@@ -50,10 +50,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
     t.datetime "start_time", null: false
     t.string "location", null: false
     t.integer "talk_format"
-    t.integer "talk_track"
     t.integer "duration", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "talks_users", force: :cascade do |t|
+    t.bigint "talk_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["talk_id"], name: "index_talks_users_on_talk_id"
+    t.index ["user_id"], name: "index_talks_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,4 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
 
   add_foreign_key "speakers_talks", "speakers"
   add_foreign_key "speakers_talks", "talks"
+  add_foreign_key "talks_users", "talks"
+  add_foreign_key "talks_users", "users"
 end
