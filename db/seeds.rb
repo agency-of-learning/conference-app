@@ -370,7 +370,6 @@ puts "Creating talks list"
     location: Faker::Address.community,
     start_time: Faker::Time.between_dates(from: Date.new(2023, 10, 0o5), to: Date.new(2023, 10, 0o6), period: :morning),
     talk_format: %w[keynote session workshop panel social].sample,
-    talk_track: %w[technical community career].sample,
     duration: [30, 45, 60].sample,
     description: Faker::Movies::Hobbit.quote
   )
@@ -404,5 +403,4 @@ User.create!(
   password: "123456789",
   role: 0
 )
-
 puts "Attendee Created!"
