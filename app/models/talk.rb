@@ -19,14 +19,10 @@ class Talk < ApplicationRecord
     social: 4
   }
 
-  def self.by_start_time
-    Talk.all.order("start_time")
-  end
-
   def selected_by?(user)
     talks_users.where(user: user).any?
   end
   
-  
-
+  scope :in_order, -> { order(:start_time) }
+    
 end

@@ -3,7 +3,7 @@ class TalksController < ApplicationController
 
   # GET /talks
   def index
-    @talks = Talk.by_start_time
+    @talks = Talk.in_order
   end
 
   # GET /talks/1
