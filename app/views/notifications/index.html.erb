@@ -5,7 +5,10 @@
 <div id="notifications">
   <% @notifications.each do |notification| %>
     <p>
-      <%= link_to "#{notification.to_notification.message}: #{notification.talk_title} at #{notification.talk_start_time}", talk_path(notification.talk)%>
+      <% case notification.type %>
+      <% when "Talk::ReminderNotification"  %>
+        <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
+      <% end %>
     </p>
   <% end %>
 </div>

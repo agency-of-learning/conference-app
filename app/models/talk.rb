@@ -25,4 +25,7 @@ class Talk < ApplicationRecord
   
   scope :in_order, -> { order(:start_time) }
     
+  def formatted_start_time
+    self.start_time.strftime("%I:%M %p, %a %d, %b %Y")
+  end 
 end

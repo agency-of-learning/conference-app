@@ -1,6 +1,5 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
-  require 'sidekiq/web'
-
   resources :speakers
   resources :talks
 
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  authenticate :user do
+  authenticate :user, lambda { |u| u.role == "admin" } do
     mount Sidekiq::Web => '/sidekiq'
   end
   
