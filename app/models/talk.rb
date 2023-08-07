@@ -23,8 +23,6 @@ class Talk < ApplicationRecord
     talks_users.where(user: user).any?
   end
  
-  # Talk Model Scopes
-
   scope :in_order, -> { order(:start_time) }
 
   scope :day_one, -> { 
