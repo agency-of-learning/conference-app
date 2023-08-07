@@ -22,10 +22,21 @@ class Talk < ApplicationRecord
   def selected_by?(user)
     talks_users.where(user: user).any?
   end
-  
+ 
   scope :in_order, -> { order(:start_time) }
+
+  scope :day_one, -> { 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 04), 
+    Date.new(2023, 10, 05)) 
+  }
     
-  def formatted_start_time
-    self.start_time.strftime("%I:%M %p, %a %d, %b %Y")
-  end 
+  scope :day_two, -> { 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 05), 
+    Date.new(2023, 10, 06)) 
+  }
+
+  scope :day_three, -> { 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 06), 
+    Date.new(2023, 10, 07)) 
+  }
 end
