@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resource :user do 
     resources :notifications 
   end 
-
+  post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
+  post 'notifications/read', to: 'notifications#read', as: :read
   devise_for :users
 
   resources :talks_users
