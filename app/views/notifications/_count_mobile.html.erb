@@ -1,0 +1,7 @@
+<%= tag.div id: :notifications_count_mobile do %>
+  <% if count > 0 %>
+    <span>
+      <%= count > 9 ? "+9" : count  %>
+    </span>
+  <% end %>
+<% end %>

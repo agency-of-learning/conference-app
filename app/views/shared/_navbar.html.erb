@@ -31,24 +31,34 @@
 
   </div>
  <%if current_user%>
-    <div class="inline-block bg-white text-sm px-4 py-2 lg:hidden leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white lg:mt-0">
-  
-        <div class="relative" data-controller="dropdown">
-            
-            <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
-                <span class="appearance-none flex items-center text-gray-700">
-                <img src="https://rubyonrails.org/assets/images/logo-railsworld.svg" class="rounded-full h-8 w-8 align-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
-                </span>
-            </div>
+    <div class="lg:hidden flex flex-row">
+        <div class=" flex flex-row items-center justify-center px-4 py-4 text-white bg-gray-400 hover:cursor-pointer active:bg-gray-400">
+                   
+                    <%= link_to user_notifications_path do %>
+                        <%= tag.div id: :notifications_count_mobile do %>
+                            <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
+                        <% end %>
+                    <% end %>
+        </div>
+        <div class="inline-block bg-white text-sm px-4 py-2 leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white lg:mt-0">
+            <div class="relative" data-controller="dropdown">
+                
+                <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
+                    <span class="appearance-none flex items-center text-gray-700">
+                    <img src="https://rubyonrails.org/assets/images/logo-railsworld.svg" class="rounded-full h-8 w-8 align-middle">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+                    </span>
+                </div>
 
-            <div data-dropdown-target="menu" class="absolute right-0 mt-4 hidden text-center w-18">
-                <div class="bg-white shadow rounded border overflow-hidden w-fit">
-                        <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
-                        <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
-                        <%= link_to 'Notifications',  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   
-                        <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
-                        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "bg-pink-500 hover:bg-pink-700 no-underline block px-4 py-3 text-gray-900 hover:bg-gray-300 whitespace-nowrap"%>
+                <div data-dropdown-target="menu" class="absolute right-0 mt-4 hidden text-center w-18">
+                
+                    <div class="bg-white shadow rounded border overflow-hidden w-fit">
+                            <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                            <%= link_to 'Profile',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                            <%= link_to 'Notifications',  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   
+                            <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+                            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "bg-pink-500 hover:bg-pink-700 no-underline block px-4 py-3 text-gray-900 hover:bg-gray-300 whitespace-nowrap"%>
+                    </div>
                 </div>
             </div>
         </div>
