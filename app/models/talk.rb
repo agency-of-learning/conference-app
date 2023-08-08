@@ -23,6 +23,10 @@ class Talk < ApplicationRecord
     talks_users.where(user: user).any?
   end
  
+  def add_duration
+    self.start_time + self.duration.minutes
+  end
+  
   scope :in_order, -> { order(:start_time) }
 
   scope :day_one, -> { 

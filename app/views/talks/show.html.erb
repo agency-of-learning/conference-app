@@ -4,10 +4,38 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @talk %>
+    <h1 class="font-bold text-4xl">Session Details</h1>
+
+    <p class="my-5">
+    <strong class="block font-bold mb-1"> <%= @talk.title %> </strong>
+  </p>
+
+ <p class="my-5">
+    <strong class="block font-bold mb-1">
+    <%= @talk.start_time.to_fs(:month_day_year) %>
+    </strong>
+  </p> 
+
+  <p class="my-5">
+    <strong class="block font-bold mb-1">
+    <%= @talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= @talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
+    </strong>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1"><%= @talk.location %></strong>
+  </p>
+
+  <h2 class="font-bold text-2xl">Session Speaker</h2>
+   
+  <p class="my-5">
+    <% @talk.speakers.each do |s| %>
+      <p> <strong class="block font-bold mb-1"><%= link_to s.name, s %> </strong></p>
+      <p><strong class="block font-bold mb-1"><%= s.title %></strong></p>
+     <% end %>
+  </p>
     
     <p class="my-5">
-      <strong class="block font-medium mb-1">Description:</strong>
       <%= @talk.description %>
     </p>
 
