@@ -20,7 +20,7 @@
         <%= submit_tag 'Read All', class:"bg-purple hover:bg-red text-white font-bold py-2 px-4 rounded" %>
       <%end%>
     </div>
-    <%= turbo_stream_from "notifications" %> #Template Tag
+    <%= turbo_stream_from "notifications" %>
       <%= tag.div id: :notifications_display do %>
         <% @unread_notifications.each do |notification| %>
           <p>
