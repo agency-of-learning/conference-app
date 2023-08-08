@@ -20,20 +20,22 @@
         <%= submit_tag 'Read All', class:"bg-purple hover:bg-red text-white font-bold py-2 px-4 rounded" %>
       <%end%>
     </div>
-    <%= turbo_stream_from "notifications" %>
-      <% @unread_notifications.each do |notification| %>
-        <p>
-          <% case notification.type %>
-          <% when "Talk::ReminderNotification"  %>
-            <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
-          <% end %>
-        </p>
-      <% end %>
+    <%= turbo_stream_from "notifications" %> #Template Tag
+      <%= tag.div id: :notifications_display do %>
+        <% @unread_notifications.each do |notification| %>
+          <p>
+            <%# case notification.type %>
+            <%# when "Talk::ReminderNotification"  %>
+              <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
+            <%# end %>
+          </p>
+        <% end %>
+      <%end%>
   </div>
 
   <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
     <%= turbo_stream_from "past_notifications" %>
-      <% @read_notifications&.each do |notification| %>
+      <% @read_notifications.each do |notification| %>
         <p>
           <% case notification.type %>
           <% when "Talk::ReminderNotification"  %>

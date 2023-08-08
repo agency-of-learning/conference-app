@@ -41,16 +41,18 @@
         <div class="inline-block text-sm px-4 py-2 leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white lg:mt-0">
             <div class="relative" data-controller="dropdown">
                 <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
+                <%= tag.div id: :notifications_count_mobile do %>
+                    <% if current_user.unread_notifications_count > 0 %>
                     
                         <div class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100  bg-red p-1.5 text-xs  text-white font-bold">
                            
-                                <%= tag.div id: :notifications_count_mobile do %>
                                 
                                     <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
-                                <% end %>
+                               
                 
-                        </div>
-                    
+                        </div> 
+                    <% end %>
+                  <%end%>   
                     <div class="flex items-center justify-center rounded-lg bg-indigo-400 text-center">
                         <i class="fa-solid fa-bars fa-2xl text-color" style="color: purple;"></i>
                     </div>
