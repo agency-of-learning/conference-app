@@ -25,6 +25,7 @@ class TalksController < ApplicationController
   # POST /talks
   def create
     @talk = Talk.new(talk_params)
+    
     if @talk.save
       redirect_to @talk, notice: "Talk was successfully created."
     else
