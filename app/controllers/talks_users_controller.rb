@@ -12,7 +12,7 @@ class TalksUsersController < ApplicationController
     @user_talk = TalkUser.new(talk: @talk, user: current_user)
 
     if @user_talk.save  
-      redirect_to @talk
+      redirect_to talks_path
     end
   end
 
@@ -20,7 +20,7 @@ class TalksUsersController < ApplicationController
     @talk_user = TalkUser.find(params[:id])
     
     if @talk_user.destroy
-      redirect_to @talk_user.talk
+      redirect_to talks_path
     end
   end
 
