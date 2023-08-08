@@ -5,7 +5,10 @@ class TalksUsersController < ApplicationController
   before_action :set_talk, only: %i[create]
 
   def index
-    @talks = current_user.talks.in_order
+    @day_one_talks = current_user.talks.day_one.in_order
+    @day_two_talks = current_user.talks.day_two.in_order
+    @day_three_talks = current_user.talks.day_three.in_order
+    
   end
 
   def create
