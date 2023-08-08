@@ -1,12 +1,12 @@
 <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
-  <h2 class="block text-black-500 font-bold md:text-right mb-4 md:mb-0 pr-4">Edit <%= resource_name.to_s.humanize %></h2>
+  <h2 class="block text-black font-bold md:text-right mb-4 md:mb-0 pr-4">Edit <%= resource_name.to_s.humanize %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field mb-2">
       <%= f.label :email , class: "block text-gray-700 text-sm font-bold "%><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,7 +14,7 @@
     <% end %>
 
     <div class="field mb-2">
-      <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, class: "block text-gray text-sm font-bold mb-2" %> <i>(leave blank if you don't want to change it)</i><br />
       <%= f.password_field :password, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       <% if @minimum_password_length %>
         <br />
@@ -23,31 +23,31 @@
     </div>
 
     <div class="field mb-2">
-      <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+      <%= f.label :password_confirmation, class: "block text-gray text-sm font-bold mb-2" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
     <div>
-      <h3 class="block text-black-500 font-bold md:text-right mt-4 mb-4 md:mb-0 pr-4">Notification Settings</h3>
+      <h3 class="block text-black font-bold md:text-right mt-4 mb-4 md:mb-0 pr-4">Notification Settings</h3>
       <div class="flex items-center mb-4">
-        <%= f.check_box :receive_app_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
-        <%= f.label :receive_app_notifications , class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"%>
+        <%= f.check_box :receive_app_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue bg-white border-gray rounded focus:ring-blue dark:focus:ring-blue dark:ring-offset-gray focus:ring-2 dark:bg-gray dark:border-gray" %>
+        <%= f.label :receive_app_notifications , class: "ml-2 text-sm font-medium text-black dark:text-gray"%>
       </div>
 
       <div class="flex items-center mb-4">
-        <%= f.check_box :receive_email_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
-        <%= f.label :receive_email_notifications , class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"%>
+        <%= f.check_box :receive_email_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue bg-white border-gray rounded focus:ring-blue dark:focus:ring-blue dark:ring-offset-gray focus:ring-2 dark:bg-gray dark:border-gray" %>
+        <%= f.label :receive_email_notifications , class: "ml-2 text-sm font-medium text-black dark:text-gray"%>
       </div>
     </div>
 
     <div class="field mb-2">
       <%= f.label :current_password, class: "block text-gray-700 text-sm font-bold mb-2" %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.password_field :current_password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
     <div class="actions mb-4">
-      <%= f.submit "Update", :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      <%= f.submit "Update", :class => "bg-blue hover:bg-blue text-white font-bold py-2 px-4 rounded" %>
     </div>
   <% end %>
 
-  <%= link_to "Back", :back, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit" %>
+  <%= link_to "Back", :back, :class => "bg-blue hover:bg-blue text-white font-bold py-2 px-4 rounded w-fit" %>
 </div>

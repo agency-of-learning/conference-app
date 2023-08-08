@@ -2,21 +2,49 @@
 
 <div class="flex flex-row justify-between items-center">
   <h1>Your Notifications!</h1>
-  <div>
-    <%= form_tag(read_all_path, method: :post) do %>
-      <%= submit_tag 'Read All', class:"bg-purple hover:bg-red text-white font-bold py-2 px-4 rounded" %>
-    <%end%>
+</div>
+
+<div data-controller="tabs" data-tabs-active-tab="-mb-px border-l border-t border-r rounded-t">
+  <ul class="list-reset flex border-b">
+    <li class="-mb-px mr-1" data-tabs-target="tab" data-action="click->tabs#change">
+      <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue font-semibold no-underline" href="#">Unread</a>
+    </li>
+    <li class="mr-1" data-tabs-target="tab" data-action="click->tabs#change">
+      <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue font-semibold no-underline" href="#">Past</a>
+    </li>
+  </ul>
+
+  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+    <div>
+      <%= form_tag(read_all_path, method: :post) do %>
+        <%= submit_tag 'Read All', class:"bg-purple hover:bg-red text-white font-bold py-2 px-4 rounded" %>
+      <%end%>
+    </div>
+    <%= turbo_stream_from "notifications" %>
+      <% @unread_notifications.each do |notification| %>
+        <p>
+          <% case notification.type %>
+          <% when "Talk::ReminderNotification"  %>
+            <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
+          <% end %>
+        </p>
+      <% end %>
   </div>
+
+  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+    <%= turbo_stream_from "past_notifications" %>
+      <% @read_notifications&.each do |notification| %>
+        <p>
+          <% case notification.type %>
+          <% when "Talk::ReminderNotification"  %>
+            <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
+          <% end %>
+        </p>
+      <% end %>
+  </div>
+
 </div>
 <div id="notifications">
-<%= turbo_stream_from "notifications" %>
-  <% @notifications.each do |notification| %>
-    <p>
-      <% case notification.type %>
-      <% when "Talk::ReminderNotification"  %>
-        <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
-      <% end %>
-    </p>
-  <% end %>
+
 </div>
 

@@ -22,8 +22,11 @@ module.exports = {
       'orange' : '#FF654C',
       'purple' : '#3B1D62',
       'lilac' : '#A386FF',
-      'grey' : '#BDBDBD',
-      'light-grey' : '#F2F2F2'
+      'gray' : '#BDBDBD',
+      'light-grey' : '#F2F2F2',
+      'blue': '#3b82f6',
+      'pink': '#ec4899',
+      'green': '#22c55e'
     }
   },
   plugins: [
