@@ -5,7 +5,7 @@ class Notification < ApplicationRecord
   scope :unread, -> { where(read_at: nil).order(created_at: :desc) }
   scope :read, -> {where.not(read_at: nil).order(created_at: :desc) }
 
-  after_create_commit -> { broadcast_after_to "notifications", target: "notifications_display"}
+  after_create_commit -> { broadcast_before_to "notifications", target: "notifications_display"}
   #after_update_commit -> { broadcast_replace_to "notifications"}
   after_create_commit do
     broadcast_replace_to "broadcast_to_user_#{self.recipient_id}", 

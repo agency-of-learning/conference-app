@@ -26,7 +26,8 @@
           <p>
             <%# case notification.type %>
             <%# when "Talk::ReminderNotification"  %>
-              <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
+              <% instance = notification.to_notification %>
+              <%= link_to "#{instance.message}: #{instance.title} at #{instance.start_time}", talk_path(instance.talk)%>
             <%# end %>
           </p>
         <% end %>
@@ -39,8 +40,9 @@
         <p>
           <% case notification.type %>
           <% when "Talk::ReminderNotification"  %>
-            <%= link_to "#{notification.to_notification.message}: #{notification.talk.title} at #{notification.talk.formatted_start_time}", talk_path(notification.talk)%>
-          <% end %>
+           <% instance = notification.to_notification %>
+            <%= link_to "#{instance.message}: #{instance.title} at #{instance.start_time}", talk_path(instance.talk)%>
+              <% end %>
         </p>
       <% end %>
   </div>
