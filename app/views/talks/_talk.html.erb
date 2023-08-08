@@ -1,12 +1,12 @@
 <div id="<%= dom_id talk %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">
-    <%= talk.start_time.to_fs(:day_and_hour) %> - <%= talk.duration %> mins.
+    <strong class="block font-bold mb-1">
+    <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
     </strong>
   </p>
 
   <p class="my-5">
-    <strong class="block font-bold mb-1"><%= talk.talk_format.titleize %>: <%= link_to talk.title, talk %></strong>
+    <strong class="block font-bold mb-1"> <%= link_to talk.title, talk %> </strong>
   </p>
 
   <p class="my-5">
