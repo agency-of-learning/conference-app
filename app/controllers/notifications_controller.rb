@@ -2,9 +2,10 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @notifications = current_user.notifications.unread
+    @unread_notifications = current_user.notifications.unread
+    @read_notifications = current_user.notifications.read
   end
-
+  #TODO REWORK THESE
   def read(notification, talk)
     notification.update(read_at: Time.current)
     redirect_to talk_path(talk)

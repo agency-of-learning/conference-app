@@ -3,6 +3,7 @@ class Notification < ApplicationRecord
   belongs_to :recipient, polymorphic: true
 
   scope :unread, -> { where(read_at: nil).order(created_at: :desc) }
+  scope :read, -> {where.not(read_at: nil).order(created_at: :desc) }
 
   after_create_commit -> { broadcast_prepend_to "notifications"}
   #after_update_commit -> { broadcast_replace_to "notifications"}
