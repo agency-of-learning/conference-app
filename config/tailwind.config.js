@@ -14,6 +14,17 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'red' : '#CC0000',
+      'orange' : '#FF654C',
+      'purple' : '#3B1D62',
+      'lilac' : '#A386FF',
+      'grey' : '#BDBDBD',
+      'light-grey' : '#F2F2F2'
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),
