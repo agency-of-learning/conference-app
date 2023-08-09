@@ -41,32 +41,27 @@
         <div class="inline-block text-sm px-4 py-2 leading-none rounded no-underline text-gray hover:text-gray-900 hover:bg-white lg:mt-0">
             <div class="relative" data-controller="dropdown">
                 <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
-                <%= tag.div id: :notifications_count_mobile do %>
-                    <% if current_user.unread_notifications_count > 0 %>
+                    <%= tag.div id: :notifications_count_mobile do %>
+                        <% if current_user.unread_notifications_count > 0 %>
                         <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
-                    <% end %>
-                  <%end%>   
+                        <% end %>
+                    <%end%>   
                     <div class="flex items-center justify-center  rounded-lg text-center align-baseline">
                         <i class="fa-solid fa-bars fa-2xl text-color h-10" style="color: purple;"></i>
                     </div>
                 </div>
-                <div class="flex flex-row">
-                <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
-                    <span class="appearance-none flex items-center text-gray-700 w-full">
-                    
-                    </span>
-                </div>
 
-                </div>
-                <div data-dropdown-target="menu" class="absolute right-0 mt-4 hidden text-center w-18">
-                
-                    <div class="bg-purple shadow rounded border overflow-hidden w-fit">
-                            <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
-                            <%= link_to 'Notifications',  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>  
-                             <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
-                              <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
-                            <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-4 py-3 text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
-                            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-lilac hover:bg-red no-underline block px-4 py-3 text-white hover:bg-gray-300 whitespace-nowrap"%>
+                <div data-dropdown-target="menu" class="fixed z-90 right-0 mt-4 hidden text-center w-screen">
+                    <div class="bg-white rounded overflow-hidden w-full h-screen flex flex-col">
+                            <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
+                            <div>
+                            <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
+                            <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>  
+                            </div>
+                             <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
+                              <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
+                            <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-purple hover:bg-gray-300 whitespace-nowrap' %>
+                            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "grow bg-lilac hover:bg-red no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white hover:bg-gray-300 whitespace-nowrap"%>
                     </div>
                 </div>
             </div>
