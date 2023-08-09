@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="flex flex-row justify-between items-center mb-4">
-  <h1 class="font-extrabold text-xl text-red"><em>Notifications</em></h1>
+  <h1 class="font-extrabold text-xl text-primary"><em>Notifications</em></h1>
 </div>
 
-<div data-controller="tabs" data-tabs-active-tab="bg-purple focus:bg-purple text-white" data-tabs-inactive-tab="bg-gray">
+<div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white" data-tabs-inactive-tab="bg-secondary-50">
   <ul class="list-reset flex justify-center mb-5">
     <li class="" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
       <a class="inline-block py-3 px-6 mx-10 text-white text-xl font-semibold no-underline" href="#"><em>Unread</em></a>
@@ -24,7 +24,7 @@
       <%end%>
   </div>
     <%= form_tag(read_all_path, method: :post) do %>
-        <%= submit_tag 'Mark As Read', class:"bg-purple hover:bg-red text-white font-bold py-4 px-4 w-full italic" %>
+        <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
     <%end%>
   </div>
 
