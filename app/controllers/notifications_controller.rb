@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
     @unread_notifications = current_user.notifications.unread
     @read_notifications = current_user.notifications.read
   end
-  #TODO REWORK THESE
+  #TODO REWORK THIS ONE
   def read(notification, talk)
     notification.update(read_at: Time.current)
     redirect_to talk_path(talk)

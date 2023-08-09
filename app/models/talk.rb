@@ -52,4 +52,9 @@ class Talk < ApplicationRecord
     "#{self.start_time.strftime("%H:%M")} - #{self.add_duration.strftime("%H:%M")}"
   end 
 
+  #this would ideally update in real-time, might be out of scope for now
+  def starting_in_x_minutes
+    ((self.start_time - Time.current) / 1.minutes).round
+  end 
+
 end
