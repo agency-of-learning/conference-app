@@ -52,4 +52,5 @@ class Talk < ApplicationRecord
     end_time = self.start_time + self.duration.minutes
     "#{self.start_time.strftime("%I:%M %p")} - #{end_time.strftime("%I:%M %p")}"
   end 
+
 end

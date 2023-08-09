@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
   post 'notifications/read', to: 'notifications#read', as: :read
+  
   devise_for :users
 
   resources :talks_users

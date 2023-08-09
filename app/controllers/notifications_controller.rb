@@ -15,5 +15,4 @@ class NotificationsController < ApplicationController
     current_user.notifications.map {|n| n.update(read_at: Time.current)}
     redirect_to user_notifications_path
   end 
-
 end
