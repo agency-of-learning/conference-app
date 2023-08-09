@@ -49,8 +49,7 @@ class Talk < ApplicationRecord
   end 
 
   def full_time
-    end_time = self.start_time + self.duration.minutes
-    "#{self.start_time.strftime("%I:%M %p")} - #{end_time.strftime("%I:%M %p")}"
+    "#{self.start_time.strftime("%H:%M")} - #{self.add_duration.strftime("%H:%M")}"
   end 
 
 end

@@ -4,7 +4,7 @@
       </div>
       <div class="flex-grow flex-col overflow-x-auto break-words p-4">
             <% instance = notification.to_notification %>
-            <div class="text-xs text-secondary font-bold"><em>Session starting in X minutes</em></div>
+            <div class="text-xs text-secondary font-bold"><em>Session starting in</em></div>
             <div class="text-md text-secondary font-bold"><em><%= "#{instance.full_time}" %></em></div>
             <div class="text-xl text-primary font-bold"><em><%= link_to "#{instance.title}", talk_path(instance.talk)%></em></div>
             <div class="text-xs text-secondary font-bold"><em>Notification sent X minitues ago</em></div>
