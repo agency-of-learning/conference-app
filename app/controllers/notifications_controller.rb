@@ -7,7 +7,7 @@ class NotificationsController < ApplicationController
   end
 
   def read_all
-    current_user.notifications.unread.map {|n| n.mark_as_read!}
+    current_user.notifications.unread.map(&:mark_as_read!)
     redirect_to user_notifications_path
   end 
 end
