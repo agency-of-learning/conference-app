@@ -10,6 +10,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#CC0000", //rails red
+        secondary: {
+          DEFAULT: "#3B1D62",
+          50: "#F0EDF3",
+          100: "#A386FF",
+        },
+        danger: "#FF654C", // orange
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
