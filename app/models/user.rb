@@ -12,6 +12,6 @@ class User < ApplicationRecord
   enum :role, attendee: 0, admin: 1
 
   def unread_notifications_count 
-    self.notifications.count {|n| !n.read_at}
+    self.notifications.unread.count
   end 
 end
