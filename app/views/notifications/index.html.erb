@@ -1,49 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="flex flex-row justify-between items-center">
-  <h1>Your Notifications!</h1>
+<div class="flex flex-row justify-between items-center mb-4">
+  <h1 class="font-extrabold text-xl text-red"><em>Notifications</em></h1>
 </div>
 
-<div data-controller="tabs" data-tabs-active-tab="-mb-px border-l border-t border-r rounded-t">
-  <ul class="list-reset flex border-b">
-    <li class="-mb-px mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue font-semibold no-underline" href="#">Unread</a>
+<div data-controller="tabs" data-tabs-active-tab="bg-purple focus:bg-purple text-white" data-tabs-inactive-tab="bg-gray">
+  <ul class="list-reset flex justify-center mb-5">
+    <li class="" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
+      <a class="inline-block py-3 px-6 mx-10 text-white text-xl font-semibold no-underline" href="#"><em>Unread</em></a>
     </li>
-    <li class="mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue font-semibold no-underline" href="#">Past</a>
+    <li class="" data-tabs-target="tab" data-action="click->tabs#change">
+      <a class="inline-block py-3 px-6 mx-10 text-white text-xl  font-semibold no-underline" href="#"><em>Past</em></a>
     </li>
   </ul>
 
-  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
-    <div>
-      <%= form_tag(read_all_path, method: :post) do %>
-        <%= submit_tag 'Read All', class:"bg-purple hover:bg-red text-white font-bold py-2 px-4 rounded" %>
-      <%end%>
-    </div>
+  <div class="hidden" data-tabs-target="panel">
+    <div class=" px-4 py-4">
     <%= turbo_stream_from "notifications" %>
       <%= tag.div id: :notifications_display do %>
         <% @unread_notifications.each do |notification| %>
-          <p>
-            <%# case notification.type %>
-            <%# when "Talk::ReminderNotification"  %>
-              <% instance = notification.to_notification %>
-              <%= link_to "#{instance.message}: #{instance.title} at #{instance.start_time}", talk_path(instance.talk)%>
-            <%# end %>
-          </p>
+          <%= render 'notification', notification: notification %>
         <% end %>
       <%end%>
   </div>
+    <%= form_tag(read_all_path, method: :post) do %>
+        <%= submit_tag 'Mark As Read', class:"bg-purple hover:bg-red text-white font-bold py-4 px-4 w-full italic" %>
+    <%end%>
+  </div>
 
-  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+  <div class="hidden py-4 px-4" data-tabs-target="panel">
     <%= turbo_stream_from "past_notifications" %>
       <% @read_notifications.each do |notification| %>
-        <p>
-          <% case notification.type %>
-          <% when "Talk::ReminderNotification"  %>
-           <% instance = notification.to_notification %>
-            <%= link_to "#{instance.message}: #{instance.title} at #{instance.start_time}", talk_path(instance.talk)%>
-              <% end %>
-        </p>
+         <%= render 'notification', notification: notification %>
       <% end %>
   </div>
 

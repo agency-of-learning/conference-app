@@ -1,4 +1,4 @@
-<nav class="navbar bg-base-100 p-3 bg-white flex justify-between items-center fixed w-full border-b-4 border-red">
+<nav class="navbar bg-base-100 p-3 bg-white flex justify-between items-center fixed w-full py-2">
   <div class="mb-0 sm:mb-0  items-center">
     <a href="/" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">
     <svg class="lg:w-96 w-80 h-auto" viewBox="0 0 694 50" fill="#CC0000" stroke="#CC0000" xmlns="http://www.w3.org/2000/svg">
@@ -43,18 +43,11 @@
                 <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
                 <%= tag.div id: :notifications_count_mobile do %>
                     <% if current_user.unread_notifications_count > 0 %>
-                    
-                        <div class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100  bg-red p-1.5 text-xs  text-white font-bold">
-                           
-                                
-                                    <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
-                               
-                
-                        </div> 
+                        <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
                     <% end %>
                   <%end%>   
-                    <div class="flex items-center justify-center rounded-lg bg-indigo-400 text-center">
-                        <i class="fa-solid fa-bars fa-2xl text-color" style="color: purple;"></i>
+                    <div class="flex items-center justify-center  rounded-lg text-center align-baseline">
+                        <i class="fa-solid fa-bars fa-2xl text-color h-10" style="color: purple;"></i>
                     </div>
                 </div>
                 <div class="flex flex-row">

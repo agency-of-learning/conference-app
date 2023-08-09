@@ -1,7 +1,5 @@
-<%= tag.div id: :notifications_count_mobile do %>
   <% if count > 0 %>
-    <div class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100  bg-red p-1.5 text-xs  text-white font-bold">
-      <%= count > 9 ? "+9" : count  %>
-    </div>
+    <span class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100  bg-red px-2 py-1 mt-3 mr-1 text-md  text-white font-bold">
+      <em><%= count > 9 ? "+9" : count  %></em>
+    </span>
   <% end %>
-<% end %>

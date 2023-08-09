@@ -1,3 +1,13 @@
-<p>
-      <%= link_to "#{notification.to_notification.message}: #{notification.talk_title} at #{notification.talk_start_time}", talk_path(notification.talk)%>
-</p>
+
+<div class="w-full h-fit border-2 border-purple rounded my-4 flex flex-row items-center">
+      <div class="flex-none pl-4">
+            <i class="fa-solid fa-stopwatch fa-2xl " style="color: #3B1D62"></i>
+      </div>
+      <div class="flex-grow flex-col overflow-x-auto break-words p-4">
+            <% instance = notification.to_notification %>
+            <div class="text-xs text-purple font-bold"><em>Session starting in X minutes</em></div>
+            <div class="text-md text-purple font-bold"><em><%= "#{instance.full_time}" %></em></div>
+            <div class="text-xl text-red font-bold"><em><%= link_to "#{instance.title}", talk_path(instance.talk)%></em></div>
+            <div class="text-xs text-purple font-bold"><em>Notification sent X minitues ago</em></div>
+      </div>
+</div>

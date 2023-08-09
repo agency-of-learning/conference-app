@@ -47,4 +47,9 @@ class Talk < ApplicationRecord
   def formatted_start_time
     self.start_time.strftime("%I:%M %p, %a %d, %b %Y") 
   end 
+
+  def full_time
+    end_time = self.start_time + self.duration.minutes
+    "#{self.start_time.strftime("%I:%M %p")} - #{end_time.strftime("%I:%M %p")}"
+  end 
 end

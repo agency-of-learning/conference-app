@@ -19,7 +19,7 @@ class Talk::ReminderNotification < Noticed::Base
 
   # Add required params
   #
-  param :talk, :title, :start_time
+  param :talk, :title, :start_time, :full_time
 
   # Define helper methods to make rendering easier.
   def message
@@ -37,6 +37,10 @@ class Talk::ReminderNotification < Noticed::Base
   def start_time 
     params[:start_time]
   end 
+
+  def full_time 
+    params[:full_time]
+  end
 
   def talk 
     params[:talk]
