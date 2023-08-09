@@ -49,7 +49,7 @@ class Talk < ApplicationRecord
   end 
 
   def full_time
-    "#{self.start_time.strftime("%H:%M")} - #{self.add_duration.strftime("%H:%M")}"
+    "#{self.start_time.to_fs(:twenty_four_hour_and_minutes)} - #{self.add_duration.to_fs(:twenty_four_hour_and_minutes)}"
   end 
 
   #this would ideally update in real-time, might be out of scope for now
