@@ -1,7 +1,11 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
-  resources :talks
-  
   resources :speakers
+  resources :talks
+
+  resource :user do 
+    resources :notifications 
+  end 
 
   devise_for :users
 
@@ -12,4 +16,16 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
+
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  # root "articles#index"
+
+  authenticate :user, lambda { |u| u.role == "admin" } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+  
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
 end
