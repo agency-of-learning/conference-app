@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end 
   
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
-  post 'notifications/read', to: 'notifications#read', as: :read
   
   devise_for :users
 
