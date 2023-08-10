@@ -44,8 +44,12 @@ class Talk < ApplicationRecord
     Date.new(2023, 10, 07)) 
   }
 
-
   def formatted_start_time
     self.start_time.strftime("%I:%M %p, %a %d, %b %Y") 
   end 
+
+  def full_time
+    "#{self.start_time.to_fs(:twenty_four_hour_and_minutes)} - #{self.add_duration.to_fs(:twenty_four_hour_and_minutes)}"
+  end 
+
 end
