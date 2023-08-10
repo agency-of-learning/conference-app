@@ -1,0 +1,8 @@
+ <%#TODO find a way to conditionally render this on turbo update of notifications%>
+ <% if unread_notifications_count > 0 %>
+   <%= form_tag(read_all_path, method: :post) do %>
+        <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
+    <%end%>
+<% else %>
+    <h3 class="font-bold text-secondary"><em>No unread notifications<em></h3>
+<%end %>
