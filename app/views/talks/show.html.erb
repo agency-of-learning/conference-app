@@ -4,38 +4,88 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <h1 class="font-bold text-4xl">Session Details</h1>
+    <h1 class="font-extrabold text-2xl text-primary mb-4 italic">Session Details</h1>
 
-    <p class="my-5">
-    <strong class="block font-bold mb-1"> <%= @talk.title %> </strong>
-  </p>
+    <p class="my-4">
+      <strong class="block font-bold text-xl text-secondary"> <%= @talk.title %> </strong>
+    </p>
 
- <p class="my-5">
-    <strong class="block font-bold mb-1">
-    <%= @talk.start_time.to_fs(:month_day_year) %>
-    </strong>
-  </p> 
+    <section>
+      <div class="flex flex-row items-center">
+        <div class="text-secondary flex-none mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          width="25" height="25" viewBox="0 0 36 36">
+          <path fill="currentColor" d="M32.25 6h-4v3a2.2 2.2 0 1 1-4.4 
+          0V6H12.2v3a2.2 2.2 0 0 1-4.4 0V6h-4A1.78 1.78 0 0 0 2 7.81v22.38A1.78 
+          1.78 0 0 0 3.75 32h28.5A1.78 1.78 0 0 0 34 30.19V7.81A1.78 1.78 0 0 0 
+          32.25 6ZM10 26H8v-2h2Zm0-5H8v-2h2Zm0-5H8v-2h2Zm6 10h-2v-2h2Zm0-5h-2v-2h2Zm0-5h-2v-2h2Zm6 
+          10h-2v-2h2Zm0-5h-2v-2h2Zm0-5h-2v-2h2Zm6 10h-2v-2h2Zm0-5h-2v-2h2Zm0-5h-2v-2h2Z" 
+          class="clr-i-solid clr-i-solid-path-1"/><path fill="currentColor" 
+          d="M10 10a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" 
+          class="clr-i-solid clr-i-solid-path-2"/><path 
+          fill="currentColor" d="M26 10a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" 
+          class="clr-i-solid clr-i-solid-path-3"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+        </div>
+        <div>
+          <p class="my-1">
+            <strong class="block font-semibold text-secondary">
+              <%= @talk.start_time.to_fs(:month_day_year) %>
+            </strong>
+          </p> 
+        </div>
+      </div>
 
-  <p class="my-5">
-    <strong class="block font-bold mb-1">
-    <%= @talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= @talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
-    </strong>
-  </p>
+      <div class="flex flex-row items-center">
+        <div class="text-secondary flex-none mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12">
+          <path fill="currentColor" d="M6 1a5 5 0 1 1 0 10A5 5 0 0 1 6 1Zm-.5 2.5A.5.5 0 0 0 5 
+          4v2.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 0-1H6V4a.5.5 0 0 0-.5-.5Z"/></svg>
+        </div>
+        <div>
+          <p class="my-1">
+            <strong class="block font-semibold text-secondary">
+              <%= @talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= @talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
+            </strong>
+          </p>
+        </div>
+      </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1"><%= @talk.location %></strong>
-  </p>
+      <div class="flex flex-row items-center">
+        <div class="text-secondary flex-none mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 384 512">
+          <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License -
+           https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+           <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 
+           168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+        </div>
 
-  <h2 class="font-bold text-2xl">Session Speaker</h2>
-   
-  <p class="my-5">
-    <% @talk.speakers.each do |s| %>
-      <p> <strong class="block font-bold mb-1"><%= link_to s.name, s %> </strong></p>
-      <p><strong class="block font-bold mb-1"><%= s.title %></strong></p>
-     <% end %>
-  </p>
+        <div>
+          <p class="my-1">
+            <strong class="block font-semibold text-secondary"><%= @talk.location %></strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="font-extrabold text-2xl text-primary mb-4 mt-6 italic">Session Speaker</h2>
+      <section>
+        <p class="my-2">
+          <% @talk.speakers.each do |s| %>
+            <div class="flex flex-row items-center my-6 py-4 px-5 bg-secondary">
+              <div class="flex-none">
+                <%#= image_tag(s.image_filename), class: "rounded-full h-[25px] w-[25px]" %>
+              </div>
+              <div class=" text-white flex-grow">
+                <strong class="font-medium text-lg"><%= link_to s.name, s %></strong> <br>
+                <strong class="font-normal text-sm"><%= s.title %></strong>
+              </div>
+              
+            </div>
+          <% end %>
+        </p>
+      </section>
     
-    <p class="my-5">
+    <p class="my-5 block font-medium text-secondary">
       <%= @talk.description %>
     </p>
 
@@ -46,6 +96,9 @@
             data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this talk?" } %>
       </div>
     <% end %>
-    <%= link_to 'Back to talks', talks_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <div class="flex justify-center my-8">
+      <%= link_to 'Back to Agenda', talks_path, class: "ml-2 py-4 px-14 bg-secondary-100 text-lg inline-block font-bold text-white text-center" %>
+    </div>
   </div>
 </div>
