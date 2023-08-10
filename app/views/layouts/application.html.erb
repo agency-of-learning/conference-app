@@ -15,6 +15,7 @@
     <% if user_signed_in? %>
         <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
         <%= turbo_stream_from "mobile" %>
+        <%= turbo_stream_from "menu" %>
     <% end %>
       <%= render "shared/navbar" %>
     <div class="container mx-auto px-6 pt-20">
