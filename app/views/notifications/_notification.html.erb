@@ -3,8 +3,7 @@
             <i class="fa-solid fa-stopwatch fa-2xl " style="color: #3B1D62"></i>
       </div>
       <div class="flex-grow flex-col overflow-x-auto break-words p-4">
-            <% instance = notification.to_notification %>
-            <% talk = instance.talk %>
+            <% talk = notification.to_notification.talk %>
             <div class="text-xs text-secondary font-bold"><em>Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </em></div>
             <div class="text-md text-secondary font-bold"><em><%= "#{talk.full_time}" %></em></div>
             <div class="text-xl text-primary font-bold"><em><%= link_to "#{talk.title}", talk_path(talk)%></em></div>
