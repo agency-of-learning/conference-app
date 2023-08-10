@@ -495,7 +495,7 @@ puts "Creating talks list"
       title: "Lunch",
       location: "Sponsor Lounge",
       start_time: Time.zone.parse("2023-10-05 12:30:00"),
-      talk_format: "talk",
+      talk_format: "social",
       duration: 60,
       description: "" 
     },

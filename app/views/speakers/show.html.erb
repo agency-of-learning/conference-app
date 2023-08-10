@@ -4,15 +4,15 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <h1 class="font-bold text-4xl">Speaker Details</h1>
+    <h1 class="font-extrabold text-2xl text-primary mb-6 italic">Speaker Details</h1>
 
     <%= render @speaker %>
 
-    <p class="my-5">
+    <p class="my-5 block font-lg text-secondary">
       <%= @speaker.bio %>
     </p>
 
-    <% if current_user&.admin? %> <%# temporary fix %>
+    <% if current_user&.admin? %> <%# TODO Routes Controll %>
       <%= link_to 'Edit this speaker', edit_speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <div class="inline-block ml-2">
         <%= link_to 'Delete', speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium",
@@ -25,7 +25,7 @@
 
     <div class="mx-auto">
       <p class="my-5">
-      <strong class="block font-heavy mb-1"><%= @speaker.name %>'s Sessions</strong>
+      <strong class="font-extrabold text-2xl text-primary mb-6 italic">Sessions</strong>
       </p>
       <p class="my-5">
       <% @speaker.talks.each do |t| %>
@@ -35,5 +35,7 @@
     </div>
   </div>
 </div>
-<%= link_to 'Agenda', talks_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+<div class="flex justify-center my-8">
+  <%= link_to 'Back to Agenda', talks_path, class: "ml-2 py-4 px-14 bg-secondary text-lg inline-block font-bold text-white text-center" %>
+</div>
 

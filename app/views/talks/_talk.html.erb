@@ -1,35 +1,46 @@
 <div id="<%= dom_id talk %>">
-  <p class="my-5">
-    <strong class="block font-bold mb-1">
-    <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
-    </strong>
-  </p>
+  <div class="flex flex-row items-center">
+    <div class="flex-grow">
+      <p class="my-2">
 
-  <p class="my-5">
-    <strong class="block font-bold mb-1"> <%= link_to talk.title, talk %> </strong>
-  </p>
+        <strong class="block font-bold mb-1 text-lg text-primary">
+        <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
+        </strong>
+      </p>
+      
+      <p class="my-1">
+        <strong class="block font-bold text-secondary"> <%= talk.talk_format.titleize %> </strong>
+      </p>
 
-  <p class="my-5">
-    <% talk.speakers.each do |s| %>
-      <strong class="block font-medium mb-1"><%= link_to s.name, s %>, <%= s.title %></strong>
-    <% end %>
-  </p>
+      <p>
+        <strong class="block font-medium text-secondary"> <%= link_to talk.title, talk %> </strong>
+      </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1"><%= talk.location %></strong>
-  </p>
-
-  <%= turbo_frame_tag talk, :talks_users do %>
-     <p class="my-5">
-      <strong class="block font-bold mb-1">
-        <% if talk.selected_by?(current_user) %>
-          <%= button_to "Remove", talks_user_path(talk.talks_users.find_by(user: current_user)), method: :delete %>
-        <% else %>
-          <%= button_to "Add", talks_users_path(talk_id: talk) %>
+      <p class="my-2">
+        <% talk.speakers.each do |s| %>
+          <strong class="block font-medium mb-1 text-sm text-secondary">Speaker: <%= link_to s.name, s %> </strong>
         <% end %>
-      </strong>
-    </p>
-  <% end %>
+      </p>
+
+      <p class="my-3">
+        <strong class="block font-bold mb-1 text-primary"><%= talk.location %></strong>
+      </p>
+    </div>
+    <div>
+      <%= turbo_frame_tag talk, :talks_users do %>
+        <p class="my-5">
+          <strong class="block font-bold mb-1">
+            <% if talk.selected_by?(current_user) %>
+              <%= button_to "Rem", talks_user_path(talk.talks_users.find_by(user: current_user)), method: :delete, 
+              class: "py-3 px-5 bg-secondary text-white block font-medium" %>
+            <% else %>
+              <%= button_to "Add", talks_users_path(talk_id: talk), class: "py-3 px-4 bg-secondary text-white block font-medium" %>
+            <% end %>
+          </strong>
+        </p>
+     <% end %> 
+    </div>
+  </div>
 
   <hr class="mt-6">
 </div>
