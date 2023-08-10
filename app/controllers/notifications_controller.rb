@@ -2,8 +2,8 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @unread_notifications = current_user.notifications.unread
-    @read_notifications = current_user.notifications.read
+    @unread_notifications = current_user.notifications.unread.order('notifications.created_at DESC')
+    @read_notifications = current_user.notifications.read.order('notifications.created_at DESC')
   end
 
   def read_all
