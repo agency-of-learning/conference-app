@@ -4,7 +4,7 @@ class Talk::FanOutToUsersJob < ApplicationJob
 
   def perform(talk)
     talk.users.each do |user|
-      Talk::ScheduleUserReminderJob.perform_now(user, talk)
+      Talk::ScheduleUserReminderJob.perform_later(user, talk)
     end 
   end
 end
