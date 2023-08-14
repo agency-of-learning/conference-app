@@ -1,12 +1,15 @@
 require "test_helper"
-#fanouttousers
-#scheduleuserreminder
-#talkreminder
+
+#FLOW
+#STARTS at scheduler.rb
+#1. fanouttousersjob
+#2. scheduleuserreminderjob
+#3. talkremindernotificationjob
 
 #there are two events today (talk, and workshop, keynote is tomorrow)
-#user 1 is going to keynote and talk
-#user 2 is going to keynote and workshop 
-#
+#user 1, attendee, is going to talk and has email notifications turned ON
+#user 2, admin, is going to  workshop and does NOT have email notifications turned on 
+
 class TalksJobTest < ActiveJob::TestCase
   include ActiveJob::TestHelper
    test "scheduler fans out first job to talks happening today" do
