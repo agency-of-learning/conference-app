@@ -17,7 +17,7 @@ module RailsWorldConf
     # in config/environments, which are processed later.
     #
 
-    config.time_zone = "Europe/Amsterdam"
+    config.time_zone = 'Eastern Time (US & Canada)'
 
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :sidekiq

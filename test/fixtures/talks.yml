@@ -1,19 +1,28 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  start_time: 2023-07-17 20:37:22
-  location: MyString
-  talk_format: 
-  talk_trak: 
-  duration: 1
+talk:
+  id: 1
+  title: Talk
+  description: I am a the first talk session!
+  start_time: <%= "#{Time.current + 30.minutes}" %>
+  location: Pawnee, Indiana 
+  talk_format: talk
+  duration: 120
 
-two:
-  title: MyString
-  description: MyText
-  start_time: 2023-07-17 20:37:22
-  location: MyString
-  talk_format: 
-  talk_trak: 
-  duration: 1
+workshop:
+  id: 2
+  title: Workshop
+  description: I happen at the same time as first talk!
+  start_time: <%= "#{Time.current + 30.minutes}" %>
+  location: Scranton, New Jersey
+  talk_format: workshop
+  duration: 60
+
+key_note:
+  id: 3
+  title: Keynote
+  description: I am the Keynote
+  start_time: <%= "#{Time.current + 30.minutes}" %>
+  location: Philadelphia, Pennsylvania
+  talk_format: keynote
+  duration: 30

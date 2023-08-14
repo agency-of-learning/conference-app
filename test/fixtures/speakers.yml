@@ -1,13 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#  create_table "speakers", force: :cascade do |t|
+#    t.string "name", null: false
+#    t.string "title"
+#    t.text "bio"
+#    t.string "image_filename", default: "placeholder.png"
+#    t.datetime "created_at", null: false
+#    t.datetime "updated_at", null: false
+#  end
 
-one:
-  name: MyString
-  title: MyString
-  bio: MyText
-  image_filename: MyString
+speaker_one:
+  id: 1
+  name: Leslie Knope
+  title: Deputy Director of Parks and Rec
+  bio: Oh, boy, Hold on. The floor and wall just switched
+  image_filename: a-patterson.jpeg
 
-two:
-  name: MyString
-  title: MyString
-  bio: MyText
-  image_filename: MyString
+speaker_two:
+  id: 2
+  name: Michael Scott
+  title: Regional Manager of Dunder Mifflin
+  bio: I DECLARE BANKRUPCTY 
+  image_filename: a-patterson.jpeg
+
+speaker_three:
+  id: 3
+  name: Ava Coleman
+  title: Principal of Abbott Elementary
+  bio: Does school end at 2:30 or 3:00?
+  image_filename: a-patterson.jpeg
+
