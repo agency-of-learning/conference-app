@@ -30,18 +30,6 @@ class Talk::ReminderNotification < Noticed::Base
     post_path(params[:talk])
   end
 
-  def title 
-    params[:title]
-  end 
-
-  def start_time 
-    params[:start_time]
-  end 
-
-  def full_time 
-    params[:full_time]
-  end
-
   def talk 
     params[:talk]
   end 
