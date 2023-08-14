@@ -22,7 +22,7 @@ key_note:
   id: 3
   title: Keynote
   description: I am the Keynote
-  start_time: <%= "#{Time.current + 30.minutes}" %>
+  start_time: <%= "#{Time.current + 1.day}" %>
   location: Philadelphia, Pennsylvania
   talk_format: keynote
   duration: 30
