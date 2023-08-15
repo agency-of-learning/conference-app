@@ -1,7 +1,7 @@
 <div id="<%= dom_id talk %>">
   <div class="flex flex-row items-center">
     <div class="flex-grow">
-      <p class="my-2">
+      <p class="my-4">
 
         <strong class="block font-bold mb-1 text-lg text-primary">
         <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
@@ -25,8 +25,13 @@
       <p class="my-3">
         <strong class="block font-bold mb-1 text-primary"><%= talk.location %></strong>
       </p>
-    </div>
-    <div>
+
+      <p>
+        <% talk.tags.each do |t| %>
+          <strong class= "ml-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-bold text-white text-center"><%= t.tag_name %> </strong>
+        <% end %>
+      </p>
+
       <%= turbo_frame_tag talk, :talks_users do %>
         <p class="my-5">
           <strong class="block font-bold mb-1">
@@ -42,6 +47,6 @@
     </div>
   </div>
 
-  <hr class="mt-6">
+  <hr class="my-6">
 </div>
 
