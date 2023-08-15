@@ -24,7 +24,8 @@ class TalksController < ApplicationController
 
   # POST /talks
   def create
-    @talk = Talk.new(talk_params)
+    @talk = Talk.new(talk_params.except(:tags))
+    create_or_delete_talk_tags(@talk, params[:talk][:tags])
     if @talk.save
       redirect_to @talk, notice: "Talk was successfully created."
     else
@@ -34,7 +35,8 @@ class TalksController < ApplicationController
 
   # PATCH/PUT /talks/1
   def update
-    if @talk.update(talk_params)
+    create_or_delete_talk_tags(@talk, params[:talk][:tags])
+    if @talk.update(talk_params.except(:tags))
       redirect_to @talk, notice: "Talk was successfully updated."
     else
       render :edit, status: :unprocessable_entity
@@ -49,13 +51,19 @@ class TalksController < ApplicationController
 
   private
 
-  # Use with before_action callback for shared use.
   def set_talk
     @talk = Talk.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters.
   def talk_params
-    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, speaker_ids: [])
+    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, :tags)
+  end
+
+  def create_or_delete_talk_tags(talk, tags)
+    talk.tags_talks.destroy_all
+    tags = tags.strip.split(',')
+    tags.each do |tag|
+      talk.tags << Tag.find_or_create_by(tag_name: tag)
+    end
   end
 end
