@@ -2,7 +2,7 @@ require "test_helper"
 
 class TalksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @talk = talks(:one)
+    @talk = talks(:talk)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class TalksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create talk" do
     assert_difference("Talk.count") do
-      post talks_url, params: {talk: {description: @talk.description, duration: @talk.duration, location: @talk.location, start_time: @talk.start_time, talk_format: @talk.talk_format, talk_trak: @talk.talk_trak, title: @talk.title}}
+      post talks_url, params: {talk: {description: @talk.description, duration: @talk.duration, location: @talk.location, start_time: @talk.start_time, talk_format: @talk.talk_format, title: @talk.title}}
     end
 
     assert_redirected_to talk_url(Talk.last)
@@ -34,7 +34,7 @@ class TalksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update talk" do
-    patch talk_url(@talk), params: {talk: {description: @talk.description, duration: @talk.duration, location: @talk.location, start_time: @talk.start_time, talk_format: @talk.talk_format, talk_trak: @talk.talk_trak, title: @talk.title}}
+    patch talk_url(@talk), params: {talk: {description: @talk.description, duration: @talk.duration, location: @talk.location, start_time: @talk.start_time, talk_format: @talk.talk_format, title: @talk.title}}
     assert_redirected_to talk_url(@talk)
   end
 

@@ -44,6 +44,8 @@ class Talk < ApplicationRecord
     Date.new(2023, 10, 07)) 
   }
 
+  scope :happening_today, -> {where("DATE(start_time) = ?", Date.current)}
+
   def formatted_start_time
     self.start_time.strftime("%I:%M %p, %a %d, %b %Y") 
   end 

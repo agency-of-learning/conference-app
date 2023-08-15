@@ -19,7 +19,7 @@ class Talk::ReminderNotification < Noticed::Base
 
   # Add required params
   #
-  param :talk, :title, :start_time, :full_time
+  param :talk
 
   # Define helper methods to make rendering easier.
   def message
@@ -28,18 +28,6 @@ class Talk::ReminderNotification < Noticed::Base
 
   def url
     post_path(params[:talk])
-  end
-
-  def title 
-    params[:title]
-  end 
-
-  def start_time 
-    params[:start_time]
-  end 
-
-  def full_time 
-    params[:full_time]
   end
 
   def talk 

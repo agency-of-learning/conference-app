@@ -18,7 +18,9 @@ module RailsWorldConf
     #
 
     config.time_zone = "Europe/Amsterdam"
-
+    
+    #For testing or QA purposes, make sure to switch time_zone to your current one
+    #config.time_zone = 'Eastern Time (US & Canada)'
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :sidekiq
   end
