@@ -12,17 +12,29 @@
   </head>
 
   <body>
-    <% if current_user %>
-        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
-        <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
-        <%= turbo_stream_from dom_id(current_user, :menu_to) %>
-    
-      <%= render "shared/navbar" %>
-     <% end %>
-    <div class="container mx-auto px-6 pt-24">
+    <div>
+      <% if user_signed_in? %>
+          <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
+          <%= turbo_stream_from "mobile" %>
+          <%= turbo_stream_from "menu" %>
+        <%= render "shared/navbar" %>
+    </div>
+    <div class="container mx-auto px-6 pt-20 ">
       <div class="flex min-h-full flex-col justify-center lg:px-8">
-      <%= yield %>
+        <%= yield %>
+      </div>
+    </div>  
+     <%else%>
+    <div class="bg-secondary h-screen text-white">
+      <div class=" flex justify-center pt-24 px-24 w-full">
+        <%= svg 'rails_world_landing' %>
+      </div>
+      <div class="container mx-auto px-6 pt-20 ">
+        <div class="flex min-h-full flex-col justify-center lg:px-8">
+          <%= yield %>
+        </div>
       </div>
     </div>
+    <% end %> 
   </body>
 </html>
