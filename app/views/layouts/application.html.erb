@@ -26,7 +26,16 @@
       </div>
     </div>  
      <%else%>
-        <%= yield %>
+    <div class="bg-secondary h-screen text-white">
+      <div class=" flex justify-center pt-24 px-24 w-full">
+        <%= svg 'rails_world_landing' %>
+      </div>
+      <div class="container mx-auto px-6 pt-20 ">
+        <div class="flex min-h-full flex-col justify-center lg:px-8">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
     <% end %> 
   </body>
 </html>
