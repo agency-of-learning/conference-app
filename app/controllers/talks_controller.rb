@@ -24,8 +24,13 @@ class TalksController < ApplicationController
 
   # POST /talks
   def create
-    @talk = Talk.new(talk_params.except(:tags))
-    create_or_delete_talk_tags(@talk, params[:talk][:tags])
+    debugger
+    @talk = Talk.new(talk_params)
+    # should probably remove tags from talk_params
+    # create_or_delete_talk_tags(@talk, params[:talk][:tags])
+    # create_or_delete_talk_tags(@talk, tags_params)
+    create_new_tags!
+    # params[:talk][:tags] is a string of comma separated tags
     if @talk.save
       redirect_to @talk, notice: "Talk was successfully created."
     else
@@ -56,14 +61,38 @@ class TalksController < ApplicationController
   end
 
   def talk_params
-    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, :tags)
+    # params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, :tags)
+    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration)
   end
 
-  def create_or_delete_talk_tags(talk, tags)
-    talk.tags_talks.destroy_all
-    tags = tags.strip.split(',')
-    tags.each do |tag|
-      talk.tags << Tag.find_or_create_by(tag_name: tag)
+  def tags_params
+    params[:talk][:tags]
+  end
+
+  # def create_or_delete_talk_tags(talk, tags)
+  #   talk.tags_talks.destroy_all
+  #   tags = tags.strip.split(',')
+  #   tags.each do |tag|
+  #     talk.tags << Tag.find_or_create_by(tag_name: tag)
+  #   end
+  # end
+  def create_new_tags!
+    incoming_tags.each do |tag_name|
+      # new_tag = Tag.find_or_create_by(tag_name: tag_name)
+      @talk.tags.build(tag_name: tag_name)
+      # building before saving so that we can use the tag_id in the join table
     end
+
+    # tags.each do |tag|
+    #   talk.tags << Tag.find_or_create_by(tag_name: tag)
+    # end
+  end
+
+  def incoming_tags
+    tags_params.split(',').map(&:strip)
+  end
+
+  def tags_to_add(talk)
+    incoming_tags - talk.tags.pluck(:tag_name)
   end
 end

@@ -54,4 +54,8 @@ class Talk < ApplicationRecord
     "#{self.start_time.to_fs(:twenty_four_hour_and_minutes)} - #{self.add_duration.to_fs(:twenty_four_hour_and_minutes)}"
   end 
 
+  def current_tags
+    self.tags.pluck(:name)
+  end
+
 end
