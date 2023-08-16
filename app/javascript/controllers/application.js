@@ -1,8 +1,6 @@
 import { Application } from "@hotwired/stimulus"
 import { Confetti } from "stimulus-confetti"
 
-application.register('confetti', Confetti)
-
 const application = Application.start()
 
 import { Alert, Autosave, Dropdown, Modal, Tabs, Popover, Toggle, Slideover } from "tailwindcss-stimulus-components"
