@@ -9,11 +9,16 @@
     <% if current_user&.admin? %> <%# TODO add route controlls for unauthenticated users %>
       <%= link_to 'New talk', new_talk_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
     <% end %>
-    <%= link_to 'Confetti', "#", class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", data: { controller: "confetti", action: "click->confetti#spray"} %>
+    <%= link_to 'Confetti', "#", class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", target: "_blank", data: { controller: "confetti",
+                                                                                                                 action: "click->confetti#spray" } %>
+    <%= link_to 'Confetti 2', "#", class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", target: "_blank", data: { controller: "confetti",
+                                                                                                                   action: "click->confetti#spray",
+                                                                                                                   animation_value: "stars",
+                                                                                                                   } %>
 
-    <%= tag.div(data: { controller: "confetti", action: "click->confetti#spray"}) do %>
-      Click here!
-    <% end %>
+    <%# <%= tag.div(data: { controller: "confetti", action: "click->confetti#spray"}) do %1> %>
+    <%#   Click here! %>
+    <%# <% end %1> %>
   </div>
 
   <div id="talks" class="min-w-full">
