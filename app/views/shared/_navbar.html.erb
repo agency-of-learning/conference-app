@@ -38,7 +38,7 @@
  <%if current_user%>
     <div class="lg:hidden flex flex-row">
         <div class="inline-block text-sm px-4 py-2 leading-none rounded no-underline text-secondary lg:mt-0">
-            <div class="relative" data-controller="dropdown">
+            <div class="relative w-full" data-controller="dropdown">
                 <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none">
                     <%= tag.div id: :notifications_count_mobile do %>
                         <% if current_user.unread_notifications_count > 0 %>
@@ -50,20 +50,21 @@
                     </div>
                 </div>
                 <div data-dropdown-target="menu" class="fixed z-90 right-0 mt-4 hidden text-center w-screen">
-                    <div class="bg-white rounded overflow-hidden w-full h-screen flex flex-col">
-                            <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary  whitespace-nowrap' %>
+                    <div class="bg-white overflow-hidden flex flex-col justify-around w-full">
+                            <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                             <div class='flex flex-row justify-center no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap'>
-                             <%= tag.div id: :notifications_count_menu do %>
-                                <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
-                             <%end%>  
-                            <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>  
+                                <%= tag.div id: :notifications_count_menu do %>
+                                    <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
+                                <%end%>  
+                                <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>  
                             </div>
-                             <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                              <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                            <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                            <div class="flex justify-center text-center">
-                            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: " bg-secondary-100 no-underline block px-40 py-6 my-2 mx-2 italic font-bold text-white whitespace-nowrap"%>
+                             <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                            <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                            <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                            <div class="mx-6 my-2">
+                            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "w-full bg-secondary-100 no-underline py-6 px-6 italic font-bold text-white whitespace-nowrap"%>
                             </div>
+                            
                     </div>
                 </div>
             </div>
