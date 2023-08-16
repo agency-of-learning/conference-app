@@ -2,7 +2,7 @@ class Notification < ApplicationRecord
   include Noticed::Model
   belongs_to :recipient, polymorphic: true
 
-  after_create_commit -> { broadcast_after_to "notifications", target: "notifications_display"}
+  after_create_commit -> { broadcast_prepend_to "notifications", target: "notifications_display"}
   
   after_create_commit do
     broadcast_update_to "broadcast_to_user_#{self.recipient_id}", 
