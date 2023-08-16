@@ -1,7 +1,28 @@
 <p style="color: green"><%= notice %></p>
+<h3 class="font-extrabold text-3xl lg:text-4xl text-primary italic">Notification Details</h3>
+<div class="w-full h-fit border-2 border-secondary rounded my-4 flex flex-row items-center" data-notifications-target="notifications">
+  <div class="flex-grow flex-col overflow-x-auto break-words p-3">
+    <% talk = @notification.to_notification.talk %>
+    <div class="text-xs text-secondary font-bold italic my-2">Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </div>
+    <div class="text-xl text-primary font-black italic my-2"><%= "#{talk.full_time}" %> </div>
+    <div class="text-md text-secondary font-black italic"><%= "#{talk.talk_format.capitalize}" %> </div>
+    <div class="text-md text-secondary font-semibold italic my-2 w-full"><%= link_to "#{talk.title}", talk_path(talk)%> </div>
+    <% talk.speakers.each do |s| %>
+      <div class="flex flex-row items-center text-secondary my-2">
+        <div class="flex-none pl-2 pr-4  float-left w-1/6 lg:w-1/12">
+          <%= image_tag(s.image_filename, class: "rounded-full h-auto max-w-1") %>
+        </div>
+        <div class=" text-secondary">
+          <p class="font-medium text-lg hover:"><%= link_to s.name, s %></p>
+          <p class="font-normal text-sm"><%= s.title %></p>
+        </div>
+      </div>
+    <%end%>
+    <div class="text-md text-primary my-1 font-black italic"><%= "#{talk.location}" %></div>
+  </div>
+</div>
 
-<%= render @notification %>
 
-<div>
-  <%= link_to "Back to notifications", user_notifications_path %>
+<div class="flex justify-center w-full text-center">
+  <%= link_to "Back", user_notifications_path, class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
 </div>

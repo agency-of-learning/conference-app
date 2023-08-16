@@ -6,7 +6,7 @@
             <% talk = notification.to_notification.talk %>
             <div class="text-xs text-secondary font-bold"><em>Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </em></div>
             <div class="text-md text-secondary font-bold"><em><%= "#{talk.full_time}" %></em></div>
-            <div class="text-xl text-primary font-bold"><em><%= link_to "#{talk.title}", talk_path(talk)%></em></div>
+            <div class="text-xl text-primary font-bold"><em><%= link_to "#{talk.title}", user_notification_path(notification)%></em></div>
             <div class="text-xs text-secondary font-bold"><em>Notification sent <%= time_ago_in_words(notification.created_at)%> ago</em></div>
       </div>
 </div>
