@@ -24,8 +24,7 @@ class TalksController < ApplicationController
 
   # POST /talks
   def create
-    @talk = Talk.new(talk_params.except(:tags))
-    create_or_delete_talk_tags(@talk, params[:talk][:tags])
+    @talk = Talk.new(talk_params)
     if @talk.save
       redirect_to @talk, notice: "Talk was successfully created."
     else
@@ -35,8 +34,7 @@ class TalksController < ApplicationController
 
   # PATCH/PUT /talks/1
   def update
-    create_or_delete_talk_tags(@talk, params[:talk][:tags])
-    if @talk.update(talk_params.except(:tags))
+    if @talk.update(talk_params)
       redirect_to @talk, notice: "Talk was successfully updated."
     else
       render :edit, status: :unprocessable_entity
@@ -56,14 +54,7 @@ class TalksController < ApplicationController
   end
 
   def talk_params
-    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, :tags)
+    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration)
   end
 
-  def create_or_delete_talk_tags(talk, tags)
-    talk.tags_talks.destroy_all
-    tags = tags.strip.split(',')
-    tags.each do |tag|
-      talk.tags << Tag.find_or_create_by(tag_name: tag)
-    end
-  end
 end

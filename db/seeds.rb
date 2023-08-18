@@ -1282,163 +1282,163 @@ puts "Creating tags list"
 
   Tag.create!([
     {
-      tag_name: "Social"
+      name: "Social"
     },
 
     {
-      tag_name: "Future of Rails"
+      name: "Future of Rails"
     },
 
     {
-      tag_name: "Strada"
+      name: "Strada"
     },
 
     {
-      tag_name: "Turbo Native"
+      name: "Turbo Native"
     },
 
     {
-      tag_name: "Hotwire"
+      name: "Hotwire"
     },
 
     {
-      tag_name: "Caching"
+      name: "Caching"
     },
 
     {
-      tag_name: "Turbo"
+      name: "Turbo"
     },
 
     {
-      tag_name: "Security"
+      name: "Security"
     },
 
     {
-      tag_name: "Databases"
+      name: "Databases"
     },
 
     {
-      tag_name: "Encryption"
+      name: "Encryption"
     },
 
     {
-      tag_name: "Stimulus"
+      name: "Stimulus"
     },
 
     {
-      tag_name: "Trilogy"
+      name: "Trilogy"
     },
 
     {
-      tag_name: "MySQL"
+      name: "MySQL"
     },
 
     {
-      tag_name: "Testing"
+      name: "Testing"
     },
 
     {
-      tag_name: "PWA"
+      name: "PWA"
     },
 
     {
-      tag_name: "Architecture"
+      name: "Architecture"
     },
 
     {
-      tag_name: "AI"
+      name: "AI"
     },
 
     {
-      tag_name: "Rails 7.1"
+      name: "Rails 7.1"
     },
 
     {
-      tag_name: "Autoloading"
+      name: "Autoloading"
     },
 
     {
-      tag_name: "Zeitwerk"
+      name: "Zeitwerk"
     },
 
     {
-      tag_name: "Gems"
+      name: "Gems"
     },
 
     {
-      tag_name: "Asset Pipeline"
+      name: "Asset Pipeline"
     },
 
     {
-      tag_name: "Open source"
+      name: "Open source"
     },
 
     {
-      tag_name: "Design"
+      name: "Design"
     },
 
     {
-      tag_name: "Garbage Collector"
+      name: "Garbage Collector"
     },
 
     {
-      tag_name: "HTML 5"
+      name: "HTML 5"
     },
 
     {
-      tag_name: "Bundler"
+      name: "Bundler"
     },
 
     {
-      tag_name: "iOS"
+      name: "iOS"
     },
 
     {
-      tag_name: "Shape Up"
+      name: "Shape Up"
     },
 
     {
-      tag_name: "Process"
+      name: "Process"
     },
 
     {
-      tag_name: "Leadership"
+      name: "Leadership"
     },
 
     {
-      tag_name: "WebSockets"
+      name: "WebSockets"
     },
 
     {
-      tag_name: "Frontend"
+      name: "Frontend"
     },
 
     {
-      tag_name: "Tailwind"
+      name: "Tailwind"
     },
 
     {
-      tag_name: "CSS"
+      name: "CSS"
     },
 
     {
-      tag_name: "Business"
+      name: "Business"
     },
 
     {
-      tag_name: "Leadership"
+      name: "Leadership"
     },
 
     {
-      tag_name: "JavaScript"
+      name: "JavaScript"
     },
 
     {
-      tag_name: "Monoliths"
+      name: "Monoliths"
     },
 
     {
-      tag_name: "Microservices"
+      name: "Microservices"
     }
 
   ])
