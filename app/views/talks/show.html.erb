@@ -77,11 +77,11 @@
       <section>
         <p class="my-2">
           <% @talk.speakers.each do |s| %>
-            <div class="flex flex-row items-center my-6 py-4 px-5 bg-secondary">
-              <div class="flex-none">
-                <%#= image_tag(s.image_filename), class: "rounded-full h-[25px] w-[25px]" %>
+            <div class="flex flex-row text-white my-6 py-4 px-5 bg-secondary">
+              <div>
+                <%= image_tag(s.image_filename, class: "rounded-full h-16 max-w-1 mr-5 border-2 border-white object-cover") %>
               </div>
-              <div class=" text-white flex-grow">
+              <div>
                 <strong class="font-medium text-lg"><%= link_to s.name, s %></strong> <br>
                 <strong class="font-normal text-sm"><%= s.title %></strong>
               </div>
