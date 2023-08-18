@@ -10,6 +10,12 @@
       <strong class="block font-bold text-xl text-secondary"> <%= @talk.title %> </strong>
     </p>
 
+    <p class="mb-4">
+        <% @talk.tags.each do |t| %>
+          <strong class= "mr-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-semibold text-white text-center"><%= t.name %> </strong>
+        <% end %>
+      </p>
+
     <section>
       <div class="flex flex-row items-center">
         <div class="text-secondary flex-none mr-3">

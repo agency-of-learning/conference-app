@@ -397,8 +397,9 @@ puts "Creating talks list"
       talk_format: "social",
       duration: 180,
       description: 
-      %(Pre-event drinks sponsored by Jeroen Nijhof. The location of these drinks 
-        will be shared with registered attendees. Badge required.
+      %(Pre-event drinks sponsored by Clear Code Wizards. Badge required. 
+        One welcome drink per person on Clear Code Wizards until they run out of drink tokens, 
+        so be sure to come early after picking up your badge.
       ).squish
     }, 
 
@@ -765,6 +766,17 @@ puts "Creating talks list"
     },
 
     {
+      title: "WNB.rb Breakfast Meetup",
+      location: "TBD",
+      start_time: Time.zone.parse("2023-10-06 08:00:00"),
+      talk_format: "social",
+      duration: 120,
+      description: 
+      %(A networking breakfast for women and non-binary Rails World attendees. Hosted by WNB.rb and sponsored by Shopify.
+      ).squish
+    },
+
+    {
       title: "Doors Open",
       location: "Sponsor Lounge",
       start_time: Time.zone.parse("2023-10-06 09:00:00"),
@@ -1102,12 +1114,12 @@ puts "Creating speakers_talks relationships"
   SpeakerTalk.create!([
     {
       speaker_id: 1,
-      talk_id: 23
+      talk_id: 24
     },
 
     {
       speaker_id: 2,
-      talk_id: 33
+      talk_id: 34
     },
 
     {
@@ -1127,12 +1139,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 6,
-      talk_id: 37
+      talk_id: 38
     },
 
     {
       speaker_id: 7,
-      talk_id: 24
+      talk_id: 25
     },
 
     {
@@ -1147,7 +1159,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 9,
-      talk_id: 31
+      talk_id: 32
     },
 
     {
@@ -1167,12 +1179,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 13,
-      talk_id: 35
+      talk_id: 36
     },
 
     {
       speaker_id: 14,
-      talk_id: 36
+      talk_id: 37
     },
 
     {
@@ -1182,12 +1194,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 16,
-      talk_id: 27
+      talk_id: 28
     },
 
     {
       speaker_id: 17,
-      talk_id: 29
+      talk_id: 30
     },
 
     {
@@ -1212,7 +1224,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 22,
-      talk_id: 26
+      talk_id: 27
     },
 
     {
@@ -1227,12 +1239,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 25,
-      talk_id: 25
+      talk_id: 26
     },
 
     {
       speaker_id: 26,
-      talk_id: 30
+      talk_id: 31
     },
 
     {
@@ -1242,12 +1254,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 27,
-      talk_id: 31
+      talk_id: 32
     },
 
     {
       speaker_id: 28,
-      talk_id: 32
+      talk_id: 33
     },
 
     {
@@ -1257,7 +1269,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 30,
-      talk_id: 34
+      talk_id: 35
     }
 
     ])
@@ -1265,6 +1277,566 @@ puts "Creating speakers_talks relationships"
 
 
 puts "Finished creating speakers_talks relationships"
+
+puts "Creating tags list"
+
+  Tag.create!([
+    {
+      name: "Social"
+    },
+
+    {
+      name: "Future of Rails"
+    },
+
+    {
+      name: "Strada"
+    },
+
+    {
+      name: "Turbo Native"
+    },
+
+    {
+      name: "Hotwire"
+    },
+
+    {
+      name: "Caching"
+    },
+
+    {
+      name: "Turbo"
+    },
+
+    {
+      name: "Security"
+    },
+
+    {
+      name: "Databases"
+    },
+
+    {
+      name: "Encryption"
+    },
+
+    {
+      name: "Stimulus"
+    },
+
+    {
+      name: "Trilogy"
+    },
+
+    {
+      name: "MySQL"
+    },
+
+    {
+      name: "Testing"
+    },
+
+    {
+      name: "PWA"
+    },
+
+    {
+      name: "Architecture"
+    },
+
+    {
+      name: "AI"
+    },
+
+    {
+      name: "Rails 7.1"
+    },
+
+    {
+      name: "Autoloading"
+    },
+
+    {
+      name: "Zeitwerk"
+    },
+
+    {
+      name: "Gems"
+    },
+
+    {
+      name: "Asset Pipeline"
+    },
+
+    {
+      name: "Open source"
+    },
+
+    {
+      name: "Design"
+    },
+
+    {
+      name: "Garbage Collector"
+    },
+
+    {
+      name: "HTML 5"
+    },
+
+    {
+      name: "Bundler"
+    },
+
+    {
+      name: "iOS"
+    },
+
+    {
+      name: "Shape Up"
+    },
+
+    {
+      name: "Process"
+    },
+
+    {
+      name: "Leadership"
+    },
+
+    {
+      name: "WebSockets"
+    },
+
+    {
+      name: "Frontend"
+    },
+
+    {
+      name: "Tailwind"
+    },
+
+    {
+      name: "CSS"
+    },
+
+    {
+      name: "Business"
+    },
+
+    {
+      name: "Leadership"
+    },
+
+    {
+      name: "JavaScript"
+    },
+
+    {
+      name: "Monoliths"
+    },
+
+    {
+      name: "Microservices"
+    }
+
+  ])
+
+puts "Finished Creating tags list"
+
+puts "Creating TagTalk Relationships"
+
+TagTalk.create!([
+  {
+    talk_id: 2, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 3, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 4, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 3
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 4
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 6, 
+    tag_id: 6
+  },
+
+  {
+    talk_id: 7, 
+    tag_id: 7
+  },
+
+  {
+    talk_id: 7, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 10
+  },
+
+  {
+    talk_id: 9, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 5
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 7
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 11
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 12
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 13
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 12,
+    tag_id: 14
+  },
+
+  {
+    talk_id: 13, 
+    tag_id: 15
+  },
+
+  {
+    talk_id: 13, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 14, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 15, 
+    tag_id: 17
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 13
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 19
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 20
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 18, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 19, 
+    tag_id: 22
+  },
+
+  {
+    talk_id: 19, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 24
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 21, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 22, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 23, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 24, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 25, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 25, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 26, 
+    tag_id: 25
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 26
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 27
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 29, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 4
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 28
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 29
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 30
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 31
+  },
+
+  {
+    talk_id: 32, 
+    tag_id: 17
+  },
+
+  {
+    talk_id: 33, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 33, 
+    tag_id: 32
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 33
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 34
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 35
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 11
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 7
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 36
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 31
+  },
+
+
+  {
+    talk_id: 37, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 37, 
+    tag_id: 38
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 39
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 40
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 24
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 40, 
+    tag_id: 1
+  }
+
+])
+
+puts "Finished creating TagTalk relationships"
 
 puts "Creating Admin User"
 

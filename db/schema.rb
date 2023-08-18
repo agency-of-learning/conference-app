@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_000626) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
     t.datetime "updated_at", null: false
     t.index ["speaker_id"], name: "index_speakers_talks_on_speaker_id"
     t.index ["talk_id"], name: "index_speakers_talks_on_talk_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_talks", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "talk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_tags_talks_on_tag_id"
+    t.index ["talk_id"], name: "index_tags_talks_on_talk_id"
   end
 
   create_table "talks", force: :cascade do |t|
@@ -81,6 +96,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
 
   add_foreign_key "speakers_talks", "speakers"
   add_foreign_key "speakers_talks", "talks"
+  add_foreign_key "tags_talks", "tags"
+  add_foreign_key "tags_talks", "talks"
   add_foreign_key "talks_users", "talks"
   add_foreign_key "talks_users", "users"
 end
