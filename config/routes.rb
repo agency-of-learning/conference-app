@@ -8,8 +8,14 @@ Rails.application.routes.draw do
   end 
   
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
-  
+ 
   devise_for :users
+
+
+  get 'notification_settings', to: 'notification_preferences#notification_settings'
+          
+  patch 'notification_settings', to: 'notification_preferences#update'
+  #patch 'push_notification_settings', to: 'notification_preferences#update_push_notifications'
 
   resources :talks_users
 
