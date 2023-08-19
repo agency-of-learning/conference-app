@@ -14,8 +14,8 @@ class NotificationPreferencesController < ApplicationController
       end
     else 
       respond_to do |format|
-      format.html         { render :notification_settings } # renders `page.html.erb`
-      format.turbo_stream { render :update_push } # renders `page.turbo_stream.erb`
+      format.html         { render :notification_settings }
+      format.turbo_stream { render :update_push }
       end
     end 
   end 

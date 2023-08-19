@@ -11,11 +11,9 @@ Rails.application.routes.draw do
  
   devise_for :users
 
-
   get 'notification_settings', to: 'notification_preferences#notification_settings'
           
   patch 'notification_settings', to: 'notification_preferences#update'
-  #patch 'push_notification_settings', to: 'notification_preferences#update_push_notifications'
 
   resources :talks_users
 
@@ -24,11 +22,6 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount Sidekiq::Web => '/sidekiq'
