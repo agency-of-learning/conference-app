@@ -1,0 +1,17 @@
+<div class="flex flex-col w-full">
+    <h3 class="block text-2xl text-left text-black-500 font-black text-primary italic mt-4 mb-4 md:mb-0 pr-4">Notification Settings</h3>
+    
+    <div class="flex flex-row sm:justify-between items-center mb-4">
+        <h3 class="block text-xl text-left text-black-500 font-black text-secondary italic mt-4 mb-4 md:mb-0 pr-4"> Email Notifications </h3>
+        <%= render "update_email_notifications", user: @user %>
+    
+    </div>
+    
+    <div class="flex flex-row sm:justify-between items-center mb-4">
+        <h3 class="block text-xl text-left text-black-500 font-black text-secondary italic mt-4 mb-4 md:mb-0 pr-4"> Push Notifications </h3>
+        <%= render "update_push_notifications", user: @user %>
+         
+    </div>  
+</div>
+
+

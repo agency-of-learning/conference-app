@@ -26,18 +26,6 @@
       <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
-    <div>
-      <h3 class="block text-black-500 font-bold md:text-right mt-4 mb-4 md:mb-0 pr-4">Notification Settings</h3>
-      <div class="flex items-center mb-4">
-        <%= f.check_box :receive_app_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
-        <%= f.label :receive_app_notifications , class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"%>
-      </div>
-
-      <div class="flex items-center mb-4">
-        <%= f.check_box :receive_email_notifications, checked_value: :true, unchecked_value: :false, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
-        <%= f.label :receive_email_notifications , class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"%>
-      </div>
-    </div>
 
     <div class="field mb-2">
       <%= f.label :current_password, class: "block text-gray-700 text-sm font-bold mb-2" %> <i>(we need your current password to confirm your changes)</i><br />

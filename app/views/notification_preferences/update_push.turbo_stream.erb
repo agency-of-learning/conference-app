@@ -1,0 +1,1 @@
+<%= turbo_stream.replace dom_id(@user, :receive_app_notifications), partial: "notification_preferences/update_push_notifications", locals: {user: @user} %>
