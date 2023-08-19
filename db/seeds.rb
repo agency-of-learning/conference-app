@@ -1516,10 +1516,6 @@ puts "Creating tags list"
     },
 
     {
-      name: "Leadership"
-    },
-
-    {
       name: "JavaScript"
     },
 
@@ -1724,11 +1720,6 @@ TagTalk.create!([
   },
 
   {
-    talk_id: 22, 
-    tag_id: 1
-  },
-
-  {
     talk_id: 23, 
     tag_id: 1
   },
@@ -1886,7 +1877,7 @@ TagTalk.create!([
 
   {
     talk_id: 37, 
-    tag_id: 38
+    tag_id: 37
   },
 
   {
@@ -1896,12 +1887,12 @@ TagTalk.create!([
 
   {
     talk_id: 38, 
-    tag_id: 39
+    tag_id: 38
   },
 
   {
     talk_id: 38, 
-    tag_id: 40
+    tag_id: 39 
   },
 
   {
