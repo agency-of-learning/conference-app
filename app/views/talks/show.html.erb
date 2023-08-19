@@ -94,6 +94,10 @@
     <p class="my-5 block font-medium text-secondary">
       <%= @talk.description %>
     </p>
+    
+    <div>
+      <%= render partial: "shared/add_remove_button_detail", locals: {talk: @talk} %>
+    </div>
 
     <% if current_user&.admin? %> <%# temporary fix %>
       <%= link_to 'Edit this talk', edit_talk_path(@talk), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
