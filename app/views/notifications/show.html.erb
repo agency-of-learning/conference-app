@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <h3 class="font-extrabold text-3xl lg:text-4xl text-primary italic">Notification Details</h3>
-<div class="w-full h-fit border-2 border-secondary rounded my-4 flex flex-row items-center" data-notifications-target="notifications">
+<div class="w-full h-fit border-2 border-secondary-50 rounded my-4 flex flex-row items-center" data-notifications-target="notifications">
   <div class="flex-grow flex-col overflow-x-auto break-words p-3">
     <% talk = @notification.to_notification.talk %>
     <div class="text-xs text-secondary font-bold italic my-2">Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </div>
