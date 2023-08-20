@@ -1,15 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  recipient: one
-  recipient_type: Recipient
-  type: 
-  params: 
-  read_at: 2023-08-01 10:52:58
+#one:
+#  recipient: user
+#  recipient_type: Recipient
+#  type: Talk::ReminderNotification 
+#  params: talk
 
-two:
-  recipient: two
-  recipient_type: Recipient
-  type: 
-  params: 
-  read_at: 2023-08-01 10:52:58
+#two:
+#  recipient: admin
+#  recipient_type: Recipient
+#  type: Talk::ReminderNotification 
+#  params: keynote

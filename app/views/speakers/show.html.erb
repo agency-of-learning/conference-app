@@ -8,9 +8,29 @@
 
     <%= render @speaker %>
 
-    <p class="my-5 block font-lg text-secondary">
-      <%= @speaker.bio %>
-    </p>
+    <div class="flex flex-col items-center">
+
+      <div>
+        <p class="my-5 block font-lg text-secondary">
+          <%= @speaker.bio %>
+        </p>
+      </div>
+
+      <div flex flex-row justify-between>
+        <%= link_to @speaker.github, target: "_blank" do %>
+          <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary"></i>
+        <% end %>
+
+        <%= link_to @speaker.linkedin, target: "_blank" do %>
+          <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary"></i>
+        <% end %>
+
+        <%= link_to @speaker.twitter, target: "_blank" do %>
+          <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary"></i>
+        <% end %>
+
+      </div>
+    </div>
 
     <% if current_user&.admin? %> <%# TODO Routes Controll %>
       <%= link_to 'Edit this speaker', edit_speaker_path(@speaker), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
@@ -20,22 +40,21 @@
       </div>
     <% end %>
 
-
-    <hr class="mt-6">
-
     <div class="mx-auto">
-      <p class="my-5">
-      <strong class="font-extrabold text-2xl text-primary mb-6 italic">Sessions</strong>
+      <p class="my-4">
+      <strong class="font-extrabold text-2xl text-primary italic">Sessions</strong>
       </p>
+      </div>
       <p class="my-5">
       <% @speaker.talks.each do |t| %>
         <%= render t %>
       <% end %>
       </p>
-    </div>
+  
+
+  <div class="flex justify-center my-8">
+    <%= link_to 'Back to Agenda', talks_path, class: "ml-2 py-4 px-14 bg-secondary text-lg inline-block font-bold text-white text-center" %>
   </div>
 </div>
-<div class="flex justify-center my-8">
-  <%= link_to 'Back to Agenda', talks_path, class: "ml-2 py-4 px-14 bg-secondary text-lg inline-block font-bold text-white text-center" %>
-</div>
+
 

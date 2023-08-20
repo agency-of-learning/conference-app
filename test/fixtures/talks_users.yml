@@ -1,0 +1,25 @@
+one: 
+  user_id: 1
+  talk_id: 1
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+two: 
+  user_id: 2
+  talk_id: 2
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+three: 
+  user_id: 1
+  talk_id: 3
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+four: 
+  user_id: 2
+  talk_id: 3
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+

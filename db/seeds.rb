@@ -10,7 +10,10 @@ Speaker.create!([
       %( Aaron is on the Rails core team, the Ruby core team, and is a Senior Staff Engineer working at Shopify.
            In his free time, he enjoys cooking, playing with cats, and writing weird software.
          ).squish,
-    image_filename: "a-patterson.jpg"
+    image_filename: "a-patterson.jpg",
+    github: "https://github.com/tenderlove",
+    linkedin: "https://www.linkedin.com/in/tenderlove/",
+    twitter: "https://twitter.com/tenderlove"
   },
 
   {
@@ -21,7 +24,10 @@ Speaker.create!([
            He has made a career out of constantly second-guessing conventional wisdom,
            trying to get to the bottom of why we do things the way we do, and exploring if there isn't a better way.
          ).squish,
-    image_filename: "a-wathan.jpg"
+    image_filename: "a-wathan.jpg",
+    github: "https://github.com/adamwathan",
+    linkedin: "https://www.linkedin.com/in/adam-wathan-9418984a/",
+    twitter: "https://twitter.com/adamwathan"
   },
 
   {
@@ -33,7 +39,10 @@ Speaker.create!([
            She is passionate about Ruby, open source software, and diversity and inclusion in tech. Outside of work,
            you're likely to find her spending time outside or hanging out with her dog.
          ).squish,
-    image_filename: "a-chang.jpeg"
+    image_filename: "a-chang.jpeg",
+    github: "https://github.com/adrianna-chang-shopify",
+    linkedin: "https://www.linkedin.com/in/adrianna-chang-42464796/",
+    twitter: "https://twitter.com/adriannakchang"
   },
 
   {
@@ -46,7 +55,10 @@ Speaker.create!([
         agroecology and environmental education. In her free time, she enjoys taking long walks in nature and 
         playing the bamboo flute 🎼🌻🌱
          ).squish,
-    image_filename: "a-rojas.jpeg"
+    image_filename: "a-rojas.jpeg",
+    github: "https://github.com/aliciapaz",
+    linkedin: "",
+    twitter: "https://twitter.com/_alicia_paz"
   },
 
   {
@@ -58,7 +70,10 @@ Speaker.create!([
            some of the things they have developed for it (including the switch to “vips by default” in Rails 7).
            This monolith was also the test bed for Breno's collaboration on Propshaft and the first app to deploy it to production.
          }.squish,
-    image_filename: "b-gazzola.jpg"
+    image_filename: "b-gazzola.jpg",
+    github: "https://github.com/brenogazzola",
+    linkedin: "https://www.linkedin.com/in/breno-gazzola-116a2447/",
+    twitter: "https://twitter.com/brenogazzola"
   },
 
   {
@@ -67,7 +82,10 @@ Speaker.create!([
     bio:
       %( Brian is a Senior Principal Systems Engineer in Intercom's Dublin office. He fixes problems, builds things and grows people.
          ).squish,
-    image_filename: "b-scanlan.jpeg"
+    image_filename: "b-scanlan.jpeg",
+    github: "https://github.com/bscanlan",
+    linkedin: "https://www.linkedin.com/in/scanlanb/",
+    twitter: "https://twitter.com/brian_scanlan"
   },
 
   {
@@ -77,7 +95,10 @@ Speaker.create!([
       %( Chris is the founder of GoRails, host of the Remote Ruby podcast, and creator of Jumpstart and Hatchbox.io.
            He loves building tools to make developers' lives easier and helping people learn to code.
          ).squish,
-    image_filename: "c-oliver.jpg"
+    image_filename: "c-oliver.jpg",
+    github: "https://github.com/excid3",
+    linkedin: "https://www.linkedin.com/in/excid3/",
+    twitter: "https://twitter.com/excid3"
   },
 
   {
@@ -91,7 +112,10 @@ Speaker.create!([
 
           If he's not hacking Ruby, he loves spending quality time with his family, including his daughter.
       }.squish,
-    image_filename: "c-bruckmeyer.jpeg"
+    image_filename: "c-bruckmeyer.jpeg",
+    github: "https://github.com/ChrisBr",
+    linkedin: "https://www.linkedin.com/in/bruckmayer/",
+    twitter: "https://twitter.com/bruckmayer"
   },
 
   {
@@ -103,7 +127,10 @@ Speaker.create!([
           Cynthia sits on the advisory board for Mobile Pathways and CodeSavvy.
           She has experience in leading nonprofit social sector strategic planning as well as go-to-market and product launches.
       ).squish,
-    image_filename: "c-lo.jpeg"
+    image_filename: "c-lo.jpeg",
+    github: "",
+    linkedin: "https://www.linkedin.com/in/cynthia-lo/",
+    twitter: ""
   },
 
   {
@@ -111,7 +138,10 @@ Speaker.create!([
     title: "Rails Core, CTO, 37signals",
     bio:
       %( Creator of Ruby on Rails. ).squish,
-    image_filename: "d-hansson.jpg"
+    image_filename: "d-hansson.jpg",
+    github: "https://github.com/dhh",
+    linkedin: "https://www.linkedin.com/in/david-heinemeier-hansson-374b18221/",
+    twitter: "https://twitter.com/dhh"
   },
 
   {
@@ -120,7 +150,10 @@ Speaker.create!([
     bio:
       %( Donal is a Senior Programmer in the Security, Infrastructure and Performance team at 37signals.
         ).squish,
-    image_filename: "d-mcbreen.jpeg"
+    image_filename: "d-mcbreen.jpeg",
+    github: "https://github.com/djmb",
+    linkedin: "https://www.linkedin.com/in/donal-mcbreen-a8227a52/",
+    twitter: ""
   },
 
   {
@@ -134,7 +167,10 @@ Speaker.create!([
            As a member of the Rails Core Team her goal is to ensure the long-term sustainability
            of the Rails framework and its continued adoption as one of the leading open-source frameworks.
       ).squish,
-    image_filename: "e-uchitelle.jpg"
+    image_filename: "e-uchitelle.jpg",
+    github: "https://github.com/eileencodes",
+    linkedin: "https://www.linkedin.com/in/eileencodes/",
+    twitter: "https://twitter.com/eileencodes"
   },
 
   {
@@ -148,7 +184,10 @@ Speaker.create!([
           her ultimate destiny. Now, armed with wit, passion, and a sprinkle of mischief, she proudly steers Evil Martians
           toward extraordinary achievements.
       ).squish,
-    image_filename: "i-nazarova.jpeg"
+    image_filename: "i-nazarova.jpeg",
+    github: "",
+    linkedin: "https://www.linkedin.com/in/nonconstant/",
+    twitter: "https://twitter.com/inazarova"
   },
 
   {
@@ -157,7 +196,10 @@ Speaker.create!([
     bio:
       %( Jason Charnes is a Staff Product Developer at Podia, co-host of the Remote Ruby podcast, lover of Ruby, and a wanna-be comedian.
       ).squish,
-    image_filename: "j-charnes.jpeg"
+    image_filename: "j-charnes.jpeg",
+    github: "https://github.com/jasoncharnes",
+    linkedin: "https://www.linkedin.com/in/jasoncharnes/",
+    twitter: "https://twitter.com/jmcharnes"
   },
 
   {
@@ -168,7 +210,10 @@ Speaker.create!([
           He has helped shape the Hotwire libraries since the early prototypes so they work well across mobile platforms.
           When not in front of a computer, he prefers to be in nature.
       ).squish,
-    image_filename: "j-ohms.jpeg"
+    image_filename: "j-ohms.jpeg",
+    github: "https://github.com/jayohms",
+    linkedin: "https://www.linkedin.com/in/jay-ohms-728a8967/",
+    twitter: "https://twitter.com/jayohms"
   },
 
   {
@@ -180,7 +225,10 @@ Speaker.create!([
           and is passionate about open source. When she isn't at her laptop, she enjoys biking, climbing,
           jamming out to K-pop, and exploring new food spots in the city.
       ).squish,
-    image_filename: "j-shen.jpeg"
+    image_filename: "j-shen.jpeg",
+    github: "https://github.com/jenshenny",
+    linkedin: "https://www.linkedin.com/in/jenny-shen-/",
+    twitter: "https://twitter.com/jenshenny"
   },
 
   {
@@ -195,7 +243,10 @@ Speaker.create!([
           Over these 7+ years I've learned a lot about Turbo Native. I know where it shines and where it falls short.
           And I'm excited to share everything I know with you!
       ).squish,
-    image_filename: "j-masilotti.jpeg"
+    image_filename: "j-masilotti.jpeg",
+    github: "https://github.com/joemasilotti/",
+    linkedin: "https://www.linkedin.com/in/joemasilotti/",
+    twitter: "https://twitter.com/joemasilotti"
   },
 
   {
@@ -207,7 +258,10 @@ Speaker.create!([
           a regular author in the 37signals dev blog. Outside of work, he loves being a dad,
           reading a good book on the beach, writing, and planning to exercise without really exercising much.
       ).squish,
-    image_filename: "j-manrubia.jpeg"
+    image_filename: "j-manrubia.jpeg",
+    github: "https://github.com/jorgemanrubia",
+    linkedin: "https://www.linkedin.com/in/jorge-manrubia-5a106561/",
+    twitter: "https://twitter.com/jorgemanru"
   },
 
   {
@@ -219,7 +273,10 @@ Speaker.create!([
           - I am obsessed with upgrading things so I **never** miss those opportunities - After the conference talks,
           you can find me at the Karaoke events!
       ).squish,
-    image_filename: "j-lopez.jpeg"
+    image_filename: "j-lopez.jpeg",
+    github: "https://github.com/yukideluxe",
+    linkedin: "https://www.linkedin.com/in/julialopez/",
+    twitter: "https://twitter.com/yukideluxe"
   },
 
   {
@@ -231,7 +288,10 @@ Speaker.create!([
           She believes in making security tooling first and foremost easy to understand and easy to adopt.
           Outside of work Kylie enjoys gardening, winemaking, hiking and scuba diving.
       ).squish,
-    image_filename: "k-stradley.jpeg"
+    image_filename: "k-stradley.jpeg",
+    github: "https://github.com/KyFaSt",
+    linkedin: "https://www.linkedin.com/in/kyliestradley/",
+    twitter: "https://twitter.com/kyfast"
   },
 
   {
@@ -243,7 +303,10 @@ Speaker.create!([
           server-rendered applications using the HTML-over-the-wire (Hotwire) approach. He has actively open-sourced,
           maintained, and contributed to several key libraries within the Hotwire and Ruby on Rails ecosystem.
       }.squish,
-    image_filename: "m-roth.jpeg"
+    image_filename: "m-roth.jpeg",
+    github: "https://github.com/marcoroth",
+    linkedin: "https://www.linkedin.com/in/marco-roth/",
+    twitter: "https://twitter.com/marcoroth_"
   },
 
   {
@@ -257,7 +320,10 @@ Speaker.create!([
           Previously he led the Cloud Foundry open source PaaS project for VMware and Pivotal.
           In 2009 he coined the phrase “WWSMD?” (IYKYK). He likes coffee, intimate chats, and long walks, and has been known to combine all three.
       }.squish,
-    image_filename: "m-dalessio.jpeg"
+    image_filename: "m-dalessio.jpeg",
+    github: "https://github.com/flavorjones",
+    linkedin: "https://www.linkedin.com/in/mikedalessio/",
+    twitter: "https://twitter.com/flavorjones"
   },
 
   {
@@ -270,7 +336,10 @@ Speaker.create!([
           long term scalability of our MySQL databases with horizontal sharding with lots of low level work at the
           application layer to make it as seamless as possible for engineers.
       }.squish,
-    image_filename: "m-mcguire.jpeg"
+    image_filename: "m-mcguire.jpeg",
+    github: "https://github.com/minuteman3",
+    linkedin: "https://www.linkedin.com/in/milesmcguire/",
+    twitter: "https://twitter.com/_minuteman3"
   },
 
   {
@@ -280,7 +349,10 @@ Speaker.create!([
       %( Nikita is a Developer at Shopify with more than 6 years of experience.
           He is an open source contributor with most of the contributions made to the Ruby on Rails framework.
       ).squish,
-    image_filename: "n-vasilevsky.jpeg"
+    image_filename: "n-vasilevsky.jpeg",
+    github: "https://github.com/nvasilevski",
+    linkedin: "https://www.linkedin.com/in/nikita-vasilevsky-66924423b/",
+    twitter: "https://twitter.com/nik_vasilevsky"
   },
 
   {
@@ -292,7 +364,10 @@ Speaker.create!([
           a gem used to find memory leaks in native gems. It has found memory leaks in popular gems such as Nokogiri, protobuf,
           gRPC, liquid-c, and YARP.
       ).squish,
-    image_filename: "p-zhu.jpeg"
+    image_filename: "p-zhu.jpeg",
+    github: "https://github.com/peterzhu2118",
+    linkedin: "https://www.linkedin.com/in/peterzhu2118/",
+    twitter: "https://twitter.com/peterzhu2118"
   },
 
   {
@@ -304,7 +379,10 @@ Speaker.create!([
           He is the author of Shape Up. In 2021, he founded Felt Presence to help product teams stop running in circles
           and regain the thrill of building.
       ).squish,
-    image_filename: "r-singer.jpg"
+    image_filename: "r-singer.jpg",
+    github: "https://github.com/rjs",
+    linkedin: "https://www.linkedin.com/in/feltpresence/",
+    twitter: "https://twitter.com/rjs"
   },
 
   {
@@ -317,7 +395,10 @@ Speaker.create!([
           serving vital missions. Sean is a passionate zymurgist, avid coffee roaster, enthusiastic writer of screenplays, and
           connoisseur of practical jokes.
       ).squish,
-    image_filename: "s-marcia.jpeg"
+    image_filename: "s-marcia.jpeg",
+    github: "https://github.com/seanmarcia",
+    linkedin: "",
+    twitter: "https://twitter.com/seanmarcia"
   },
 
   {
@@ -328,7 +409,10 @@ Speaker.create!([
           contributing to open source and being an Evil Martian. Author of AnyCable, TestProf,
           Action Policy and many yet unknown ukulele melodies.
       ).squish,
-    image_filename: "v-dementyev.jpeg"
+    image_filename: "v-dementyev.jpeg",
+    github: "https://github.com/palkan",
+    linkedin: "https://www.linkedin.com/in/vladimir-dementyev-1a8b415a/",
+    twitter: "https://twitter.com/palkan_tula"
   },
 
   {
@@ -337,7 +421,10 @@ Speaker.create!([
     bio:
       %( Everlasting student · Zeitwerk · Rails Core · Fukuoka Ruby Award · Ruby Hero Award · Freelance · Life lover
       ).squish,
-    image_filename: "x-noria.jpeg"
+    image_filename: "x-noria.jpeg",
+    github: "https://github.com/fxn",
+    linkedin: "https://www.linkedin.com/in/xaviernoria/",
+    twitter: "https://twitter.com/fxn"
   },
 
   {
@@ -369,7 +456,10 @@ Speaker.create!([
             to learn. I was amazed by scaffolds, associations, devise and Heroku - it's all I really needed to worry about when building my app!
             That's what I call Rails magic - being able to jump in and build something that provides business value with minimal experience!
       ).squish,
-    image_filename: "y-shmarov.jpg"
+    image_filename: "y-shmarov.jpg",
+    github: "https://github.com/yshmarov",
+    linkedin: "https://www.linkedin.com/in/yshmarov/",
+    twitter: "https://twitter.com/yarotheslav"
   }
 ])
 
@@ -397,8 +487,9 @@ puts "Creating talks list"
       talk_format: "social",
       duration: 180,
       description: 
-      %(Pre-event drinks sponsored by Jeroen Nijhof. The location of these drinks 
-        will be shared with registered attendees. Badge required.
+      %(Pre-event drinks sponsored by Clear Code Wizards. Badge required. 
+        One welcome drink per person on Clear Code Wizards until they run out of drink tokens, 
+        so be sure to come early after picking up your badge.
       ).squish
     }, 
 
@@ -765,6 +856,17 @@ puts "Creating talks list"
     },
 
     {
+      title: "WNB.rb Breakfast Meetup",
+      location: "TBD",
+      start_time: Time.zone.parse("2023-10-06 08:00:00"),
+      talk_format: "social",
+      duration: 120,
+      description: 
+      %(A networking breakfast for women and non-binary Rails World attendees. Hosted by WNB.rb and sponsored by Shopify.
+      ).squish
+    },
+
+    {
       title: "Doors Open",
       location: "Sponsor Lounge",
       start_time: Time.zone.parse("2023-10-06 09:00:00"),
@@ -1102,12 +1204,12 @@ puts "Creating speakers_talks relationships"
   SpeakerTalk.create!([
     {
       speaker_id: 1,
-      talk_id: 23
+      talk_id: 24
     },
 
     {
       speaker_id: 2,
-      talk_id: 33
+      talk_id: 34
     },
 
     {
@@ -1127,12 +1229,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 6,
-      talk_id: 37
+      talk_id: 38
     },
 
     {
       speaker_id: 7,
-      talk_id: 24
+      talk_id: 25
     },
 
     {
@@ -1147,7 +1249,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 9,
-      talk_id: 31
+      talk_id: 32
     },
 
     {
@@ -1167,12 +1269,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 13,
-      talk_id: 35
+      talk_id: 36
     },
 
     {
       speaker_id: 14,
-      talk_id: 36
+      talk_id: 37
     },
 
     {
@@ -1182,12 +1284,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 16,
-      talk_id: 27
+      talk_id: 28
     },
 
     {
       speaker_id: 17,
-      talk_id: 29
+      talk_id: 30
     },
 
     {
@@ -1212,7 +1314,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 22,
-      talk_id: 26
+      talk_id: 27
     },
 
     {
@@ -1227,12 +1329,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 25,
-      talk_id: 25
+      talk_id: 26
     },
 
     {
       speaker_id: 26,
-      talk_id: 30
+      talk_id: 31
     },
 
     {
@@ -1242,12 +1344,12 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 27,
-      talk_id: 31
+      talk_id: 32
     },
 
     {
       speaker_id: 28,
-      talk_id: 32
+      talk_id: 33
     },
 
     {
@@ -1257,7 +1359,7 @@ puts "Creating speakers_talks relationships"
 
     {
       speaker_id: 30,
-      talk_id: 34
+      talk_id: 35
     }
 
     ])
@@ -1265,6 +1367,557 @@ puts "Creating speakers_talks relationships"
 
 
 puts "Finished creating speakers_talks relationships"
+
+puts "Creating tags list"
+
+  Tag.create!([
+    {
+      name: "Social"
+    },
+
+    {
+      name: "Future of Rails"
+    },
+
+    {
+      name: "Strada"
+    },
+
+    {
+      name: "Turbo Native"
+    },
+
+    {
+      name: "Hotwire"
+    },
+
+    {
+      name: "Caching"
+    },
+
+    {
+      name: "Turbo"
+    },
+
+    {
+      name: "Security"
+    },
+
+    {
+      name: "Databases"
+    },
+
+    {
+      name: "Encryption"
+    },
+
+    {
+      name: "Stimulus"
+    },
+
+    {
+      name: "Trilogy"
+    },
+
+    {
+      name: "MySQL"
+    },
+
+    {
+      name: "Testing"
+    },
+
+    {
+      name: "PWA"
+    },
+
+    {
+      name: "Architecture"
+    },
+
+    {
+      name: "AI"
+    },
+
+    {
+      name: "Rails 7.1"
+    },
+
+    {
+      name: "Autoloading"
+    },
+
+    {
+      name: "Zeitwerk"
+    },
+
+    {
+      name: "Gems"
+    },
+
+    {
+      name: "Asset Pipeline"
+    },
+
+    {
+      name: "Open source"
+    },
+
+    {
+      name: "Design"
+    },
+
+    {
+      name: "Garbage Collector"
+    },
+
+    {
+      name: "HTML 5"
+    },
+
+    {
+      name: "Bundler"
+    },
+
+    {
+      name: "iOS"
+    },
+
+    {
+      name: "Shape Up"
+    },
+
+    {
+      name: "Process"
+    },
+
+    {
+      name: "Leadership"
+    },
+
+    {
+      name: "WebSockets"
+    },
+
+    {
+      name: "Frontend"
+    },
+
+    {
+      name: "Tailwind"
+    },
+
+    {
+      name: "CSS"
+    },
+
+    {
+      name: "Business"
+    },
+
+    {
+      name: "JavaScript"
+    },
+
+    {
+      name: "Monoliths"
+    },
+
+    {
+      name: "Microservices"
+    }
+
+  ])
+
+puts "Finished Creating tags list"
+
+puts "Creating TagTalk Relationships"
+
+TagTalk.create!([
+  {
+    talk_id: 2, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 3, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 4, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 3
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 4
+  },
+
+  {
+    talk_id: 5, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 6, 
+    tag_id: 6
+  },
+
+  {
+    talk_id: 7, 
+    tag_id: 7
+  },
+
+  {
+    talk_id: 7, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 8, 
+    tag_id: 10
+  },
+
+  {
+    talk_id: 9, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 5
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 7
+  },
+
+  {
+    talk_id: 10,
+    tag_id: 11
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 12
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 13
+  },
+
+  {
+    talk_id: 11, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 12,
+    tag_id: 14
+  },
+
+  {
+    talk_id: 13, 
+    tag_id: 15
+  },
+
+  {
+    talk_id: 13, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 14, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 15, 
+    tag_id: 17
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 13
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 16, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 19
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 20
+  },
+
+  {
+    talk_id: 17, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 18, 
+    tag_id: 9
+  },
+
+  {
+    talk_id: 19, 
+    tag_id: 22
+  },
+
+  {
+    talk_id: 19, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 24
+  },
+
+  {
+    talk_id: 20, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 21, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 23, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 24, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 25, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 25, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 26, 
+    tag_id: 25
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 18
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 27, 
+    tag_id: 26
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 27
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 21
+  },
+
+  {
+    talk_id: 28, 
+    tag_id: 8
+  },
+
+  {
+    talk_id: 29, 
+    tag_id: 1
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 4
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 28
+  },
+
+  {
+    talk_id: 30, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 29
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 30
+  },
+
+  {
+    talk_id: 31, 
+    tag_id: 31
+  },
+
+  {
+    talk_id: 32, 
+    tag_id: 17
+  },
+
+  {
+    talk_id: 33, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 33, 
+    tag_id: 32
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 33
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 34
+  },
+
+  {
+    talk_id: 34, 
+    tag_id: 35
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 5
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 11
+  },
+
+  {
+    talk_id: 35, 
+    tag_id: 7
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 36
+  },
+
+  {
+    talk_id: 36, 
+    tag_id: 31
+  },
+
+
+  {
+    talk_id: 37, 
+    tag_id: 2
+  },
+
+  {
+    talk_id: 37, 
+    tag_id: 37
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 38
+  },
+
+  {
+    talk_id: 38, 
+    tag_id: 39 
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 23
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 24
+  },
+
+  {
+    talk_id: 39, 
+    tag_id: 16
+  },
+
+  {
+    talk_id: 40, 
+    tag_id: 1
+  }
+
+])
+
+puts "Finished creating TagTalk relationships"
 
 puts "Creating Admin User"
 
