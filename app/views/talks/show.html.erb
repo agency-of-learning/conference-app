@@ -79,7 +79,7 @@
           <% @talk.speakers.each do |s| %>
             <div class="flex flex-row text-white my-6 py-4 px-5 bg-secondary">
               <div>
-                <%= image_tag(s.image_filename, class: "rounded-full h-16 max-w-1 mr-5 border-2 border-white object-cover") %>
+                <%= image_tag(s.image_filename, class: "rounded-full h-16 w-16 object-cover mr-5 border-2 border-white ") %>
               </div>
               <div>
                 <strong class="font-medium text-lg"><%= link_to s.name, s %></strong> <br>
@@ -95,8 +95,11 @@
       <%= @talk.description %>
     </p>
     
-    <div>
-      <%= render partial: "shared/add_remove_button_detail", locals: {talk: @talk} %>
+
+    <div class="flex flex-row justify-end">
+      <div>
+        <%= render partial: "shared/add_remove_button_detail", locals: {talk: @talk} %>
+      </div>
     </div>
 
     <% if current_user&.admin? %> <%# temporary fix %>

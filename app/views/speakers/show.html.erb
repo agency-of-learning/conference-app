@@ -11,21 +11,21 @@
     <div class="flex flex-col items-center">
 
       <div>
-        <p class="my-5 block font-lg text-secondary">
+        <p class="my-4 block font-lg text-secondary">
           <%= @speaker.bio %>
         </p>
       </div>
 
-      <div flex flex-row justify-between>
-        <%= link_to @speaker.github, target: "_blank" do %>
+      <div class="flex flex-row justify-between mb-4">
+        <%= link_to @speaker.github do %>
           <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary"></i>
         <% end %>
 
-        <%= link_to @speaker.linkedin, target: "_blank" do %>
+        <%= link_to @speaker.linkedin do %>
           <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary"></i>
         <% end %>
 
-        <%= link_to @speaker.twitter, target: "_blank" do %>
+        <%= link_to @speaker.twitter do %>
           <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary"></i>
         <% end %>
 
@@ -46,8 +46,8 @@
       </p>
       </div>
       <p class="my-5">
-      <% @speaker.talks.each do |t| %>
-        <%= render t %>
+      <% @speaker.talks.each do |talk| %>
+        <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
       </p>
   
