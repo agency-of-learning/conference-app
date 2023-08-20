@@ -2,7 +2,9 @@ require "application_system_test_case"
 
 class SpeakersTest < ApplicationSystemTestCase
   setup do
-    @speaker = speakers(:one)
+    admin = users(:admin)
+    sign_in admin
+    @speaker = speakers(:speaker_one)
   end
 
   test "visiting the index" do
@@ -40,8 +42,7 @@ class SpeakersTest < ApplicationSystemTestCase
 
   test "should destroy Speaker" do
     visit speaker_url(@speaker)
-    click_on "Destroy this speaker", match: :first
-
-    assert_text "Speaker was successfully destroyed"
+    accept_alert {click_on "Delete", match: :first}
+    assert_text "Speaker was successfully deleted"
   end
 end
