@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_171004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
     t.string "image_filename", default: "placeholder.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "github"
+    t.string "linkedin"
+    t.string "twitter"
   end
 
   create_table "speakers_talks", force: :cascade do |t|
@@ -42,6 +45,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
     t.datetime "updated_at", null: false
     t.index ["speaker_id"], name: "index_speakers_talks_on_speaker_id"
     t.index ["talk_id"], name: "index_speakers_talks_on_talk_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_talks", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "talk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_tags_talks_on_tag_id"
+    t.index ["talk_id"], name: "index_tags_talks_on_talk_id"
   end
 
   create_table "talks", force: :cascade do |t|
@@ -75,12 +93,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_145258) do
     t.integer "role", default: 0
     t.boolean "receive_app_notifications", default: false
     t.boolean "receive_email_notifications", default: false
+    t.string "name"
+    t.text "bio"
+    t.string "location"
+    t.string "github"
+    t.string "linkedin"
+    t.string "twitter"
+    t.boolean "private"
+    t.string "image_filename"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "speakers_talks", "speakers"
   add_foreign_key "speakers_talks", "talks"
+  add_foreign_key "tags_talks", "tags"
+  add_foreign_key "tags_talks", "talks"
   add_foreign_key "talks_users", "talks"
   add_foreign_key "talks_users", "users"
 end
