@@ -1,21 +1,18 @@
 <div id="<%= dom_id talk %>">
   <div class="flex flex-row items-center p-2">
     <div class="flex-grow">
-      <p class="font-bold text-secondary">
-        <%= talk.start_time.to_fs(:weekday_month_date) %>
-      </p>
       <p class="my-1">
-        <strong class="block font-black mb-1 text-lg text-primary">
+        <strong class="block font-black italic mb-1 text-lg text-primary">
         <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
         </strong>
       </p>
       
       <p class="my-1">
-        <strong class="block font-extrabold italic text-secondary"> <%= talk.talk_format.titleize %> </strong>
+        <strong class="block font-thin italic text-secondary"> <%= talk.talk_format.titleize %> </strong>
       </p>
 
       <p>
-        <strong class="block font-medium italic text-secondaryi pr-4"> <%= link_to talk.title, talk %> </strong>
+        <strong class="block font-medium italic text-secondary pr-4"> <%= link_to talk.title, talk %> </strong>
       </p>
 
       <p class="my-2">
