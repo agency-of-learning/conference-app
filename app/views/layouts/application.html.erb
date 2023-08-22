@@ -13,7 +13,7 @@
 
   <body>
     <div>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && !controller.action_name == "onboarding" %>
           <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
           <%= turbo_stream_from "mobile" %>
           <%= turbo_stream_from "menu" %>
@@ -25,16 +25,7 @@
       </div>
     </div>  
      <%else%>
-    <div class="bg-secondary h-screen text-white">
-      <div class=" flex justify-center pt-24 px-24 w-full">
-        <%= svg 'rails_world_landing' %>
-      </div>
-      <div class="container mx-auto px-6 pt-20 ">
-        <div class="flex min-h-full flex-col justify-center lg:px-8">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+        <%= yield %>
     <% end %> 
   </body>
 </html>
