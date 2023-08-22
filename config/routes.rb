@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   end 
   
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
- 
-  devise_for :users
+  
+  get '/onboarding', to: 'users#onboarding'
+  get '/onboarding_form', to: 'users#onboarding_form'
+  post '/onboarding_form', to: 'users#onboarding_form'
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   get 'notification_settings', to: 'notification_preferences#notification_settings'
           
