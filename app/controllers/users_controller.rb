@@ -4,8 +4,6 @@ class UsersController < ApplicationController
     end 
 
     def onboarding_form
-        debugger
-        @user
     end 
 
     private 
