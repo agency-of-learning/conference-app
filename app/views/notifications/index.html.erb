@@ -15,7 +15,7 @@
 
   <div class="hidden" data-tabs-target="panel" data-controller="notifications" data-notifications-unread-value=<%= @unread_notifications.count %> >
     <div id="unread_notifications" class="px-4 py-4">
-    <%= turbo_stream_from "notifications" %>
+    <%= turbo_stream_from dom_id(current_user, :notifications_to) %>
       <%= tag.div id: :notifications_display, data: {"notifications-target" => "notifications"} do %>
         <% @unread_notifications.each do |notification| %>
           <%= render 'notification', notification: notification %>
