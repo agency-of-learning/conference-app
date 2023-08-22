@@ -13,7 +13,7 @@
 
   <body>
     <div>
-      <% if user_signed_in? && !controller.action_name == "onboarding" %>
+      <% if current_user && controller.action_name != "onboarding" %> <%# this feels not great%>
           <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
           <%= turbo_stream_from "mobile" %>
           <%= turbo_stream_from "menu" %>
