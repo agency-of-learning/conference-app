@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   
   get '/onboarding', to: 'users#onboarding'
   get '/onboarding_form', to: 'users#onboarding_form'
-  post '/onboarding_form', to: 'users#onboarding_form'
 
+  get '/onboarding_preview', to: 'users#onboarding_preview'
+  get '/users/profile', to: 'users#profile'
+  
   devise_for :users, controllers: { registrations: "registrations" }
 
   resources :talks_users
