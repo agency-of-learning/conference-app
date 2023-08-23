@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
+  has_one_attached :profile_photo
+  
   has_many :notifications, as: :recipient
   has_many :talks_users, dependent: :destroy, class_name: "TalkUser"
   has_many :talks, through: :talks_users

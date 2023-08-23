@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
     def onboarding_form
     end 
+    
+    def onboarding_preview
+    end 
 
     private 
     def set_user 
