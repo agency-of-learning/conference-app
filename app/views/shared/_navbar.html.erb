@@ -31,7 +31,7 @@
                 </div>
             </li>
             <li>
-                <%= link_to 'Profile', edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4' %>   
+                <%= link_to 'Profile', users_profile_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4' %>   
             </li>
             <li>
             <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-secondary-100 hover:bg-primary text-white font-bold py-2 px-4")%>
@@ -64,12 +64,15 @@
                              <%end%>  
                             <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>  
                             </div>
-                             <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                              <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                            <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                            <div class="flex justify-center text-center">
-                            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: " bg-secondary-100 no-underline block px-40 py-6 my-2 mx-2 italic font-bold text-white whitespace-nowrap"%>
-                            </div>
+                                <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                                <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                                <%= link_to 'Settings',  edit_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                       
+                                <%= link_to 'Profile', users_profile_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>   
+        
+                                <div class="flex justify-center text-center">
+                                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: " bg-secondary-100 no-underline block px-40 py-6 my-2 mx-2 italic font-bold text-white whitespace-nowrap"%>
+                                </div>
                     </div>
                 </div>
             </div>
