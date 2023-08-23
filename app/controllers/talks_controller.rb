@@ -52,13 +52,12 @@ class TalksController < ApplicationController
 
   private
 
-  # Use with before_action callback for shared use.
   def set_talk
     @talk = Talk.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters.
   def talk_params
-    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration, speaker_ids: [])
+    params.require(:talk).permit(:title, :description, :start_time, :location, :talk_format, :talk_track, :duration)
   end
+
 end

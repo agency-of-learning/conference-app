@@ -1,7 +1,7 @@
-<div id="<%= dom_id speaker %>" class="flex flex-col">
+<div id="<%= dom_id speaker %>" class="flex flex-col items-center">
   
   <div>
-    <%= image_tag(speaker.image_filename, class: "rounded-full h-[14rem] w-[14rem]") %>
+    <%= image_tag(speaker.image_filename, class: "rounded-full h-40 w-40 object-cover") %>
   </div>
   <p class="my-2">
     <strong class="font-extrabold text-2xl text-primary mb-6 italic"><%= link_to speaker.name, speaker %></strong>
