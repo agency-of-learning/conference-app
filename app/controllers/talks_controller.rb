@@ -3,6 +3,9 @@ class TalksController < ApplicationController
 
   # GET /talks
   def index
+    if request.referrer&.include?("onboarding")
+      flash[:notice] = "Welcome To The Rails World App!"
+    end 
     @day_one_talks = Talk.day_one.in_order
     @day_two_talks = Talk.day_two.in_order
     @day_three_talks = Talk.day_three.in_order
