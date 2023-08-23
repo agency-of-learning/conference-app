@@ -1,6 +1,9 @@
     <%# TODO: ADD PING ANIMATION HERE%>
   <% if count > 0 %>
-    <span class="bg-primary px-2 py-1 mt-3 mr-1 text-md  text-white font-bold">
+  <div class="relative flex h-6 w-6 mx-2 justify-center">
+    <span class=" animate-ping absolute inline-flex h-full w-full bg-red-500 opacity-75"></span>
+    <span class="bg-primary px-2 py-2 text-md h-6 w-6 text-white font-bold text-center">
       <em><%= count > 9 ? "+9" : count  %></em>
     </span>
+  </div>
   <% end %>
