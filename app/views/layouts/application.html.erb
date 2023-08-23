@@ -13,7 +13,8 @@
 
   <body>
     <div>
-      <% if current_user && controller.action_name != "onboarding" %> <%# this feels not great%>
+     
+      <% if current_user && !controller.action_name.include?("onboarding")%> <%# this feels not great%>
           <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
           <%= turbo_stream_from "mobile" %>
           <%= turbo_stream_from "menu" %>

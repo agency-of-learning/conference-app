@@ -1,7 +1,8 @@
-<div class="relative w-full">
-hi
-<div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-around  text-center w-full">
-    <%= button_to("Create Shareable Profile", onboarding_form_path, method: :get, :class => "w-full  bg-primary hover:bg-blue-900 text-white font-bold py-4  text-lg italic" )%>
-    <%= button_to("Skip For Now", root_path, method: :get, :class => "w-full  bg-secondary-100 mt-8 hover:bg-blue-900 text-white font-bold py-4  text-lg italic")%> 
-</div>
+<div class="">
+    <div class="bg-white w-full h-screen flex flex-col justify-center p-4">
+        <%= button_to("Create Shareable Profile", onboarding_form_path, method: :get, :class => "w-full p-8 my-4 bg-primary no-underline block italic font-bold text-white whitespace-nowrap" )%>
+    
+        <%= button_to("Skip For Now", root_path, method: :get, :class => "w-full p-8 my-4 bg-secondary-100 no-underline block italic font-bold text-white whitespace-nowrap")%> 
+
+    </div>
 </div>
