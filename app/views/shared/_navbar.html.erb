@@ -50,7 +50,7 @@
                 <div data-dropdown-target="menu" class="fixed right-0 hidden text-center w-screen h-screen left-0 top-0">
                     <div class="bg-white overflow-hidden flex flex-col w-full h-full p-1 z-10 ">
                             <%= link_to 'Home',  root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline py-6 mx-6 my-4 italic font-bold text-white bg-secondary whitespace-nowrap' %>
-                            <div class='flex flex-row justify-center no-underline px-6 py-6 mx-6 my-4 italic font-bold text-white bg-secondary whitespace-nowrap'>
+                            <div class='flex flex-row justify-center items-center no-underline px-6 py-6 mx-6 my-4 italic font-bold text-white bg-secondary whitespace-nowrap'>
                                 <%= tag.div id: :notifications_count_menu do %>
                                     <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
                                 <%end%>  
