@@ -1,10 +1,10 @@
-<div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white text-2xl" data-tabs-inactive-tab="bg-secondary-50">
+<div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white text-2xl font-black italice" data-tabs-inactive-tab="bg-secondary-50">
   <ul class="list-reset flex justify-center mb-2">
     <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
-      <a class="inline-block py-4 px-10 text-white text-xl font-bold no-underline" href="#">Upcoming</a>
+      <a class="inline-block py-4 px-10 text-white text-xl font-bold italic no-underline" href="#">Upcoming</a>
     </li>
     <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-4 px-10 text-white text-xl font-bold no-underline" href="#">Past</a>
+      <a class="inline-block py-4 px-10 text-white text-xl font-bold italic no-underline" href="#">Past</a>
     </li>
   </ul>
 
@@ -13,7 +13,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_one_talks_upcoming)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Wed, Oct 4</h2>
+          <h2 class="font-extrabold italic text-xl text-secondary">Wed, Oct 4</h2>
         <% end %>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_two_talks_upcomimg)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Thurs, Oct 5</h2>
+          <h2 class="font-extrabold italic text-xl text-secondary">Thurs, Oct 5</h2>
         <% end %>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_three_talks_upcoming)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Fri, Oct 6</h2>
+          <h2 class="font-extrabold itlic text-xl text-secondary">Fri, Oct 6</h2>
         <% end %>
       </div>
     </div>
@@ -58,7 +58,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_one_talks_past)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Wed, Oct 4</h2>
+          <h2 class="font-extrabold italic text-xl text-secondary">Wed, Oct 4</h2>
         <% end %>
       </div>
     </div>
@@ -72,7 +72,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_two_talks_past)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Thurs, Oct 5</h2>
+          <h2 class="font-extrabold italic text-xl text-secondary">Thurs, Oct 5</h2>
         <% end %>
       </div>
     </div>
@@ -86,7 +86,7 @@
     <div class="flex flex-row justify-center">
       <div>
         <% if (@day_three_talks_past)&.any? %>
-          <h2 class="font-extrabold text-xl text-secondary">Fri, Oct 6</h2>
+          <h2 class="font-extrabold italic text-xl text-secondary">Fri, Oct 6</h2>
         <% end %>
       </div>
     </div>

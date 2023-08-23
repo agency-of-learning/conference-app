@@ -22,6 +22,7 @@ module.exports = {
         },
         danger: "#FF654C", // orange
       },
+      
     },
   },
   plugins: [
