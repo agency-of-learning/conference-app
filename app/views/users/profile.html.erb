@@ -1,0 +1,87 @@
+<div class="container">
+ <% if notice.present? %>
+    <p class="py-2 px-3 bg-secondary-50 mb-5 text-secondary-100 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
+    <h2 class="block text-primary italic font-extrabold text-lg md:text-right mb-4 md:mb-0 pr-4">My Profile</h2>
+      <div class="field mb-2 w-full flex flex-col items-center justify-center">
+        <% if @user.profile_photo.representable? %>
+        <div class="flex-none">
+         <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] object-cover" %>
+         </div>
+        <%end%>
+
+        <h1 class="mt-4 text-primary italic font-extrabold text-xl">
+        <%= @user.name %>
+        </h1>
+
+        <h3 class="text-secondary font-bold text-lg italic">
+        <%= @user.location%>
+        </h3>
+
+        <p class="text-secondary italic font-bold text-sm my-2">
+        <i class="fa-solid fa-user"></i> 
+        Your profile is <%= @user.private ? "Private" : "Public"%> 
+        </p>
+      </div>
+      <div>
+        
+      </div>
+      <div class="field mb-4 text-center text-secondary font-semibold text-md italic my-3">
+        <%= @user.bio%>
+      </div>
+
+      <div class="field mb-2">
+      
+      </div>
+
+      <div class="field my-3 flex justify-center">
+        <%if @user.github != "" %>
+            <a href=<%="#{@user.github}"%> target="_blank">
+                <i class="fa-brands fa-github fa-2xl mx-3 h-12"  style="color: #3B1D62;"></i>
+            </a>
+        <%end%> 
+        <%if @user.linkedin != "" %> 
+            <a href=<%="#{@user.linkedin}"%> target="_blank">
+                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12" style="color: #3B1D62;"></i>
+            </a>
+        <%end%>
+        <%if @user.twitter != "" %>
+            <a href=<%="#{@user.twitter}"%> target="_blank">
+                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+            </a>
+        <%end%>
+        <%if !@user.private %>
+            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+        <%end%>
+      </div>
+
+   
+   <div class="flex flex-col text-center">
+
+    <%= link_to talks_users_path, :class=>"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
+        <div class="flex flex-row justify-around items-center">
+            <i class="fa-solid fa-clock fa-2xl"></i>
+            <h3>My Schedule</h3>
+            <div></div>
+        </div>
+    <%end%>
+   
+    <%= link_to talks_path, :class => "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
+        <div class="flex flex-row justify-around items-center">
+            <i class="fa-solid fa-calendar-days fa-2xl"></i>
+            <h3>Agenda</h3>
+            <div></div>
+        </div>
+    <%end%>
+
+    <%= link_to edit_user_registration_path, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
+        <div class="flex flex-row justify-around items-center">
+            <div></div>
+            <h3>Edit Profile</h3>
+            <div></div>
+        </div>
+    <%end%>
+    </div>
+  </div>
+</div>
