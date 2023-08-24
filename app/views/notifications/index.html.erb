@@ -13,21 +13,29 @@
     </li>
   </ul>
 
-  <div class="hidden" data-tabs-target="panel">
-    <div class=" px-4 py-4">
-    <%= turbo_stream_from "notifications" %>
-      <%= tag.div id: :notifications_display do %>
+  <div class="hidden" data-tabs-target="panel" data-controller="notifications" data-notifications-unread-value=<%= @unread_notifications.count %> >
+    <div id="unread_notifications" class="px-4 py-4">
+    <%= turbo_stream_from dom_id(current_user, :notifications_to) %>
+      <%= tag.div id: :notifications_display, data: {"notifications-target" => "notifications"} do %>
         <% @unread_notifications.each do |notification| %>
           <%= render 'notification', notification: notification %>
         <% end %>
       <%end%>
-  </div>
-    <%= form_tag(read_all_path, method: :post) do %>
-        <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
-    <%end%>
+    </div>
+    <div>
+      <div class="hidden" data-notifications-target="read">
+      <%= form_tag(read_all_path, method: :post) do %>
+          <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 italic" %>
+      <%end%>
+      </div>
+      <div class="hidden" data-notifications-target="none">
+        <h3 class="text-2xl font-bold italic text-secondary">No unread Notifications</h3>
+      </div>
+    </div>
+    
   </div>
 
-  <div class="hidden py-4 px-4" data-tabs-target="panel">
+  <div id="read_notifications" class="hidden py-4 px-4" data-tabs-target="panel">
     <%= turbo_stream_from "past_notifications" %>
       <% @read_notifications.each do |notification| %>
          <%= render 'notification', notification: notification %>

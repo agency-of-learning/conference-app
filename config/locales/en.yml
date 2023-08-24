@@ -35,5 +35,3 @@ en:
     talk:
       reminder_notification:
         message: "Upcoming Talk Is Happening!"
-      update_notification:
-        message: "Update on one of your Talks!"

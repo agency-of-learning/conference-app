@@ -1,5 +1,8 @@
  <% if count > 0 %>
-    <span class="bg-primary px-2 mx-1 text-white font-bold">
-      <em><%= count > 9 ? "+9" : count  %></em>
+ <div class="relative flex h-6 w-6 mx-2 justify-center text-center">
+  <span class=" animate-ping absolute inline-flex h-full w-full bg-red-500 opacity-75"></span>
+  <span class=" bg-primary h-6 w-6 text-white font-bold align-center leading-2 text-center">
+      <em class=""><%= count > 9 ? "+9" : count  %></em>
     </span>
+  </div>  
 <% end %>
