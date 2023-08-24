@@ -7,13 +7,24 @@ Rails.application.routes.draw do
     resources :notifications 
   end 
   
+  #Notifications
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
- 
-  devise_for :users
 
   get 'notification_settings', to: 'notification_preferences#notification_settings'
           
   patch 'notification_settings', to: 'notification_preferences#update'
+
+  #Onboarding
+  get '/onboarding', to: 'users#onboarding'
+
+  get '/onboarding_form', to: 'users#onboarding_form'
+
+  get '/onboarding_preview', to: 'users#onboarding_preview'
+  
+  #Users
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  get '/users/profile', to: 'users#profile'
 
   resources :talks_users
 
