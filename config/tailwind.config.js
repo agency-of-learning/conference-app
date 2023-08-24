@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        'sans': ['Acumin-Variable-Concept', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: "#CC0000", //rails red
@@ -22,6 +22,7 @@ module.exports = {
         },
         danger: "#FF654C", // orange
       },
+      
     },
   },
   plugins: [

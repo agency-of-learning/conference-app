@@ -29,6 +29,10 @@ class Talk < ApplicationRecord
   
   scope :in_order, -> { order(:start_time) }
 
+  scope :upcoming, -> { where(start_time: Time.now..) }
+  
+  scope :past, -> { where(start_time: ..Time.now) }
+
   scope :day_one, -> { 
     where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 04), 
     Date.new(2023, 10, 05)) 

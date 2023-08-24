@@ -1,17 +1,17 @@
-<div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white text-xl" data-tabs-inactive-tab="bg-secondary-50">
+<div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white text-l" data-tabs-inactive-tab="bg-secondary-50">
   <ul class="list-reset flex justify-center mb-5">
     <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
-      <a class="inline-block py-4 px-1 text-white text-l font-bold no-underline" href="#">Wed, Oct 4</a>
+      <a class="inline-block py-4 px-1 text-white text-base font-black italic no-underline" href="#">Wed, Oct 4</a>
     </li>
     <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-4 px-1 text-white text-l font-bold no-underline" href="#">Thurs, Oct 5</a>
+      <a class="inline-block py-4 px-1 text-white text-base font-black italic no-underline" href="#">Thurs, Oct 5</a>
     </li>
     <li class="w-full text-center mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-4 px-1 text-white text-l font-bold no-underline" href="#">Fri, Oct 6</a>
+      <a class="inline-block py-4 px-1 text-white text-base font-black italic no-underline" href="#">Fri, Oct 6</a>
     </li>
   </ul>
 
-  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+  <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_one_talks.each do |talk| %>
         <%= render "talks/talk", talk: talk %>
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+  <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_two_talks.each do |talk| %>
         <%= render "talks/talk", talk: talk %>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
+  <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_three_talks.each do |talk| %>
         <%= render "talks/talk", talk: talk %>
