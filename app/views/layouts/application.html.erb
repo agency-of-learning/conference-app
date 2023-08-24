@@ -12,15 +12,13 @@
   </head>
 
   <body>
-    <div>
-     
-      <% if current_user && !controller.action_name.include?("onboarding")%> <%# this feels not great%>
-          <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
-          <%= turbo_stream_from "mobile" %>
-          <%= turbo_stream_from "menu" %>
-        <%= render "shared/navbar" %>
-    </div>
-    <div class="container mx-auto px-6 pt-20 ">
+    <% if current_user && !controller.action_name.include?("onboarding")%>
+        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
+        <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
+        <%= turbo_stream_from dom_id(current_user, :menu_to) %>
+    
+      <%= render "shared/navbar" %>
+    <div class="container mx-auto px-6 pt-24">
       <div class="flex min-h-full flex-col justify-center lg:px-8">
         <%= yield %>
       </div>
