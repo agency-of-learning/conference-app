@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end 
   
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
-  
+ 
   get '/onboarding', to: 'users#onboarding'
   get '/onboarding_form', to: 'users#onboarding_form'
 
@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   
   devise_for :users, controllers: { registrations: "registrations" }
 
+  get 'notification_settings', to: 'notification_preferences#notification_settings'
+          
+  patch 'notification_settings', to: 'notification_preferences#update'
+
   resources :talks_users
 
   authenticated :user do
@@ -24,11 +28,6 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount Sidekiq::Web => '/sidekiq'

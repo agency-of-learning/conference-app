@@ -10,4 +10,9 @@ class NotificationsController < ApplicationController
     current_user.notifications.unread.map(&:mark_as_read!)
     redirect_to user_notifications_path
   end 
+
+  def show 
+    @notification = Notification.find(params[:id])
+    @notification.mark_as_read!
+  end 
 end
