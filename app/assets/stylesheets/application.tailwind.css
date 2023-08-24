@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+@layer base {
+  html {
+    font-family: Acumin-Variable-Concept, sans-serif;
+    font-variation-settings: "slnt" 12, "wdth" 80 100, "wght" 700 800;
   }
 }
 
-*/

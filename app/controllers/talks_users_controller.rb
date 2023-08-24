@@ -4,10 +4,14 @@ class TalksUsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_talk, only: %i[create]
 
-  def index
-    @day_one_talks = current_user.talks.day_one.in_order
-    @day_two_talks = current_user.talks.day_two.in_order
-    @day_three_talks = current_user.talks.day_three.in_order
+  def index 
+    @day_one_talks_upcoming = current_user.talks.day_one.upcoming.in_order
+    @day_two_talks_upcomimg = current_user.talks.day_two.upcoming.in_order
+    @day_three_talks_upcoming = current_user.talks.day_three.upcoming.in_order
+
+    @day_one_talks_past = current_user.talks.day_one.past.in_order
+    @day_two_talks_past = current_user.talks.day_two.past.in_order
+    @day_three_talks_past = current_user.talks.day_three.past.in_order
     
   end
 

@@ -1,17 +1,19 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-extrabold text-2xl text-primary mb-6 italic">Agenda</h1>
-    
-    <% if current_user&.admin? %> <%# TODO add route controlls for unauthenticated users %>
-      <%= link_to 'New talk', new_talk_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="w-full">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-  </div>
 
-  <div id="talks" class="min-w-full">
-    <%= render "shared/tabs_by_day" %>
+    <div class="flex justify-between items-center">
+      <h1 class="font-black italic text-2xl text-primary mb-6">Agenda</h1>
+      
+      <% if current_user&.admin? %> <%# TODO add route controlls for unauthenticated users %>
+        <%= link_to 'New talk', new_talk_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+      <% end %>
+    </div>
+
+    <div id="talks" class="min-w-full">
+      <%= render "shared/tabs_by_day" %>
+    </div>
   </div>
 </div>
