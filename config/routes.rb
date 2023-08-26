@@ -2,10 +2,6 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :speakers
   resources :talks
-
-  resource :user do 
-    resources :notifications 
-  end 
   
   #Notifications
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
@@ -24,7 +20,15 @@ Rails.application.routes.draw do
   #Users
   devise_for :users, controllers: { registrations: "registrations" }
 
-  get '/users/profile', to: 'users#profile'
+  get '/users/:id', to: 'users#show'
+
+  resources :users, :only =>[:show]
+
+  get '/user_profile', to: 'users#profile'
+
+  resource :user do 
+    resources :notifications 
+  end 
 
   resources :talks_users
 

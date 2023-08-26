@@ -35,3 +35,26 @@ en:
     talk:
       reminder_notification:
         message: "Upcoming Talk Is Happening!"
+  activerecord:
+    attributes:
+      user:
+        linkedin: "LinkedIn:"
+        github: "Github:"
+        twitter: "Twitter:"
+    errors:
+      models:
+        user:
+          attributes:
+            linkedin:
+              blank: "is required"
+              https_only: "fhttps format is required"
+              host_not_allowed: "link is not LinkedIn"
+            github:
+              blank: "is required"
+              https_only: "https format is required"
+              host_not_allowed: "link is not github"
+            twitter:
+              blank: "is required"
+              https_only: "https format is required"
+              host_not_allowed: "link is not Twitter, X, whatever"
+

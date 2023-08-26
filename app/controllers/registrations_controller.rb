@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
+  before_action :set_user
   protected
    def after_sign_up_path_for(resource)
      onboarding_path
@@ -10,11 +11,16 @@ class RegistrationsController < Devise::RegistrationsController
      if request.referrer.include?("onboarding_form")
       onboarding_preview_path 
      else 
-      users_profile_path 
+      user_profile_path 
      end 
    end
 
    def update_resource(resource, params)
       resource.update_without_password(params)
    end
+
+   private 
+   def set_user 
+      @user = current_user
+    end
 end

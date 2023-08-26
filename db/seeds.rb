@@ -1924,7 +1924,12 @@ puts "Creating Admin User"
 User.create!(
   email: "admin@railsworld.com",
   password: "123456789",
-  role: 1
+  role: 1,
+  name: "Admin McAdmin",
+  bio: "Cough. Playing with balls of wool weigh eight pounds but take up a full-size bed so destroy dog brown cats with pink ears or cats go for world domination but i like cats because they are fat and fluffy. Meow all night scoot butt on the rug yet dismember a mouse and then regurgitate parts of it on the family room floor jump on fridge cat jumps and falls onto the couch purrs and wakes up in a new dimension filled with kitty litter meow meow yummy there is a bunch of cats hanging around eating catnip . Scream at teh bath chase ball of string so decide to want nothing to do with my owner today, eat fish on floor but sleeping in the box nyaa nyaa yet thinking about you i'm joking it's food always food.",
+  github: "https://github.com/",
+  linkedin: "https://www.linkedin.com/feed/",
+  twitter: "https://twitter.com/home?lang=en"
 )
 puts "Admin user created!"
 
@@ -1933,6 +1938,11 @@ puts "Creating Attendee User"
 User.create!(
   email: "user@railsworld.com",
   password: "123456789",
-  role: 0
+  role: 0,
+  name: "User Attendee",
+  bio: "Cough. Playing with balls of wool weigh eight pounds but take up a full-size bed so destroy dog brown cats with pink ears or cats go for world domination but i like cats because they are fat and fluffy. Meow all night scoot butt on the rug yet dismember a mouse and then regurgitate parts of it on the family room floor jump on fridge cat jumps and falls onto the couch purrs and wakes up in a new dimension filled with kitty litter meow meow yummy there is a bunch of cats hanging around eating catnip . Scream at teh bath chase ball of string so decide to want nothing to do with my owner today, eat fish on floor but sleeping in the box nyaa nyaa yet thinking about you i'm joking it's food always food.",
+  github: "https://github.com/",
+  linkedin: "https://www.linkedin.com/feed/",
+  twitter: "https://twitter.com/home?lang=en"
 )
 puts "Attendee Created!"
