@@ -1,24 +1,29 @@
 <p style="color: green"><%= notice %></p>
 <h3 class="font-extrabold text-3xl lg:text-4xl text-primary italic">Notification Details</h3>
-<div class="w-full h-fit border-2 border-secondary-50 rounded my-4 flex flex-row items-center" data-notifications-target="notifications">
+<div class="w-full h-fit border-2 border-secondary-50 rounded mb-4 lg:my-2 flex flex-row items-center" data-notifications-target="notifications">
   <div class="flex-grow flex-col overflow-x-auto break-words p-3">
     <% talk = @notification.to_notification.talk %>
-    <div class="text-xs text-secondary font-bold italic my-2">Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </div>
-    <div class="text-xl text-primary font-black italic my-2"><%= "#{talk.full_time}" %> </div>
-    <div class="text-md text-secondary font-black italic"><%= "#{talk.talk_format.capitalize}" %> </div>
-    <div class="text-md text-secondary font-semibold italic my-2 w-full"><%= link_to "#{talk.title}", talk_path(talk)%> </div>
+    <div class="text-xs md:text-lg text-secondary font-bold italic my-2">Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </div>
+    <div class="text-xl md:text-2xl text-primary font-black italic my-2"><%= "#{talk.full_time}" %> </div>
+    <div class="text-2xl md:text-3xl text-secondary font-black italic"><%= "#{talk.talk_format.capitalize}" %> </div>
+    <div class="text-md md:text-xl text-secondary font-semibold italic my-2 w-full"><%= link_to "#{talk.title}", talk_path(talk)%> </div>
     <% talk.speakers.each do |s| %>
       <div class="flex flex-row items-center text-secondary my-2">
-        <div class="flex-none pl-2 pr-4  float-left w-1/6 lg:w-1/12">
-          <%= image_tag(s.image_filename, class: "rounded-full h-auto max-w-1") %>
+        <div class="flex-none pl-2 pr-4  float-left  ">
+          <%= image_tag(s.image_filename, class: "rounded-full h-[4rem] w-[4rem] lg:w-[6rem] lg:h-[6rem] object-cover") %>
         </div>
         <div class=" text-secondary">
           <p class="font-medium text-lg hover:"><%= link_to s.name, s %></p>
-          <p class="font-normal text-sm"><%= s.title %></p>
+          <p class="font-normal text-sm md:text-lg"><%= s.title %></p>
         </div>
       </div>
     <%end%>
-    <div class="text-md text-primary my-1 font-black italic"><%= "#{talk.location}" %></div>
+    <div class="text-md md:text-lg text-primary my-1 font-black italic"><%= "#{talk.location}" %></div>
+    <p class="my-2">
+        <% talk.tags.each do |t| %>
+          <strong class= "mr-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-semibold text-white text-center"><%= t.name %> </strong>
+        <% end %>
+    </p>
   </div>
 </div>
 

@@ -1,12 +1,12 @@
-<div class="w-full h-fit border-2 border-secondary rounded my-4 flex flex-row items-center" data-notifications-target="notifications">
+<div class="w-full h-fit border-2 border-secondary rounded my-4 flex flex-row items-center lg:text-left " data-notifications-target="notifications">
       <div class="flex-none pl-4">
-            <i class="fa-solid fa-stopwatch fa-2xl " style="color: #3B1D62"></i>
+            <i class="fa-solid fa-stopwatch fa-2xl lg:h-14 lg:px-4" style="color: #3B1D62"></i>
       </div>
       <div class="flex-grow flex-col overflow-x-auto break-words p-4">
             <% talk = notification.to_notification.talk %>
-            <div class="text-xs text-secondary font-bold"><em>Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </em></div>
-            <div class="text-md text-secondary font-bold"><em><%= "#{talk.full_time}" %></em></div>
-            <div class="text-xl text-primary font-bold"><em><%= link_to "#{talk.title}", user_notification_path(notification)%></em></div>
-            <div class="text-xs text-secondary font-bold"><em>Notification sent <%= time_ago_in_words(notification.created_at)%> ago</em></div>
+            <div class="text-xs lg:text-xl text-secondary font-bold"><em>Session starting in <%= distance_of_time_in_words(talk.start_time, Time.now) %> </em></div>
+            <div class="text-md lg:text-xl text-secondary font-bold"><em><%= "#{talk.full_time}" %></em></div>
+            <div class="text-xl lg:text-2xl text-primary font-bold"><em><%= link_to "#{talk.title}", user_notification_path(notification)%></em></div>
+            <div class="text-xs lg:text-lg text-secondary font-bold"><em>Notification sent <%= time_ago_in_words(notification.created_at)%> ago</em></div>
       </div>
 </div>

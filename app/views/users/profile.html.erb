@@ -1,85 +1,81 @@
-<div class="container">
+<div class="container text-center">
  <% if notice.present? %>
-    <p class="py-2 px-3 bg-secondary-50 mb-5 text-secondary-100 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <p class="py-2 px-3 bg-secondary-50 mb-5 text-secondary-100 font-medium rounded-lg inline-block align-center" id="notice"><%= notice %></p>
   <% end %>
-  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
-    <h2 class="block text-primary italic font-extrabold text-lg md:text-right mb-4 md:mb-0 pr-4">My Profile</h2>
-      <div class="field mb-2 w-full flex flex-col items-center justify-center">
-        <% if @user.profile_photo.representable? %>
-        <div class="flex-none">
-         <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] object-cover" %>
-         </div>
-        <%end%>
+  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+    <h2 class="block text-primary italic font-extrabold text-2xl mb-4  pr-4 sm:text-left lg:text-4xl text-left lg:text-left">My Profile</h2>
+      <div class="field my-2 w-full flex flex-col items-center justify-center">
+        <% if @user.profile_photo.attached? %>
+            <%= image_tag @user.profile_photo, class:"rounded-full h-[12rem] w-[12rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
+        <% else %>  
+            <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
+        <% end %>
 
-        <h1 class="mt-4 text-primary italic font-extrabold text-xl">
+        <h1 class="mt-2 text-primary italic font-extrabold text-xl lg:text-2xl">
         <%= @user.name %>
         </h1>
 
-        <h3 class="text-secondary font-bold text-lg italic">
+        <h3 class="text-secondary font-bold text-md italic">
         <%= @user.location%>
         </h3>
 
-        <p class="text-secondary italic font-bold text-sm my-2">
-        <i class="fa-solid fa-user"></i> 
-        Your profile is <%= @user.private ? "Private" : "Public"%> 
+        <p class="text-secondary italic font-bold text-sm p-1">
+            <i class="fa-solid fa-user"></i> 
+            Your profile is <%= @user.private ? "Private" : "Public"%> 
         </p>
       </div>
       <div>
         
       </div>
-      <div class="field mb-4 text-center text-secondary font-semibold text-md italic my-3">
+      <div class="field text-center text-secondary font-semibold text-md italic my-2">
         <%= @user.bio%>
       </div>
 
-      <div class="field mb-2">
-      
-      </div>
-
-      <div class="field my-3 flex justify-center">
+      <div class="field my-2 flex justify-center">
         <%if @user.github != "" %>
             <a href=<%="#{@user.github}"%> target="_blank">
-                <i class="fa-brands fa-github fa-2xl mx-3 h-12"  style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-github fa-2xl mx-3 h-12 lg:h-18"  style="color: #3B1D62;"></i>
             </a>
         <%end%> 
         <%if @user.linkedin != "" %> 
             <a href=<%="#{@user.linkedin}"%> target="_blank">
-                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12" style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 lg:h-18" style="color: #3B1D62;"></i>
             </a>
         <%end%>
         <%if @user.twitter != "" %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
-                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 lg:h-18" style="color: #3B1D62;"></i>
             </a>
         <%end%>
         <%if !@user.private %>
-            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18" style="color: #3B1D62;"></i>
         <%end%>
       </div>
 
    
    <div class="flex flex-col text-center">
 
-    <%= link_to talks_users_path, :class=>"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
-        <div class="flex flex-row justify-around items-center">
-            <i class="fa-solid fa-clock fa-2xl"></i>
-            <h3>My Schedule</h3>
-            <div></div>
+    <%= link_to talks_users_path, :class=>"bg-secondary hover:bg-primary text-white font-bold w-full  py-3 px-3 mx-auto md:w-3/4 italic my-2" do %>
+        <div class="flex flex-row justify-center items-center ">
+            <i class="fa-solid fa-clock fa-2xl flex-1"></i>
+            <h3 class=" ">My Schedule</h3>
+            <div class="flex-1"></div>
         </div>
     <%end%>
    
-    <%= link_to talks_path, :class => "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
-        <div class="flex flex-row justify-around items-center">
-            <i class="fa-solid fa-calendar-days fa-2xl"></i>
-            <h3>Agenda</h3>
-            <div></div>
+    <%= link_to talks_path, :class => "bg-secondary hover:bg-primary text-white font-bold w-full  py-3 px-3 mx-auto md:w-3/4 italic my-2" do %>
+        <div class="flex flex-row justify-center items-center">
+            <i class="fa-solid fa-calendar-days fa-2xl flex-1"></i>
+            <h3 class="">Agenda</h3>
+            <div class="flex-1"></div>
         </div>
     <%end%>
 
-    <%= link_to edit_user_registration_path, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" do %>
-        <div class="flex flex-row justify-around items-center">
-            <div></div>
+    <%= link_to edit_user_registration_path, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 mx-auto md:w-3/4 w-full italic my-2" do %>
+        <div class="flex flex-row justify-center items-center">
+            <div class="flex-1"></div>
             <h3>Edit Profile</h3>
-            <div></div>
+            <div class="flex-1"></div>
         </div>
     <%end%>
     </div>

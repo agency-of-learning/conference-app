@@ -4,7 +4,7 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <h1 class="font-black italic text-2xl text-primary mb-4 italic">Session Details</h1>
+    <h1 class="font-black text-2xl text-primary mb-4 italic">Session Details</h1>
 
     <p class="my-4">
       <strong class="block font-bold text-xl text-secondary"> <%= @talk.title %> </strong>
@@ -14,7 +14,7 @@
         <% @talk.tags.each do |t| %>
           <strong class= "mr-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-semibold text-white text-center"><%= t.name %> </strong>
         <% end %>
-      </p>
+    </p>
 
     <section>
       <div class="flex flex-row items-center">
