@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  validates :linkedin, url: { host: /linkedin\.com\Z/ }
+  validates :github, url: { host: /github\.com\Z/ }
+  validates :twitter, url: { host: /twitter\.com\Z/ }
+  
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
@@ -8,6 +13,7 @@ class User < ApplicationRecord
   has_many :talks_users, dependent: :destroy, class_name: "TalkUser"
   has_many :talks, through: :talks_users
 
+  has_one_attached :profile_photo
 
   enum :role, attendee: 0, admin: 1
 

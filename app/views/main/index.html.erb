@@ -1,9 +1,12 @@
 <% if !current_user %>
-
-    <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
-        <%= render "shared/flash_messages" %>
+ <div class="bg-secondary h-screen text-white">
+    <div class="container mx-auto px-6 pt-20 ">
+        <div class="flex min-h-full flex-col justify-center lg:px-8">
+            <div id="flash" class="empty:hidden px-4 flex justify-center my-1">
+                <%= render "shared/flash_messages" %>
+            </div>
+            <%= render "sign_up_login" %>
+        </div>
     </div>
-
-    <%= render "sign_up_login" %>
+</div>
 <%end%>
-

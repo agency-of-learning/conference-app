@@ -12,17 +12,18 @@
   </head>
 
   <body>
-    <% if current_user %>
-        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %>
+    <% if current_user && !controller.action_name.include?("onboarding")%>
+        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %> <%# TODDO MOVE THESE SOMEWHERE ELSE%>
         <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
         <%= turbo_stream_from dom_id(current_user, :menu_to) %>
-    
       <%= render "shared/navbar" %>
-     <% end %>
-    <div class="container mx-auto px-6 pt-24">
-      <div class="flex min-h-full flex-col justify-center lg:px-8">
-      <%= yield %>
+    <div class="container mx-auto px-6 pt-20">
+      <div class="flex min-h-full w-full flex-col justify-center lg:px-8">
+        <%= yield %>
       </div>
-    </div>
+    </div>  
+     <%else%>
+        <%= yield %>
+    <% end %> 
   </body>
 </html>

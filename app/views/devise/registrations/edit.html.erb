@@ -1,11 +1,24 @@
-<div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
-  <h2 class="block text-black-500 font-bold md:text-right mb-4 md:mb-0 pr-4">Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="mt-0 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
+  <h2 class="block text-primary italic font-extrabold text-lg w-full md:text-left mb-2 md:mb-4 md:text-2xl">Edit My Profile</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+    <div  data-controller="onboarding" class="field mb-2 w-full flex flex-col items-center justify-center">
+      <%= f.label(:profile_photo) do %>
+      <div data-onboarding-target="icon">
+        <%= svg "photo" %>
+      </div>
+        <%= f.file_field :profile_photo, autofocus: true, data: {onboarding_target: "image", action: "input->onboarding#upload"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%end %>
+      <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= @user.name %></h1>
+    </div>
 
     <div class="field mb-2">
-      <%= f.label :email , class: "block text-gray-700 text-sm font-bold "%><br />
+      <%= f.label :name , class: "block text-primary italic text-sm font-bold mb-2"%>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="field mb-2">
+      <%= f.label :email , class: "block text-primary italic text-sm font-bold mb-2"%>
       <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
@@ -13,29 +26,50 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
+      <div class="field mb-2">
+        <%= f.label :bio , class: "block text-primary italic text-sm font-bold mb-2"%>
+        <%= f.text_area :bio, autofocus: true, size: "5x4", placeholder: "Short Bio", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="field mb-2">
+        <%= f.label :location , class: "block text-primary italic text-sm font-bold mb-2"%>
+        <%= f.text_field :location, autofocus: true, placeholder: "Location",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="field mb-2">
+         <%= f.label "Social Links" , class: "block text-primary italic text-sm font-bold mb-2"%>
+          <%= f.text_field :github, autofocus: true, placeholder: "Add Your Github Here",  class: "shadow appearance-none border rounded w-full py-2 px-3  my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+          <%= f.text_field :linkedin, autofocus: true, placeholder: "Add Your LinkedIn Here",  class: "shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+          <%= f.text_field :twitter, autofocus: true, placeholder: "Add Your Twitter/X/Other Here",  class: "shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+   
+    <div class="flex justify-between mb-2">
+          <%= f.label "Keep Profile Private", class: "text-secondary font-extrabold italic" %>
+          <%= f.check_box :private, as: :boolean, class: "#{ !@user.private? ? 'bg-secondary-100' : 'bg-gray-200' } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
+            <span class="sr-only">Private</span>
+            <span aria-hidden="true" class="translate-x-0 <%= !@user.private? ? 'translate-x-5 bg-primary' : 'translate-x-0' %>  pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+         <% end %>
+    </div>
+
     <div class="field mb-2">
-      <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, class: "block text-primary italic text-sm font-bold mb-2" %> <i>(leave blank if you don't want to change it)</i>
       <%= f.password_field :password, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       <% if @minimum_password_length %>
-        <br />
         <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
     </div>
 
     <div class="field mb-2">
-      <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %><br />
+      <%= f.label :password_confirmation, class: "block text-primary italic text-sm font-bold mb-2" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
+   
 
-    <div class="field mb-2">
-      <%= f.label :current_password, class: "block text-gray-700 text-sm font-bold mb-2" %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-    </div>
-
-    <div class="actions mb-4">
-      <%= f.submit "Update", :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    <div class="flex flex-col text-center">
+      <%= f.submit "Save Changes", class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" %>
+      <%= link_to "Back", :back, data: { turbo_frame: "_top" }, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3" %>
     </div>
   <% end %>
-
-  <%= link_to "Back", :back, :class => "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit" %>
+ 
 </div>
