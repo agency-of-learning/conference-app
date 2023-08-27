@@ -46,7 +46,7 @@
    
     <div class="flex justify-between mb-2">
           <%= f.label "Keep Profile Private", class: "text-secondary font-extrabold italic" %>
-          <%= f.check_box :private, as: :boolean, class: "#{ !@user.private? ? 'bg-secondary-100' : 'bg-gray-200' } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
+          <%= f.check_box :private, as: :boolean, class: "#{ !@user.private? ? 'bg-secondary-50' : 'bg-gray-200' } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
             <span class="sr-only">Private</span>
             <span aria-hidden="true" class="translate-x-0 <%= !@user.private? ? 'translate-x-5 bg-primary' : 'translate-x-0' %>  pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
          <% end %>
