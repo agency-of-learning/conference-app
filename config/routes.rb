@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   resources :talks_users
 
   authenticated :user do
-    root to: "talks#index", as: :user_root
+    root to: "talks_users#index", as: :user_root
   end
 
   root to: "main#index"

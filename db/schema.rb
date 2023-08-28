@@ -127,7 +127,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_204026) do
     t.string "github"
     t.string "linkedin"
     t.string "twitter"
-    t.boolean "private"
+    t.boolean "private", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

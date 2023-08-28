@@ -6,6 +6,6 @@ class AddDetailsToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :github, :string
     add_column :users, :linkedin, :string
     add_column :users, :twitter, :string
-    add_column :users, :private, :boolean
+    add_column :users, :private, :boolean, default: true 
   end
 end
