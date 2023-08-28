@@ -29,8 +29,9 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
           </div>
 
-          <div class="actions mb-4">
+          <div class="actions mb-4 w-full flex flex-col text-center">
             <%= f.submit "Sign up",:class => "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
+            <%= link_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-2") %>
           </div>
         <% end %>
      </div>
