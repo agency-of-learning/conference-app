@@ -13,7 +13,7 @@
             <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
         <% end %>
 
-        <h1 class="mt-2 text-primary italic font-extrabold text-xl lg:text-2xl">
+        <h1 class="mt-4 text-primary italic font-extrabold text-xl lg:text-2xl">
         <%= @user.name %>
         </h1>
 
@@ -45,8 +45,20 @@
                 <i class="fa-brands fa-twitter fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
             </a>
         <%end%>
-        <%if !@user.private %>
-            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+        <%if !@user.private && @user.qrcode.attached?  %>
+        <div data-controller="dialog">
+          <button data-action="click->dialog#open">
+            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18" style="color: #3B1D62;"></i>
+          </button>
+          <dialog data-dialog-target="modal" class="backdrop:bg-secondary-50 backdrop:opacity-80 w-full md:w-1/4">
+            <div class="p-4 bg-secondary justify-center">
+              <p><%= image_tag(url_for(@user.qrcode), class:"mx-auto w-full")%></p>
+              <form>
+                <button formmethod="dialog" class="text-secondary-50 italic font-extrabold text-2xl mt-4">Close</button>
+              </form>
+            </div>
+          </dialog>
+        </div>
         <%end%>
       </div>
 
