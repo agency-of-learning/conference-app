@@ -1,22 +1,14 @@
-<nav class=" bg-white flex justify-between items-center fixed w-full px-2 py-2 z-10">
+<nav class=" bg-white flex justify-between items-center fixed w-full px-2 py-2 z-10 top-0 left-0 right-0">
   <div class="sm:mb-0 flex w-full mt-3">
    <a href="/" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">
         <%= inline_svg_tag "rails_world_nav_logo.svg", size: "100% * 100%", class:"lg:w-96 w-full" %>
     </a>
   </div>
 
-  <div class="">
+  <div class="w-full">
     <ul class="menu menu-horizontal px-1 hidden lg:flex space-x-2 items-center">
         <% if current_user %>
-            <li><span class="text-lg no-underline text-white font-extrabold italic mx-2 py-2 px-4">Welcome <%= "#{current_user.role}" %>!</span>
-            </li>
             <li>
-                <%= link_to 'Home', root_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4 ' %>
-            </li>
-            <li>
-                <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
-            </li>
-             <li>
                  <div class='flex flex-row bg-secondary hover:bg-primary text-white font-bold py-1.5 px-4'>
                              <%= tag.div id: :notifications_count do %>
                                 <%= render "notifications/count", count: current_user.unread_notifications_count %>
@@ -25,10 +17,20 @@
                 </div>
             </li>
             <li>
-                <%= link_to 'Profile', user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4' %>   
+                <%= link_to 'My Schedule', talks_users_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4 w-96 whitespace-nowrap' %>   
             </li>
             <li>
-            <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-secondary-100 hover:bg-primary text-white font-bold py-2 px-4")%>
+                <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
+            </li>
+            <li>
+                <%= link_to 'Notification Settings', notification_settings_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
+            </li>
+             
+            <li>
+                <%= link_to 'Profile', user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
+            </li>
+            <li>
+            <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "bg-secondary-100 hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap")%>
             </li>
         <% end %>
     </ul>
