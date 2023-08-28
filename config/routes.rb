@@ -1,9 +1,10 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
-  resources :speakers
-  resources :talks
-
-  get 'about', to: 'about#index'
+  
+  #Talks and Speakers
+  resources :speakers, :only => [:show]
+  resources :talks, :only => [:index, :show]
+  resources :talks_users, :only => [:index, :create, :destroy]
   
   #Notifications
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
@@ -32,18 +33,21 @@ Rails.application.routes.draw do
     resources :notifications 
   end 
 
-  resources :talks_users
-
   authenticated :user do
     root to: "talks#index", as: :user_root
   end
 
-  root to: "main#index"
-
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount Sidekiq::Web => '/sidekiq'
   end
+
+  root to: "main#index"
+
+  #About Page
+  get 'about', to: 'about#index'
   
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+  get '*pages', to: 'talks#index', format: false
 
 end
