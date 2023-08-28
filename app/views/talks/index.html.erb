@@ -6,10 +6,6 @@
 
     <div class="flex justify-between items-center">
       <h1 class="font-black italic text-2xl text-primary mb-6">Agenda</h1>
-      
-      <% if current_user&.admin? %> <%# TODO add route controlls for unauthenticated users %>
-        <%= link_to 'New talk', new_talk_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-      <% end %>
     </div>
 
     <div id="talks" class="min-w-full">
@@ -17,3 +13,4 @@
     </div>
   </div>
 </div>
+<%= render "shared/footer" %>

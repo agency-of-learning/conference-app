@@ -2,6 +2,8 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :speakers
   resources :talks
+
+  get 'about', to: 'about#index'
   
   #Notifications
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all
