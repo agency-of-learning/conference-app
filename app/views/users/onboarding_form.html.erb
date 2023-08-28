@@ -41,10 +41,10 @@
             <span aria-hidden="true" class="translate-x-0 <%= !@user.private? ? 'translate-x-5 bg-primary' : 'translate-x-0 bg-primary' %>  pointer-events-none inline-block h-5 w-5 transform rounded-full accent-primary shadow ring-0 transition duration-200 ease-in-out"></span>
          <% end %>
         </div>
-   
+  
 
       <div class="actions my-6">
-        <%= f.submit "Done", class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
+        <%= f.submit "Done", class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic", data:{controller: "confetii", action: "click->confetti#spray", "animation-value":"basic"} %>
       </div>
     <% end %>
 

@@ -1,12 +1,15 @@
-<div class="container text-center">
+<div class="container text-center mt-8 ">
  <% if notice.present? %>
     <p class="py-2 px-3 bg-secondary-50 mb-5 text-secondary-100 font-medium rounded-lg inline-block align-center" id="notice"><%= notice %></p>
   <% end %>
-  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+  <div  class=" px-6 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
     <h2 class="block text-primary italic font-extrabold text-2xl mb-4  pr-4 sm:text-left lg:text-4xl text-left lg:text-left">My Profile</h2>
       <div class="field my-2 w-full flex flex-col items-center justify-center">
         <% if @user.profile_photo.attached? %>
+        <a data-controller="confetti" data-action="click->confetti#schoolPride" data-animation-value="school-pride" data-confetti-first-color-value="#CC0000" 
+        data-confetti-second-color-value="#3B1D62" data-duration-value="10" data-confetti-debug-value="true">
             <%= image_tag @user.profile_photo, class:"rounded-full h-[12rem] w-[12rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
+        </a>
         <% else %>  
             <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
         <% end %>
@@ -86,7 +89,7 @@
     <%= link_to edit_user_registration_path, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 mx-auto md:w-3/4 w-full italic my-2" do %>
         <div class="flex flex-row justify-center items-center">
             <div class="flex-1"></div>
-            <h3>Edit Profile</h3>
+            <h3>Edit Profile / Settings</h3>
             <div class="flex-1"></div>
         </div>
     <%end%>
