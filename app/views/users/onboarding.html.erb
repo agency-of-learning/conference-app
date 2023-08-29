@@ -1,19 +1,7 @@
 <%= render 'shared/onboarding_header'%>
-<div class="" data-controller="decorator">
+<div>
     <div class="bg-white w-full h-full flex flex-col p-4 justify-center text-center">
-        <a data-decorator-target="anchor"
-        href="<%=onboarding_form_path%>"
-        data-controller="confetti"
-        data-action="click->confetti#schoolPride click->decorator#submit"  
-        data-animation-value="school-pride" 
-        data-duration-value="50"
-        data-confetti-first-color-value="#CC0000" 
-        data-confetti-second-color-value="#3B1D62" 
-        data-confetti-follow-value="false"
-        class="w-full mx-auto lg:w-1/2 lg:text-2xl p-8 my-4 bg-primary no-underline block italic font-bold text-white whitespace-nowrap">
-        
-        Create Shareable Profile
-        </a>
+        <%= button_to "Create Shareable Profile", onboarding_form_path, method: :get, class:"w-full mx-auto lg:w-1/2 lg:text-2xl p-8 my-4 bg-primary no-underline block italic font-bold text-white whitespace-nowrap"%>
         <%= button_to("Skip For Now", root_path, method: :get, :class => "w-full mx-auto lg:w-1/2 lg:text-2xl p-8 my-4 bg-secondary-100 no-underline block italic font-bold text-white whitespace-nowrap")%> 
     </div>
 </div>

@@ -55,11 +55,11 @@
           <button data-action="click->dialog#open">
             <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18" style="color: #3B1D62;"></i>
           </button>
-          <dialog data-dialog-target="modal" class="backdrop:bg-secondary-50 backdrop:opacity-80 w-full md:w-1/4">
+          <dialog data-dialog-target="modal" class="backdrop:bg-white backdrop:opacity-80 w-full md:w-1/4">
             <div class="p-4 bg-secondary justify-center">
               <p><%= image_tag(url_for(@user.qrcode), class:"mx-auto w-full")%></p>
               <form>
-                <button formmethod="dialog" class="text-secondary-50 italic font-extrabold text-2xl mt-4">Close</button>
+                <button formmethod="dialog" class="text-white italic font-extrabold text-2xl mt-4">Close</button>
               </form>
             </div>
           </dialog>

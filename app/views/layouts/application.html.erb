@@ -17,13 +17,19 @@
         <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
         <%= turbo_stream_from dom_id(current_user, :menu_to) %>
       <%= render "shared/navbar" %>
-    <div class="container mx-auto px-6 pt-20">
+    <div class="container mx-auto px-6 pt-20 min-h-[90vh]">
       <div class="flex min-h-full w-full flex-col justify-center lg:px-8">
         <%= yield %>
       </div>
-    </div>  
-     <%else%>
-        <%= yield %>
+    </div> 
+    <div class="footer px-4">
+      <% if controller.controller_name != "about" %>
+        <%= render "shared/footer" %> 
+      <% end %>
+    </div>
+    <%# Else Yield the Non-Signed-In User View %>
+    <% else %>
+      <%= yield %>
     <% end %> 
   </body>
 </html>
