@@ -1,5 +1,3 @@
-require "faker"
-
 puts "Creating Speaker List"
 
 Speaker.create!([
@@ -105,12 +103,11 @@ Speaker.create!([
     name: "Christian Bruckmayer",
     title: "Staff Engineer, Shopify",
     bio:
-      %{ Christian Bruckmayer is originally from Nuremberg, Germany,
-          although now calls the South West of England home.
-          In his day job, he makes commerce better for everyone at Shopify.
-          For more than a decade, he has been an avid open source contributor hacking for instance on JRuby, openSUSE Linux or various (Ruby) gems.
+      %{Christian Bruckmayer is originally from Nuremberg, Germany, although now calls the South West of England home. 
+        In his day job, he makes commerce better for everyone at Shopify. For more than a decade, he has been an avid 
+        open source contributor hacking for instance on JRuby, openSUSE Linux or various (Ruby) gems.
 
-          If he's not hacking Ruby, he loves spending quality time with his family, including his daughter.
+        If he's not hacking Ruby, he loves spending quality time with his family, including his daughter.
       }.squish,
     image_filename: "c-bruckmeyer.jpeg",
     github: "https://github.com/ChrisBr",
@@ -469,7 +466,7 @@ puts "Creating talks list"
 
   Talk.create!([
     {
-      title: "Early Registration",
+      title: "Registration Opens",
       location: "Beurs van Berlage",
       start_time: Time.zone.parse("2023-10-04 16:00:00"),
       talk_format: "social",
@@ -481,15 +478,14 @@ puts "Creating talks list"
     },
 
     {
-      title: "Sponsored Drinks",
-      location: "TBD",
+      title: "Pre-Event Drinks sponsored by Clear Code Wizards",
+      location: "Bar Jones, Nes 33",
       start_time: Time.zone.parse("2023-10-04 17:00:00"),
       talk_format: "social",
       duration: 180,
       description: 
-      %(Pre-event drinks sponsored by Clear Code Wizards. Badge required. 
-        One welcome drink per person on Clear Code Wizards until they run out of drink tokens, 
-        so be sure to come early after picking up your badge.
+      %(Pre-event drinks sponsored by Clear Code Wizards. One welcome drink per person courtesy of Clear Code Wizards 
+        until they run out of drink tokens, so be sure to come early after picking up your badge. Badge required for a token.
       ).squish
     }, 
 
@@ -498,7 +494,7 @@ puts "Creating talks list"
       location: "Sponsor Lounge",
       start_time: Time.zone.parse("2023-10-05 09:00:00"),
       talk_format: "social",
-      duration: 60,
+      duration: 45,
       description: 
       %(Rails World attendees are welcome to register, enter, and get breakfast before the keynote begins.
       ).squish
@@ -507,9 +503,9 @@ puts "Creating talks list"
     {
       title: "Opening Keynote",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 10:00:00"),
+      start_time: Time.zone.parse("2023-10-05 09:45:00"),
       talk_format: "keynote",
-      duration: 60,
+      duration: 75,
       description: 
       %(Opening Keynote
       ).squish
@@ -557,7 +553,7 @@ puts "Creating talks list"
       description: 
       %(At 37signals, we're working on a new product with some special needs regarding UI interactivity and fidelity.
 
-        Based on the previous experience with HEY - the product that helped shape Hotwire itself – and the new app's 
+        Based on the previous experience with HEY - the product that helped shape Hotwire itself - and the new app's 
         particular needs, we developed a little Turbo addition that we believe can make a big difference for everyone.
         
         In this talk, we'll present the problem we are solving, where we are coming from, and where we landed. 
@@ -641,17 +637,19 @@ puts "Creating talks list"
       talk_format: "workshop",
       duration: 60,
       description: 
-      %(The simplest way of running tests is to run all of them, regardless of what changes you are testing. 
-        However, depending on the size of your test suite, this will either get slow or expensive. 
-        At Shopify we have almost 300,000 Rails tests and we add 50,000 more annually. The sheer amount of tests 
-        and their growth makes it impossible to run all tests, all the time! Hence we implemented a framework to 
-        only run tests relevant to your code changes.
+      %(The simplest way of running tests is to run all of them, regardless of what changes you are testing. However, 
+        depending on the size of your test suite, this will either get slow or expensive. At Shopify we have almost 300,000 
+        Rails tests and we add 50,000 more annually. The sheer amount of tests and their growth makes it impossible to run 
+        all tests, all the time! Hence we implemented a framework to only run tests relevant to your code changes.
 
-        We will build a test selection framework from scratch in this workshop. We will begin by exploring the 
-          fundamentals of such a framework: code analysis. After that we will dive into minitest reporters, 
-          how they work and how we can use them to generate a test map. Finally we will use the generated 
-          test map to only run tests relevant to your code changes. Attendees will walk away with a solid 
-          understanding of what test selection is, how it works and how to implement it.
+        We will build a test selection framework from scratch in this workshop. We will begin by exploring the fundamentals 
+          of such a framework: code analysis. After that we will dive into minitest reporters, how they work and how we can 
+          use them to generate a test map. Finally we will use the generated test map to only run tests relevant to your code 
+          changes. Attendees will walk away with a solid understanding of what test selection is, how it works and how to 
+          implement it.
+        
+        Please register for this workshop here (https://ti.to/rails-world/rails-world-workshops-2023). 
+        Please only register if you truly intend to show up, as space is limited.
       ).squish
     },
 
@@ -724,20 +722,21 @@ puts "Creating talks list"
       description: 
       %(Presented by Cynthia Lo and Sean Marcia. This workshop will be given once per day.
 
-        Are you intrigued by all the chatter around AI-powered tools like ChatGPT and CoPilot? 
-        Then our workshop is the perfect place for you to learn and understand these tools hands-on. 
-        We'll walk through practical applications of these tools and you'll be using them to add features, tests, 
-        and fix bugs in a real-world application - no contrived demos here!
+        Are you intrigued by all the chatter around AI-powered tools like ChatGPT and CoPilot? Then our workshop 
+        is the perfect place for you to learn and understand these tools hands-on. We'll walk through practical 
+        applications of these tools and you'll be using them to add features, tests, and fix bugs in a real-world 
+        application - no contrived demos here!
         
         Don't forget to bring your laptop to this workshop, as there is no better way to learn than by doing. 
         And you'll definitely be doing!
         
-        Note: Registration for this workshop will open in September, and space is limited.
-        
         To participate, advance registration and setup is required. Workshop attendees will be invited to a 
-        GitHub repo and given free access to Copilot for this workshop. Before the workshop begins, you will need 
-        to install vscode and the correct versions of Ruby, Rails, and other various gems. The workshop presenters 
-        will send all registered attendees instructions before Rails World.
+        GitHub repo and given free access to Copilot for this workshop. Before the workshop begins, you will 
+        need to install vscode and the correct versions of Ruby, Rails, and other various gems. 
+        The workshop presenters will send all registered attendees instructions before Rails World.
+        
+        Please register for this workshop here (https://ti.to/rails-world/rails-world-workshops-2023). Please only register 
+        if you truly intend to show up, as space is limited.
       ).squish
     },
 
@@ -860,9 +859,11 @@ puts "Creating talks list"
       location: "TBD",
       start_time: Time.zone.parse("2023-10-06 08:00:00"),
       talk_format: "social",
-      duration: 120,
+      duration: 90,
       description: 
-      %(A networking breakfast for women and non-binary Rails World attendees. Hosted by WNB.rb and sponsored by Shopify.
+      %(A networking breakfast for women and non-binary Rails World attendees. 
+        Hosted by WNB.rb and sponsored by Shopify. The location of this breakfast will be shared with 
+        registered attendees. Badge required. 
       ).squish
     },
 
@@ -871,24 +872,24 @@ puts "Creating talks list"
       location: "Sponsor Lounge",
       start_time: Time.zone.parse("2023-10-06 09:00:00"),
       talk_format: "social",
-      duration: 60,
+      duration: 45,
       description: 
-      %(Rails World attendees are welcome to register, enter, and get breakfast before the keynote begins.
+      %(Rails World attendees are welcome to register, enter, and get breakfast before we begin.
       ).squish
     },
 
     {
-      title: "Future of Developer Acceleration with Rails",
+      title: "Day 2 Opening Session - Rails Core AMA",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 10:00:00"),
+      start_time: Time.zone.parse("2023-10-06 09:45:00"),
       talk_format: "keynote",
-      duration: 60,
+      duration: 75,
       description: 
-      %(What would development be like if Rails had tight integration with Language Servers? 
-        In this presentation we'll look at how language servers work, how we can improve language server support in Rails, 
-        and how this will increase our productivity as Rails developers. We'll dive in to the implementation details 
-        of a language server, what needs to be done in Rails to support language servers, and how we as Rails developers 
-        can make better use of LSPs to boost our productivity.
+      %(Day 2 of Rails World will kick off with an AMA panel featuring the Rails Core.
+
+        Have burning questions about the latest version of Rails, best practices, upcoming enhancements, 
+        or the team's favorite hacks? https://app.todohelpers.com/forms/b97f02c5-0a40-4d76-84ca-8b1f7247e719 
+        Submit your questions here by September 30
       ).squish
     },
 
@@ -1035,20 +1036,21 @@ puts "Creating talks list"
       description: 
       %(Presented by Cynthia Lo and Sean Marcia. This workshop will be given once per day.
 
-        Are you intrigued by all the chatter around AI-powered tools like ChatGPT and CoPilot? Then our workshop is the 
-        perfect place for you to learn and understand these tools hands-on. We'll walk through practical applications of 
-        these tools and you'll be using them to add features, tests, and fix bugs in a real-world application - no contrived 
-        demos here!
+        Are you intrigued by all the chatter around AI-powered tools like ChatGPT and CoPilot? Then our workshop 
+        is the perfect place for you to learn and understand these tools hands-on. We'll walk through practical 
+        applications of these tools and you'll be using them to add features, tests, and fix bugs in a real-world 
+        application - no contrived demos here!
         
-        Don't forget to bring your laptop to this workshop, as there is no better way to learn than by doing. And you'll 
-        definitely be doing!
+        Don't forget to bring your laptop to this workshop, as there is no better way to learn than by doing. 
+        And you'll definitely be doing!
         
-        Note: Registration for this workshop will open in September, and space is limited.
+        To participate, advance registration and setup is required. Workshop attendees will be invited to a 
+        GitHub repo and given free access to Copilot for this workshop. Before the workshop begins, you will 
+        need to install vscode and the correct versions of Ruby, Rails, and other various gems. 
+        The workshop presenters will send all registered attendees instructions before Rails World.
         
-        To participate, advance registration and setup is required. Workshop attendees will be invited to a GitHub repo 
-        and given free access to Copilot for this workshop. Before the workshop begins, you will need to install vscode 
-        and the correct versions of Ruby, Rails, and other various gems. The workshop presenters will send all registered 
-        attendees instructions before Rails World.
+        Please register for this workshop here (https://ti.to/rails-world/rails-world-workshops-2023). Please only register 
+        if you truly intend to show up, as space is limited.
       ).squish
     },
 
@@ -1174,13 +1176,17 @@ puts "Creating talks list"
     },
 
     {
-      title: "Day 2 Closing Session - TBD",
+      title: "Closing Keynote: Future of Developer Acceleration with Rails",
       location: "Track 1",
       start_time: Time.zone.parse("2023-10-06 16:30:00"),
       talk_format: "keynote",
       duration: 45,
       description: 
-      %(More information to follow.
+      %(What would development be like if Rails had tight integration with Language Servers? 
+        In this presentation we'll look at how language servers work, how we can improve language server 
+        support in Rails, and how this will increase our productivity as Rails developers. 
+        We'll dive in to the implementation details of a language server, what needs to be done in Rails 
+        to support language servers, and how we as Rails developers can make better use of LSPs to boost our productivity.
       ).squish
     },
 
@@ -1194,6 +1200,29 @@ puts "Creating talks list"
       %(Join us for the closing party of the first edition of Rails World. Let's celebrate the first 20 years of Ruby on Rails, 
         and look into the future at the next 20 years and beyond.
       ).squish
+    },
+
+    {
+      title: "Test Smarter, Not Harder: Crafting a Test Selection Framework from Scratch",
+      location: "Workshop Hall",
+      start_time: Time.zone.parse("2023-10-06 15:00:00"),
+      talk_format: "workshop",
+      duration: 60,
+      description: 
+      %(The simplest way of running tests is to run all of them, regardless of what changes you are testing. However, 
+        depending on the size of your test suite, this will either get slow or expensive. At Shopify we have almost 300,000 
+        Rails tests and we add 50,000 more annually. The sheer amount of tests and their growth makes it impossible to run 
+        all tests, all the time! Hence we implemented a framework to only run tests relevant to your code changes.
+
+        We will build a test selection framework from scratch in this workshop. We will begin by exploring the fundamentals 
+          of such a framework: code analysis. After that we will dive into minitest reporters, how they work and how we can 
+          use them to generate a test map. Finally we will use the generated test map to only run tests relevant to your code 
+          changes. Attendees will walk away with a solid understanding of what test selection is, how it works and how to 
+          implement it.
+        
+        Please register for this workshop here (https://ti.to/rails-world/rails-world-workshops-2023). 
+        Please only register if you truly intend to show up, as space is limited.
+      ).squish
     }
     ])
 
@@ -1204,7 +1233,7 @@ puts "Creating speakers_talks relationships"
   SpeakerTalk.create!([
     {
       speaker_id: 1,
-      talk_id: 24
+      talk_id: 39
     },
 
     {
@@ -1240,6 +1269,11 @@ puts "Creating speakers_talks relationships"
     {
       speaker_id: 8,
       talk_id: 12
+    },
+
+    {
+      speaker_id: 8,
+      talk_id: 41
     },
 
     {
@@ -1534,15 +1568,6 @@ puts "Finished Creating tags list"
 puts "Creating TagTalk Relationships"
 
 TagTalk.create!([
-  {
-    talk_id: 2, 
-    tag_id: 1
-  },
-
-  {
-    talk_id: 3, 
-    tag_id: 1
-  },
 
   {
     talk_id: 4, 
@@ -1592,11 +1617,6 @@ TagTalk.create!([
   {
     talk_id: 8, 
     tag_id: 10
-  },
-
-  {
-    talk_id: 9, 
-    tag_id: 1
   },
 
   {
@@ -1715,18 +1735,18 @@ TagTalk.create!([
   },
 
   {
-    talk_id: 21, 
-    tag_id: 1
-  },
-
-  {
-    talk_id: 23, 
-    tag_id: 1
+    talk_id: 24, 
+    tag_id: 23
   },
 
   {
     talk_id: 24, 
-    tag_id: 2
+    tag_id: 24
+  },
+
+  {
+    talk_id: 24, 
+    tag_id: 16
   },
 
   {
@@ -1772,11 +1792,6 @@ TagTalk.create!([
   {
     talk_id: 28, 
     tag_id: 8
-  },
-
-  {
-    talk_id: 29, 
-    tag_id: 1
   },
 
   {
@@ -1869,7 +1884,6 @@ TagTalk.create!([
     tag_id: 31
   },
 
-
   {
     talk_id: 37, 
     tag_id: 2
@@ -1897,24 +1911,13 @@ TagTalk.create!([
 
   {
     talk_id: 39, 
-    tag_id: 23
+    tag_id: 2
   },
 
   {
-    talk_id: 39, 
-    tag_id: 24
-  },
-
-  {
-    talk_id: 39, 
-    tag_id: 16
-  },
-
-  {
-    talk_id: 40, 
-    tag_id: 1
+    talk_id: 41, 
+    tag_id: 14
   }
-
 ])
 
 puts "Finished creating TagTalk relationships"
