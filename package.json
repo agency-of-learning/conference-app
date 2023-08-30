@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "debounce": "^1.2.1",
+    "stimulus-confetti": "^1.0.1",
     "tailwindcss-stimulus-components": "^3.0.4"
   }
 }

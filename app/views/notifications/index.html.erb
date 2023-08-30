@@ -1,49 +1,51 @@
+<div class="mx-auto md:w-2/3 w-full flex"class="min-w-full" data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white" data-tabs-inactive-tab="bg-secondary-50">
+  <div class="w-full">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
 
-
-<div class="lg:items-center flex flex-col justify-center self-center w-full" data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white" data-tabs-inactive-tab="bg-secondary-50">
- 
-  <p style="color: green"><%= notice %></p>
-  <div class="flex flex-row justify-between items-center mb-4">
-    <h1 class="font-extrabold text-2xl lg:text-4xl lg:font-black text-primary"><em>Notifications</em></h1>
-  </div>
-
- <ul class="list-reset flex justify-center lg:w-2/3 ">
-    <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
-      <a class="inline-block py-3 px-6 mx-10 text-white text-xl lg:py-4 font-semibold no-underline" href="#"><em>Unread</em></a>
-    </li>
-    <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-3 px-6 mx-10 text-white text-xl   font-semibold no-underline" href="#"><em>Past</em></a>
-    </li>
-  </ul>
-
-  <div class="hidden lg:w-full lg:justify-center lg:text-center" data-tabs-target="panel" data-controller="notifications" data-notifications-unread-value=<%= @unread_notifications.count %> >
-    <div id="unread_notifications" class="px-4 py-4">
-    <%= turbo_stream_from dom_id(current_user, :notifications_to) %>
-      <%= tag.div id: :notifications_display, data: {"notifications-target" => "notifications"} do %>
-        <% @unread_notifications.each do |notification| %>
-          <%= render 'notification', notification: notification %>
-        <% end %>
-      <%end%>
+    <div class="flex justify-between items-center">
+      <h1 class="font-black italic text-2xl text-primary mb-6">Notifications</h1>
     </div>
-    <div>
-      <div class="hidden" data-notifications-target="read">
-      <%= form_tag(read_all_path, method: :post) do %>
-          <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 italic lg:text-xl lg:w-2/5" %>
-      <%end%>
+
+    <div id="">
+      <ul class="list-reset flex justify-center mb-2">
+        <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
+          <a class="inline-block py-3 px-6 mx-10 text-white text-xl lg:py-4 font-semibold no-underline" href="#"><em>Unread</em></a>
+        </li>
+        <li class="w-full text-center" data-tabs-target="tab" data-action="click->tabs#change">
+        
+          <a class="inline-block py-3 px-6 mx-10 text-white text-xl  font-semibold no-underline" href="#"><em>Past</em></a>
+        </li>
+      </ul>
+
+      <div class="hidden lg:w-full lg:justify-center lg:text-center" data-tabs-target="panel" data-controller="notifications" data-notifications-unread-value=<%= @unread_notifications.count %> >
+        <div id="unread_notifications" class="px-4 py-2">
+        <%= turbo_stream_from dom_id(current_user, :notifications_to) %>
+          <%= tag.div id: :notifications_display, data: {"notifications-target" => "notifications"} do %>
+            <% @unread_notifications.each do |notification| %>
+              <%= render 'notification', notification: notification %>
+            <% end %>
+          <%end%>
+        </div>
+        <div>
+          <div class="hidden" data-notifications-target="read">
+          <%= form_tag(read_all_path, method: :post) do %>
+              <%= submit_tag 'Mark As Read', class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 italic lg:text-xl lg:w-2/5 float-left" %>
+          <%end%>
+          </div>
+          <div class="hidden" data-notifications-target="none">
+            <h3 class="text-2xl font-bold italic text-secondary">No unread Notifications</h3>
+          </div>
+        </div>
       </div>
-      <div class="hidden" data-notifications-target="none">
-        <h3 class="text-2xl font-bold italic text-secondary">No unread Notifications</h3>
+      <div id="read_notifications" class="hidden lg:w-full lg:justify-center lg:text-center px-4 py-2" data-tabs-target="panel">
+        <%= turbo_stream_from "past_notifications" %>
+          <% @read_notifications.each do |notification| %>
+            <%= render 'notification', notification: notification %>
+          <% end %>
       </div>
     </div>
-    
   </div>
-
-  <div id="read_notifications" class="hidden lg:w-full lg:justify-center lg:text-center px-4 py-4" data-tabs-target="panel">
-    <%= turbo_stream_from "past_notifications" %>
-      <% @read_notifications.each do |notification| %>
-         <%= render 'notification', notification: notification %>
-      <% end %>
-  </div>
-
 </div>
 

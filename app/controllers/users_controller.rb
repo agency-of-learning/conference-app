@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:onboarding, :onboarding_form, :onboarding_preview, :profile]
-    
+    before_action :authenticate_user!, except: %i[show]
+
     def onboarding 
     end 
 
@@ -10,11 +11,18 @@ class UsersController < ApplicationController
     def onboarding_preview
     end 
 
-    def profile 
+    def profile
+        if request.referrer.include?("onboarding_preview")
+            flash[:notice] = "Welcome to the Rails World Conference App!"
+        end 
     end 
 
     def show 
+        #TO DO: After Installing Pundit, utilize it here!!!
         @user = User.find(params[:id])
+        if @user.private?
+            redirect_to root_path 
+        end 
     end 
 
     private 

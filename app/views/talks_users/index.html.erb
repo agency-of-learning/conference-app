@@ -7,11 +7,17 @@
     <div class="flex justify-between items-center">
       <h1 class="font-black text-2xl text-primary mb-6 italic">My Schedule</h1>
     </div>
-
+  <% if current_user.talks.size > 0 %>
     <div id="talks" class="min-w-full">
       <%= render "shared/tabs_upcoming" %>
     </div>
+  <% else %>
+    <div class="flex flex-col min-w-full">
+      <p class="text-secondary font-medium text-lg italic">You have not yet added any events to your schedule, you can add them by going to Agenda</p><br/>
+      <%= link_to 'Go to Agenda', talks_path, class:"bg-secondary hover:bg-primary text-white font-bold py-4 px-4 mt-4 italic lg:text-xl w-full text-center" %>
+    </div>
+  <% end %>  
   </div>
   </div>
 </div>
-<%= render "shared/footer" %>
+<%#= render "shared/footer" %>

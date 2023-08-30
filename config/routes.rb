@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   end 
 
   authenticated :user do
-    root to: "talks#index", as: :user_root
+    root to: "talks_users#index", as: :user_root
   end
 
   authenticate :user, lambda { |u| u.role == "admin" } do

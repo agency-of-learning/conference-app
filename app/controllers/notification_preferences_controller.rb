@@ -1,6 +1,7 @@
 class NotificationPreferencesController < ApplicationController
   before_action :set_user 
-
+  before_action :authenticate_user!
+  
   def notification_settings 
     @user = current_user
   end 
