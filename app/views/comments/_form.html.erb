@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :comment %>
-    <%= form.text_area :comment, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :comment, class: "text-secondary"%>
+    <%= form.text_area :comment, rows: 4, class: "block shadow rounded-md border border-secondary text-secondary outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "mx-auto my-2 mt-4 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full" %>
   </div>
 <% end %>
