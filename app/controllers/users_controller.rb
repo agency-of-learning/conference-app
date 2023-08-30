@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     end 
 
     def show 
+        #TO DO: After Installing Pundit, utilize it here!!!
         @user = User.find(params[:id])
         if @user.private?
             redirect_to root_path 
