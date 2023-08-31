@@ -187,6 +187,9 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailpace-rails (0.3.2)
+      actionmailer (>= 6.0.0)
+      httparty (>= 0.18.1)
     marcel (1.0.2)
     matrix (0.4.2)
     meta-tags (2.18.0)
@@ -388,6 +391,7 @@ DEPENDENCIES
   jbuilder
   letter_opener_web
   mini_magick
+  mailpace-rails
   noticed (~> 1.6)
   pg (~> 1.1)
   puma (~> 5.0)
