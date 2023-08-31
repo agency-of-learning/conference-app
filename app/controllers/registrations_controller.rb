@@ -27,7 +27,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     def generate_qrcode(resource)
-        host = Rails.application.config.action_controller.default_url_options[:host]
+        host = Rails.application.routes.default_url_options[:host]
         qrcode = RQRCode::QRCode.new(user_url(resource, host:))
         png = qrcode.as_png(
           color: "000",
