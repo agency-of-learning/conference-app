@@ -71,6 +71,10 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.1)
+      rbtree3 (~> 0.6)
     ast (2.4.2)
     avo (2.40.0)
       actionview (>= 6.0)
@@ -253,6 +257,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rbtree3 (0.7.1)
     redis (4.8.1)
     redis-client (0.15.0)
       connection_pool
@@ -363,6 +368,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  avo
+  airbrake
   avo
   bootsnap
   capybara
