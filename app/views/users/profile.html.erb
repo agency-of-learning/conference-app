@@ -1,7 +1,7 @@
 <div class="container text-center mt-8 ">
- <% if notice.present? %>
-    <p class="py-2 px-3 bg-secondary-50 mb-5 text-secondary-100 font-medium rounded-lg inline-block align-center" id="notice"><%= notice %></p>
-  <% end %>
+  <% if notice.present? %>
+    <%= render "shared/alert_message", notice: notice %>
+  <% end %> 
   <div  class=" px-6 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
     <h2 class="block text-primary italic font-extrabold text-2xl mb-4  pr-4 sm:text-left lg:text-4xl text-left lg:text-left">My Profile</h2>
       <div class="field my-2 w-full flex flex-col items-center justify-center">

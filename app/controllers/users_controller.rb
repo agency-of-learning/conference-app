@@ -6,13 +6,15 @@ class UsersController < ApplicationController
     end 
 
     def onboarding_form
+        #If user agrees to fill out a profile, they probably want it to be public
+        @user.update(private: false)
     end 
     
     def onboarding_preview
     end 
 
     def profile
-        if request.referrer.include?("onboarding_preview")
+        if request.referrer&.include?("onboarding_preview")
             flash[:notice] = "Welcome to the Rails World Conference App!"
         end 
     end 

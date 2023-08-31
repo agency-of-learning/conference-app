@@ -10,7 +10,7 @@ export default class extends Controller {
   initialize(){
     console.log("initializing")
     this.anchorTarget.addEventListener("click", this.preventD)
-    this.submit = debounce(this.submit.bind(this), 5000)
+    this.submit = debounce(this.submit.bind(this), 3000)
   }
 
   preventD(e){

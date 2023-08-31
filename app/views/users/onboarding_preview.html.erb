@@ -54,7 +54,7 @@
 
    
    <div class="flex flex-col text-center" data-controller="decorator">
-    <%= button_to "Save", user_profile_path, method: :get, data:{"decorator-target": "anchor", controller: "confetti", action:"click->confetti#schoolPride click->decorator#submit", "animation-value":"30", "confetti-first-color-value": "#CC0000", "confetti-second-color-value": "#3B1D62", "confetti-follow-value": "false"}, class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3 mx-auto md:w-3/4"%>
+    <%= button_to "Save", user_profile_path, method: :get, data:{"decorator-target": "anchor", controller: "confetti", action:"click->confetti#schoolPride click->decorator#submit", "confetti-animation-value":"10", "confetti-first-color-value": "#CC0000", "confetti-second-color-value": "#3B1D62", "confetti-follow-value": "false"}, class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3 mx-auto md:w-3/4"%>
    
     <%= link_to "Back", :back, data: { turbo_frame: "_top" }, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-3 mx-auto md:w-3/4" %>
    </div>

@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
-  get '*pages', to: 'talks#index', format: false
+  #Added constraints in order to ensure active storage could be accessed
+  get '*pages', to: 'talks#index', format: false,  constraints: lambda { |request| !request.fullpath.include?('rails/active_storage') }
 
 end
