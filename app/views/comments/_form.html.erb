@@ -1,7 +1,7 @@
 <%= form_with(model: comment, class: "contents") do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this feedback from being saved:</h2>
 
       <ul>
         <% comment.errors.each do |error| %>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :comment, class: "text-secondary"%>
+    <%= form.label :comment, "Feedback", class: "text-secondary"%>
     <%= form.text_area :comment, rows: 4, class: "block shadow rounded-md border border-secondary text-secondary outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "mx-auto my-2 mt-4 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full" %>
+    <%= form.submit "Send Feedback", class: "mx-auto my-2 mt-4 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full" %>
   </div>
 <% end %>
