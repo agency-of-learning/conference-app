@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     end 
 
     def onboarding_form
+        #If user agrees to fill out a profile, they probably want it to be public
+        @user.update(private: false)
     end 
     
     def onboarding_preview
