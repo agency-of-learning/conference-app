@@ -1,5 +1,5 @@
 <div id="<%= dom_id talk %>" class="border-secondary-50 border-2 my-4">
-  <div class="flex flex-row p-2 items-center">
+  <div class="flex flex-row p-2">
     <div class="flex-grow">
       <p class="my-1">
         <strong class="block font-black italic mb-1 text-lg text-primary">
@@ -34,9 +34,9 @@
       </p>
     </div>
 
-    <!-- <div> -->
-      <%#= render partial: "shared/add_remove_button", locals: {talk: talk} %>
-    <!-- </div> -->
+    <div>
+      <%= render partial: "shared/add_remove_button", locals: {talk: talk} %>
+    </div>
     
   </div>
 

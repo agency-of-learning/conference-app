@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :speakers, :only => [:show]
   resources :talks, :only => [:index, :show]
   resources :talks_users, :only => [:index, :create, :destroy]
+
+  #Comments
+  resources :comments, :only => [:new, :create]
   
   #Notifications
   post 'notifications/read_all', to: 'notifications#read_all', as: :read_all

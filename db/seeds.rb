@@ -888,8 +888,8 @@ puts "Creating talks list"
       %(Day 2 of Rails World will kick off with an AMA panel featuring the Rails Core.
 
         Have burning questions about the latest version of Rails, best practices, upcoming enhancements, 
-        or the team's favorite hacks? https://app.todohelpers.com/forms/b97f02c5-0a40-4d76-84ca-8b1f7247e719 
-        Submit your questions here by September 30
+        or the team's favorite hacks?
+        Submit your questions here (https://rails-foundation.neetoform.com/4ac1586be8e0c231fa21) by September 30
       ).squish
     },
 
