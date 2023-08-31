@@ -46,6 +46,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     activejob (7.0.6)
       activesupport (= 7.0.6)
       globalid (>= 0.3.6)
@@ -68,7 +71,25 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.1)
+      rbtree3 (~> 0.6)
     ast (2.4.2)
+    avo (2.40.0)
+      actionview (>= 6.0)
+      active_link_to
+      activerecord (>= 6.0)
+      addressable
+      docile
+      dry-initializer
+      httparty
+      inline_svg
+      meta-tags
+      pagy
+      turbo-rails
+      view_component (>= 2.54.0)
+      zeitwerk (>= 2.6.2)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -97,8 +118,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    docile (1.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dry-initializer (3.1.1)
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
@@ -166,6 +189,8 @@ GEM
       httparty (>= 0.18.1)
     marcel (1.0.2)
     matrix (0.4.2)
+    meta-tags (2.18.0)
+      actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.19.0)
@@ -191,6 +216,7 @@ GEM
       http (>= 4.0.0)
       rails (>= 5.2.0)
     orm_adapter (0.5.0)
+    pagy (6.0.4)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -234,6 +260,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rbtree3 (0.7.1)
     redis (4.8.1)
     redis-client (0.15.0)
       connection_pool
@@ -315,6 +342,10 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
+    view_component (3.5.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -340,6 +371,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  avo
+  airbrake
+  avo
   bootsnap
   capybara
   debug
