@@ -389,8 +389,8 @@ DEPENDENCIES
   inline_svg
   jbuilder
   letter_opener_web
-  mini_magick
   mailpace-rails
+  mini_magick
   noticed (~> 1.6)
   pg (~> 1.1)
   puma (~> 5.0)
