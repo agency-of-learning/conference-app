@@ -377,7 +377,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  avo
   airbrake
   avo
   bootsnap
