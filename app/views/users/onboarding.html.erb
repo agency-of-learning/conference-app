@@ -1,7 +1,9 @@
 <%= render 'shared/onboarding_header'%>
 <div>
-    <div class="bg-white w-full h-full flex flex-col p-4 justify-center text-center">
-        <%= button_to "Create Shareable Profile", onboarding_form_path, method: :get, class:"w-full mx-auto lg:w-1/2 lg:text-2xl p-6 my-4 bg-primary no-underline block italic font-bold text-white whitespace-nowrap"%>
-        <%= button_to("Skip For Now", root_path, method: :get, :class => "w-full mx-auto lg:w-1/2 lg:text-2xl p-6 my-4 bg-secondary-100 no-underline block italic font-bold text-white whitespace-nowrap")%> 
+    
+    <div class="bg-white w-full md:w-2/3  mx-auto h-full flex flex-col p-4 justify-center text-center">
+        <h1 class="text-2xl italic font-bold text-primary py-4 mb-4">Create a Profile you can share with other attendees</h1>
+        <%= button_to "Lets Do It!", onboarding_form_path, method: :get, class:"w-full mx-auto lg:w-1/2 lg:text-2xl p-6 my-4 bg-secondary hover:bg-primary no-underline block italic font-bold text-white whitespace-nowrap"%>
+        <%= button_to("Skip For Now", root_path, method: :get, :class => "w-full mx-auto lg:w-1/2 lg:text-2xl p-6 my-4 bg-secondary-100 hover:bg-primary  no-underline block italic font-bold text-white whitespace-nowrap")%> 
     </div>
 </div>
