@@ -13,9 +13,13 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
           </div>
 
-      <div class="field mb-8">
+      <div class="field mb-4">
         <%= f.label :password, class: "block text-sm font-bold mb-2" %>
         <%= f.password_field :password, autocomplete: "current-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+      <%= link_to "Forgot Password?", new_user_password_path, data: { turbo_frame: "_top" }, :class => "" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -27,6 +31,7 @@
         </div>
       <% end %>
 
+    
       <div class="actions w-full flex flex-col text-center">
         <%= f.submit "Log in",  data: { turbo_frame: "_top" }, :class => "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-2" %>
         <%= link_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-2") %>
