@@ -1,5 +1,19 @@
+<h1 class="font-black italic text-2xl text-center text-primary mt-4 mb-1 mx-auto">Introducing the team behind the Rails World Conference App</h1>
+<section class="text-secondary font-medium italic mx-auto md:w-2/3 w-full mb-4">
+  <br>
+  <p>In May, 2023, the <%= link_to "Rails Foundation", "https://rubyonrails.org/foundation", class: "text-primary", :target => "_blank" %> announced a partnership with the <%= link_to "Agency of Learning", "https://agencyoflearning.com/", class: "text-primary", :target => "_blank"%>
+  to create an event app for <%= link_to "Rails World 2023", "https://rubyonrails.org/world", class: "text-primary", :target => "_blank" %>.</p>
+  <br>
+
+  <p>This collaboration was intended to create a valuable learning opportunity for early career developers while enhancing the event experience for
+  Rails World attendees.</p> <br>
+
+  <p>The team consisted of two early-career developers from the Agency of Learning working with an early-career designer and mentored by two senior developers, also from the Agency of Learning.</p><br>
+  <h2 class="font-bold mb-3 text-center text-lg">Here is the team behind the app!</h2>
+</section>
+
 <% @contributors.each do |contributor| %>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center mx-auto md:w-2/3 w-full">
     <div>
       <%= image_tag(contributor.image_filename, class: "rounded-full h-40 w-40 object-cover") %>
     </div>
@@ -39,5 +53,11 @@
       </div>
     </div>
  </div>
- <hr class="mb-2 border-secondary">
+ <hr class="mb-3 border-secondary">
 <% end %>
+
+<p class="my-4 block font-lg text-secondary mx-auto md:w-2/3 w-full">This team’s dedication and creativity have been instrumental in making the Rails World Conference app a reality. We are grateful for their time and effort. Please let us know what you think below.</p>
+
+<div class="mx-auto my-2 mt-4 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full">
+  <%= link_to 'Send Feedback', new_comment_path %>
+</div>

@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount AhoyCaptain::Engine => '/ahoy_captain'
   end
-  resources :contributors
   mount Avo::Engine, at: Avo.configuration.root_path
 
   #Talks and Speakers
   resources :speakers, :only => [:show]
   resources :talks, :only => [:index, :show]
   resources :talks_users, :only => [:index, :create, :destroy]
+
+  #Contributors
+  resources :contributors, :only => [:index]
 
   #Comments
   resources :comments, :only => [:new, :create]
@@ -51,10 +53,7 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
-
-  #About Page
-  get 'about', to: 'about#index'
-
+  
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   #Added constraints in order to ensure active storage could be accessed
