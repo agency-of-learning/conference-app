@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  Rails.application.routes.default_url_options[:host] = "railsworld.agencyoflearn.com"
+  Rails.application.routes.default_url_options[:host] = "railsworld.agencyoflearning.com"
   Rails.application.routes.default_url_options[:protocol] = "https"
   # Settings specified here will take precedence over those in config/application.rb.
 
