@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  mount AhoyCaptain::Engine => '/ahoy_captain'
   mount Avo::Engine, at: Avo.configuration.root_path
   
   #Talks and Speakers
