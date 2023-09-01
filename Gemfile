@@ -63,6 +63,10 @@ gem "airbrake"
 
 gem "aws-sdk-s3", require: false
 
+gem "ahoy_matey"
+gem "ahoy_captain"
+
+gem "chartkick"
 gem "rack-attack"
 
 # Use Sass to process CSS
