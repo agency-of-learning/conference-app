@@ -1,4 +1,7 @@
 <div class="mx-auto md:w-2/3 w-full flex">
+ <% if notice.present? %>
+    <%= render "shared/alert_message", notice: notice %>
+  <% end %> 
   <div class="w-full">
     <div class="flex justify-between items-center">
       <h1 class="font-black text-2xl text-primary mb-6 italic">My Schedule</h1>

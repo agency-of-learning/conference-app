@@ -1,9 +1,9 @@
-<div class=" flex justify-center pb-24 px-24 w-full">
-        <%= svg 'rails_world_landing' %>
+<div class=" flex justify-center mx-atuo mb-24">
+        <%= image_tag('rails_world_landing.png', size:"500", class: "w-[18rem]") %>
 </div>
 
 <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-around  text-center w-full">
-    <%= button_to("Attendee Sign Up", new_user_registration_path, method: :get, :class => "w-full  bg-primary hover:bg-blue-900 text-white font-bold py-4  text-lg italic" )%>
+    <%= button_to("Sign Up", new_user_registration_path, method: :get, :class => "w-full  bg-primary hover:bg-blue-900 text-white font-bold py-4  text-lg italic" )%>
     <%= button_to("Log In", new_user_session_path, method: :get, :class => "w-full  bg-secondary-100 mt-8 hover:bg-blue-900 text-white font-bold py-4  text-lg italic")%> 
 </div>
 
