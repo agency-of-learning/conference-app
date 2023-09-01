@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     def profile
         if request.referrer&.include?("onboarding_preview")
-            flash[:notice] = "Welcome to the Rails World Conference App!"
+            flash.now[:notice] = "Welcome to the Rails World Conference App!"
         end 
     end 
 
