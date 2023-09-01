@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount AhoyCaptain::Engine => '/ahoy_captain'
   end
+  resources :contributors
   mount Avo::Engine, at: Avo.configuration.root_path
 
   #Talks and Speakers

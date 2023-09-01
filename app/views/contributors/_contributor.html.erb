@@ -1,0 +1,13 @@
+<div id="<%= dom_id contributor %>" class="flex flex-col items-center">
+  <%= @contributors.each do |contributor| %>
+  
+  <div>
+    <%= image_tag(contributor.image_filename, class: "rounded-full h-40 w-40 object-cover") %>
+  </div>
+  <p class="my-2">
+    <strong class="font-extrabold text-2xl text-primary mb-6 italic"><%= contributor.name%></strong>
+  </p>
+  <p>
+    <strong class="font-bold text-sm text-secondary"><%= contributor.title %></strong>
+  </p>
+</div>
