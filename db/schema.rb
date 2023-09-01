@@ -90,6 +90,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_134810) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "contributors", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title"
+    t.text "bio"
+    t.string "image_filename"
+    t.string "github"
+    t.string "linkedin"
+    t.string "twitter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.bigint "recipient_id", null: false

@@ -1922,6 +1922,76 @@ TagTalk.create!([
 
 puts "Finished creating TagTalk relationships"
 
+puts "Creating Contributors"
+
+Contributor.create!([
+  {
+    name: "Eric Halverson",
+    title: "Full-stack Ruby on Rails Engineer, Agency of Learning",
+    bio:
+      %( Eric is an Open Source Contributor, Rubyist, and early-career Full-stack engineer. He lives in Aliso Viejo, California.
+         ).squish,
+    image_filename: "contributors/eric.png",
+    github: "https://github.com/elhalvers",
+    linkedin: "https://www.linkedin.com/in/elhalverson/",
+    twitter: "https://twitter.com/elhalvers"
+  },
+
+  {
+    name: "Shami Tomita-Rodriguez",
+    title: "Full-stack Ruby on Rails Engineer, Agency of Learning",
+    bio:
+      %(Shami is an Open Source Contributor, Rubyist, and early-career Full-stack engineer. They live in Philadelphia, Pennsylvania.
+         ).squish,
+    image_filename: "contributors/shami.jpg",
+    github: "https://github.com/ShamiTomita",
+    linkedin: "https://www.linkedin.com/in/shami-tomita-rodriguez/",
+    twitter: "https://twitter.com/Shami941"
+  },
+
+  {
+    name: "Katya Sitko",
+    title: "Problem Solver | Recruiting Ops | UX Design",
+    bio:
+      %(Katya is a early-career UX developer from the Rails community who completed her web development bootcamp at Le Wagon 
+        while designing the UX of the Rails World website. She is from Ireland and lives in Berlin.
+         ).squish,
+    image_filename: "contributors/katya.png",
+    github: "https://github.com/kat-s92",
+    linkedin: "https://www.linkedin.com/in/katya-sitko-5b22a095/",
+    twitter: ""
+  },
+
+  {
+    name: "Cody Norman",
+    title: "Ruby on Rails Consultant",
+    bio:
+      %(Cody is a senior developer from the Rails community. A former loan officer, Cody has been working in 
+        software development since 2014. Cody lives in a small town in Colorado and is an avid fly fisherman.
+         ).squish,
+    image_filename: "contributors/cody.jpg",
+    github: "https://github.com/cnorm35",
+    linkedin: "https://www.linkedin.com/in/cody-norman-26832027/",
+    twitter: "https://twitter.com/cnorm35"
+  },
+
+  {
+    name: "Daniel Rassiner",
+    title: "Backend Ruby on Rails Developer | Ruby Enthusiast | Open Source Contributor | Software Developer",
+    bio:
+      %(Daniel is a senior software developer who specializes in back-end development with Ruby on Rails but 
+        is comfortable working in multiple languages. Daniel lives in Orange County, California.
+         ).squish,
+    image_filename: "contributors/daniel.jpg",
+    github: "https://github.com/toyhammered",
+    linkedin: "https://www.linkedin.com/in/drassiner/",
+    twitter: ""
+  }
+  
+])
+
+puts "Finished creating Contributors"
+
 puts "Creating Admin User"
 
 User.create!(
