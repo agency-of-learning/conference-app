@@ -8,11 +8,11 @@
       </p>
       
       <p class="my-1">
-        <strong class="block font-extrabold italic text-secondary"> <%= talk.talk_format.titleize %> </strong>
+        <strong class="block font-black italic text-secondary text-lg"> <%= talk.talk_format.titleize %> </strong>
       </p>
 
       <p>
-        <strong class="block font-medium italic text-secondaryi pr-4"> <%= link_to talk.title, talk %> </strong>
+        <strong class="block font-semibold italic text-secondary pr-4"> <%= link_to talk.title, talk %> </strong>
       </p>
 
       <p class="my-2">
@@ -22,7 +22,7 @@
               <%= image_tag(s.image_filename, class: "rounded-full h-16 w-16 object-cover") %>
             </div>
           
-            <div class="block font-medium italic mb-1 text-sm text-secondary">
+            <div class="block font-bold italic mb-1 text-sm text-secondary">
               <%= link_to s.name, s %>, <%= s.title %> 
             </div>
           </div>
