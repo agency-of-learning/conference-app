@@ -420,6 +420,7 @@ PLATFORMS
 
 DEPENDENCIES
   ahoy_captain
+  ahoy_matey
   airbrake
   avo
   aws-sdk-s3

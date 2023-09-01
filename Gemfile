@@ -63,6 +63,7 @@ gem "airbrake"
 
 gem "aws-sdk-s3", require: false
 
+gem "ahoy_matey"
 gem "ahoy_captain"
 
 # Use Sass to process CSS
