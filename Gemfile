@@ -66,6 +66,8 @@ gem "aws-sdk-s3", require: false
 gem "ahoy_matey"
 gem "ahoy_captain"
 
+gem "chartkick"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

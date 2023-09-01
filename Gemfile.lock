@@ -426,6 +426,7 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   capybara
+  chartkick
   debug
   devise
   faker
