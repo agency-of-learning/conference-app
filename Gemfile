@@ -63,6 +63,8 @@ gem "airbrake"
 
 gem "aws-sdk-s3", require: false
 
+gem "rack-attack"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
