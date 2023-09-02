@@ -1,5 +1,5 @@
-<p style="color: green"><%= notice %></p>
-<h3 class="font-extrabold text-3xl lg:text-4xl text-primary italic">Notification Details</h3>
+<div class="w-full mx-auto md:w-2/3">
+<h3 class="font-extrabold text-3xl lg:text-4xl mb-2 text-primary italic">Notification Details</h3>
 <div class="w-full h-fit border-2 border-secondary-50 rounded mb-4 lg:my-2 flex flex-row items-center" data-notifications-target="notifications">
   <div class="flex-grow flex-col overflow-x-auto break-words p-3">
     <% talk = @notification.to_notification.talk %>
@@ -29,5 +29,6 @@
 
 
 <div class="flex justify-center w-full text-center">
-  <%= link_to "Back", user_notifications_path, class: "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
+  <%= link_to "Back", user_notifications_path, class: "bg-secondary hover:bg-primary active:bg-primary  text-white font-bold py-4 px-4 w-full italic" %>
+</div>
 </div>

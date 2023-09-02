@@ -35,19 +35,19 @@
       <div class="flex flex-row justify-between mb-4">
         <% unless contributor.github.empty? %>
           <%= link_to contributor.github, :target => '_blank' do %>
-            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
 
         <% unless contributor.linkedin.empty? %>
           <%= link_to contributor.linkedin, :target => '_blank' do %>
-            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
         
         <% unless contributor.twitter.empty? %>
           <%= link_to contributor.twitter, :target => '_blank' do %>
-            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
       </div>
@@ -58,6 +58,8 @@
 
 <p class="my-4 block font-lg text-secondary mx-auto md:w-2/3 w-full">This team’s dedication and creativity have been instrumental in making the Rails World Conference app a reality. We are grateful for their time and effort. Please let us know what you think below.</p>
 
-<div class="mx-auto my-2 mt-4 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full">
-  <%= link_to 'Send Feedback', new_comment_path %>
-</div>
+  <%= link_to new_comment_path do%>
+    <div class="mx-auto my-2 mt-4 py-4 px-14 bg-secondary hover:bg-primary  text-lg font-bold text-white text-center md:w-2/3 w-full">
+      Send Feedback
+    </div>
+  <% end %>

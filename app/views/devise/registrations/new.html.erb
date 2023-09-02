@@ -4,7 +4,7 @@
     <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center text-primary italic text-left">
       <div>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "px-2 pt-6 pb-8 mb-2"}) do |f| %>
-        <h1 class="text-2xl mb-3 font-extrabold dark:text-white flex w-full">Attendee Sign Up</h1>
+        <h1 class="text-2xl mb-3 font-extrabold dark:text-white flex w-full">Sign Up</h1>
           <div class="mb-1">
             <%= render "devise/shared/error_messages", resource: resource %>
           </div>
@@ -21,7 +21,7 @@
 
           <div class="field mb-8">
             <%= f.label "Password *", class: "block text-sm font-bold mb-2" %>
-            <%= f.password_field :password, autocomplete: "new-password" , placeholder: "Password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"%>
+            <%= f.password_field :password, requird: true, autocomplete: "new-password" , placeholder: "Password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"%>
           </div>
 
           <div class="field mb-8">
@@ -30,8 +30,8 @@
           </div>
 
           <div class="actions mb-4 w-full flex flex-col text-center">
-            <%= f.submit "Sign up",:class => "bg-secondary hover:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
-            <%= link_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "bg-secondary-100 hover:bg-primary text-white font-bold py-4 px-4 w-full italic my-2") %>
+            <%= f.submit "Sign up",:class => "bg-secondary hover:bg-primary active:bg-primary text-white font-bold py-4 px-4 w-full italic" %>
+            <%= link_to("Go Back", root_path, data: { turbo_frame: "_top" }, method: :get, :class => "bg-secondary-100 hover:bg-primary active:bg-primary  text-white font-bold py-4 px-4 w-full italic my-2") %>
           </div>
         <% end %>
      </div>
