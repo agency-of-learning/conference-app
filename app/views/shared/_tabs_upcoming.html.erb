@@ -19,7 +19,7 @@
     </div>
 
     <div id="talks" class="min-w-full">
-      <% @day_one_talks_upcoming&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_one_talks_upcoming&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -33,7 +33,7 @@
     </div>
 
     <div id="talks" class="min-w-full">
-      <% @day_two_talks_upcomimg&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_two_talks_upcomimg&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -47,7 +47,7 @@
     </div>
     
     <div id="talks" class="min-w-full">
-      <% @day_three_talks_upcoming&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_three_talks_upcoming&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -64,7 +64,7 @@
     </div>
 
     <div id="talks" class="min-w-full">
-      <% @day_one_talks_past&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_one_talks_past&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -78,7 +78,7 @@
     </div>
 
     <div id="talks" class="min-w-full">
-      <% @day_two_talks_past&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_two_talks_past&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -92,7 +92,7 @@
     </div>
     
     <div id="talks" class="min-w-full">
-      <% @day_three_talks_past&.includes(:speakers, :tags)&.each do |talk| %>
+      <% @day_three_talks_past  &.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
