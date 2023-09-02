@@ -13,7 +13,7 @@
 
   <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
-      <% @day_one_talks.each do |talk| %>
+      <% @day_one_talks&.includes(:speakers, :tags)&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -21,7 +21,7 @@
 
   <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
-      <% @day_two_talks.each do |talk| %>
+      <% @day_two_talks&.includes(:speakers, :tags)&.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
@@ -29,7 +29,8 @@
 
   <div class="hidden py-4 px-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
-      <% @day_three_talks.each do |talk| %>
+      <% @day_three_talks&.includes(:speakers, :tags)&.each do |talk| %>
+
         <%= render "shared/my_schedule_talk", talk: talk %>
       <% end %>
     </div>
