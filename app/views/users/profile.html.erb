@@ -37,23 +37,23 @@
       <div class="field my-2 flex justify-center">
         <%if @user.github != "" %>
             <a href=<%="#{@user.github}"%> target="_blank">
-                <i class="fa-brands fa-github fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-github fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-secondary-100"></i>
             </a>
         <%end%> 
         <%if @user.linkedin != "" %> 
             <a href=<%="#{@user.linkedin}"%> target="_blank">
-                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 lg:h-18 text-secondary hover:text-secondary-100"></i>
             </a>
         <%end%>
         <%if @user.twitter != "" %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
-                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-secondary-100"></i>
             </a>
         <%end%>
         <%if !@user.private && @user.qrcode.attached? %>
         <div data-controller="dialog">
           <button data-action="click->dialog#open">
-            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18" style="color: #3B1D62;"></i>
+            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-secondary-100"></i>
           </button>
           <dialog data-dialog-target="modal" class="backdrop:bg-white backdrop:opacity-80 w-full md:w-1/4">
             <div class="p-4 bg-secondary justify-center">
