@@ -47,7 +47,7 @@ class TalksJobTest < ActiveJob::TestCase
       assert_equal(0, Notification.count)
    end
    
-   test "assert that the job performs at the correct time and delivers notifications " do 
+   test "assert that the job flow performs as expected" do 
       assert_enqueued_jobs 0
       talks = Talk.happening_today 
       talks.each {|talk| Talk::FanOutToUsersJob.perform_now(talk)} #Go through whole flow
