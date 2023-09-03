@@ -6,3 +6,8 @@ scheduler.cron '00 0 * * *' do
     talks = Talk.happening_today 
     talks.each {|talk| Talk::FanOutToUsersJob.perform_later(talk)}
 end 
+
+scheduler.every '10m' do
+    talks = Talk.happening_today 
+    talks.each {|talk| Talk::FanOutToUsersJob.perform_later(talk)}
+end 
