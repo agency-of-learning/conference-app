@@ -20,7 +20,7 @@
                 <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
             </li>
             <li>
-                <%= link_to 'My Schedule', root_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
+                <%= link_to 'My Schedule', user_root_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
             </li>      
             <li>
                 <%= link_to 'Profile', user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
@@ -66,7 +66,7 @@
                             <%end%>  
                             <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>  
                         </div>
-                        <%= link_to 'My Schedule', root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                        <%= link_to 'My Schedule', user_root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                         <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                         <%= link_to 'Profile / Settings',  user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                         <%= link_to 'About', contributors_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %> 

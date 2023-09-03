@@ -1,6 +1,6 @@
       <%= tag.div id: dom_id(talk, :talks_users) do %>
         <% if talk.selected_by?(current_user) %>
-          <%= button_to talks_user_path(talk, talk_id: talk), method: :delete,
+          <%= button_to talk_my_schedule_path(talk), method: :delete,
           class: "text-secondary" do %>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 15 15">
             <path fill="currentColor" fill-rule="evenodd" d="M13.5 2H12V0h-1v2H4V0H3v2H1.5A1.5 1.5 0 0 0 0 
@@ -9,7 +9,7 @@
             </svg>
           <% end %>
         <% else %>
-          <%= button_to talks_users_path(talk_id: talk), method: :post, class: "text-secondary" do %>
+          <%= button_to talk_my_schedule_path(talk), method: :post, class: "text-secondary" do %>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
             <path fill="currentColor" d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 
             32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM704 536c0 4.4-3.6 8-8 8H544v152c0 
