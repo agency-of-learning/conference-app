@@ -4,6 +4,8 @@ class Talk::FanOutToUsersJob < ApplicationJob
 
   def perform(talk)
     talk.users.each do |user|
+      return if !user.talks.include?(talk) #in case a user removes a talk
+
       Talk::ScheduleUserReminderJob.perform_later(user, talk)
     end 
   end

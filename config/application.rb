@@ -19,7 +19,7 @@ module RailsWorldConf
     # in config/environments, which are processed later.
     #
 
-    config.time_zone = "Europe/Amsterdam"
+    config.time_zone = "Eastern Time (US & Canada)"
     
     #For testing or QA purposes, make sure to switch time_zone to your current one
     #config.time_zone = 'Eastern Time (US & Canada)'
