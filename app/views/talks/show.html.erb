@@ -7,12 +7,12 @@
     <h1 class="font-black text-2xl text-primary mb-4 italic">Session Details</h1>
 
     <p class="my-4">
-      <strong class="block font-bold text-xl text-secondary"> <%= @talk.title %> </strong>
+      <strong class="block font-bold text-xl text-secondary italic"> <%= @talk.title %> </strong>
     </p>
 
     <p class="mb-4">
         <% @talk.tags.each do |t| %>
-          <strong class= "mr-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-semibold text-white text-center"><%= t.name %> </strong>
+          <strong class= "mr-2 py-2 px-2 bg-secondary-100 text-medium inline-block font-semibold text-white text-center italic"><%= t.name %> </strong>
         <% end %>
     </p>
 
@@ -34,7 +34,7 @@
         </div>
         <div>
           <p class="my-1">
-            <strong class="block font-semibold text-secondary">
+            <strong class="block font-semibold text-secondary italic">
               <%= @talk.start_time.to_fs(:month_day_year) %>
             </strong>
           </p> 
@@ -49,25 +49,25 @@
         </div>
         <div>
           <p class="my-1">
-            <strong class="block font-semibold text-secondary">
+            <strong class="block font-semibold text-secondary italic">
               <%= @talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= @talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
             </strong>
           </p>
         </div>
       </div>
 
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row items-center text-secondary">
         <div class="text-secondary flex-none mr-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 384 512">
           <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License -
            https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-           <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 
+           <path fill="currentColor" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 
            168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
         </div>
 
         <div>
           <p class="my-1">
-            <strong class="block font-semibold text-secondary"><%= @talk.location %></strong>
+            <strong class="block font-semibold text-secondary italic"><%= @talk.location %></strong>
           </p>
         </div>
       </div>
@@ -80,11 +80,11 @@
             <% @talk.speakers.each do |s| %>
               <div class="flex flex-row text-white my-6 py-4 px-5 bg-secondary">
                 <div class="flex-none">
-                  <%= image_tag(s.image_filename, class: "rounded-full h-16 w-16 object-cover mr-5 border-2 border-white ") %>
+                  <%= image_tag(s.image_filename, class: "rounded-full h-16 w-16 object-cover mr-5 border-2 border-white") %>
                 </div>
                 <div>
-                  <strong class="font-medium text-lg"><%= link_to s.name, s %></strong> <br>
-                  <strong class="font-normal text-sm"><%= s.title %></strong>
+                  <strong class="font-medium text-lg italic"><%= link_to s.name, s %></strong> <br>
+                  <strong class="font-normal text-sm italic"><%= s.title %></strong>
                 </div>
               </div>
             <% end %>
@@ -92,13 +92,12 @@
       <% end %>
     </section>
     
-    <p class="my-5 block font-medium text-secondary">
+    <p class="my-5 block text-lg text-secondary italic">
       <%= auto_link(@talk.description, :html => {:target => '_blank'}) %>
     </p>
     
 
     <div class="flex flex-row justify-end items-center">
-      <p class="text-secondary font-bold mx-4 text-right">Add or Remove</p>
       <div>
         <%= render partial: "shared/add_remove_button", locals: {talk: @talk} %>
       </div>
@@ -106,5 +105,5 @@
   </div>
 </div>
 
-<%= link_to 'My Schedule', user_root_path, class: "mx-auto my-2 mt-4 py-4 px-14 bg-secondary-100 hover:bg-primary active:bg-primary text-lg font-bold text-white text-center md:w-2/3 w-full" %>
-<%= link_to 'Back to Agenda', talks_path, class: "mx-auto my-2 py-4 px-14 bg-secondary hover:bg-primary active:bg-primary text-lg font-bold text-white text-center md:w-2/3 w-full" %>
+<%= link_to 'My Schedule', user_root_path, class: "mx-auto my-2 mt-4 py-4 px-14 bg-secondary-100 text-lg font-bold text-white text-center md:w-2/3 w-full rounded italic" %>
+<%= link_to 'Back to Agenda', talks_path, class: "mx-auto my-2 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full rounded italic" %>
