@@ -5,13 +5,13 @@ class TalksUsersController < ApplicationController
   before_action :set_talk, only: %i[create]
 
   def index 
-    @day_one_talks_upcoming = current_user.talks.day_one.upcoming.in_order
-    @day_two_talks_upcomimg = current_user.talks.day_two.upcoming.in_order
-    @day_three_talks_upcoming = current_user.talks.day_three.upcoming.in_order
+    @day_one_talks_upcoming = current_user.talks.day_one.upcoming.in_order.includes(:speakers, :tags)
+    @day_two_talks_upcomimg = current_user.talks.day_two.upcoming.in_order.includes(:speakers, :tags)
+    @day_three_talks_upcoming = current_user.talks.day_three.upcoming.in_order.includes(:speakers, :tags)
 
-    @day_one_talks_past = current_user.talks.day_one.past.in_order
-    @day_two_talks_past = current_user.talks.day_two.past.in_order
-    @day_three_talks_past = current_user.talks.day_three.past.in_order
+    @day_one_talks_past = current_user.talks.day_one.past.in_order.includes(:speakers, :tags)
+    @day_two_talks_past = current_user.talks.day_two.past.in_order.includes(:speakers, :tags)
+    @day_three_talks_past = current_user.talks.day_three.past.in_order.includes(:speakers, :tags)
     
   end
 
