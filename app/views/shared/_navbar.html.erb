@@ -20,7 +20,7 @@
                 <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
             </li>
             <li>
-                <%= link_to 'My Schedule', root_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
+                <%= link_to 'My Schedule', user_root_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
             </li>      
             <li>
                 <%= link_to 'Profile', user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'bg-secondary hover:bg-primary text-white font-bold py-2 px-4  whitespace-nowrap' %>   
@@ -63,13 +63,13 @@
                         <%= link_to user_notifications_path, class: "flex flex-row justify-center items-center no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap" do %> 
                             <%= tag.div id: :notifications_count_menu do %>
                                 <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
-                            <%end%>  
-                            Notifications
-                        <% end %>    
-                        <%= link_to 'My Schedule', root_path, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap' %>
-                        <%= link_to 'Agenda', talks_path, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap' %>
-                        <%= link_to 'Profile / Settings',  user_profile_path, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap' %>
-                        <%= link_to 'About', contributors_path, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap' %> 
+                            <%end%>
+                            <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>
+                        </div>
+                        <%= link_to 'My Schedule', user_root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                        <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                        <%= link_to 'Profile / Settings',  user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
+                        <%= link_to 'About', contributors_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %> 
                         <div class="mx-6 my-2">
                         <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "w-full bg-secondary-100 hover:bg-primary no-underline py-6 px-6 italic font-bold text-white whitespace-nowrap"%>
                         </div>
