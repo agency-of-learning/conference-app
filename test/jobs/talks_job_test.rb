@@ -52,9 +52,12 @@ class TalksJobTest < ActiveJob::TestCase
       talks = Talk.happening_today 
       talks.each {|talk| Talk::FanOutToUsersJob.perform_now(talk)} #Go through whole flow
       #flow results with last job in cycle enqueued:
-      assert_enqueued_with(job: Talk::TalkReminderNotificationJob)
+      assert_enqueued_with(job: Talk::ScheduleUserReminderJob)
       assert_equal(0, Notification.count)
       #IDK how to test a job executing at a certain time without having to manually use "perform_enqueued_jobs"
+      perform_enqueued_jobs 
+      assert_enqueued_with(job: Talk::TalkReminderNotificationJob)
+      assert_equal(0, Notification.count)
       perform_enqueued_jobs 
       #admin and attendee will have 2 notifications each
       assert_equal(2, Notification.count)
