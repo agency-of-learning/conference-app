@@ -1,5 +1,4 @@
 #I get called in config/initializer/scheduler.rb
-#NOTE: should I even exist?
 class Talk::FanOutToUsersJob < ApplicationJob
   queue_as :default
 
