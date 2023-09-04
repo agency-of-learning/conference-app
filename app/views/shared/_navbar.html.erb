@@ -51,21 +51,22 @@
                 <div data-action="click->dropdown#toggle" role="button" data-dropdown-target="button" tabindex="0" class="inline-block select-none w-full">
                     <%= tag.div id: :notifications_count_mobile do %>
                         <% if current_user.unread_notifications_count > 0 %>
-                        <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
+                          <%= render "notifications/count_mobile", count: current_user.unread_notifications_count %>
                         <% end %>
-                    <%end%>   
+                    <%end%>
                     <div class="flex items-center justify-center  rounded-lg text-center align-baseline w-full">
                         <%= svg 'hamburger' %>
                     </div>
                 </div>
                 <div data-dropdown-target="menu" class="fixed right-0 hidden text-center w-screen h-screen left-0 top-0">
                     <div class="bg-white overflow-hidden flex flex-col w-full h-full p-1 z-10 ">
-                        <%= link_to user_notifications_path, class: "flex flex-row justify-center items-center no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap" do %> 
-                            <%= tag.div id: :notifications_count_menu do %>
-                                <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
-                            <%end%>
-                            <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>
-                        </div>
+                      <%= link_to user_notifications_path, class: "flex flex-row justify-center items-center no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary hover:bg-primary whitespace-nowrap" do %> 
+                          <%= tag.div id: :notifications_count_menu do %>
+                            <%= render "notifications/count_menu", count: current_user.unread_notifications_count %>
+                          <% end %>
+                          <%= link_to "Notifications",  user_notifications_path, data: {action: "click->dropdown#toggle"} %>
+                      <% end %>
+                    </div>
                         <%= link_to 'My Schedule', user_root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                         <%= link_to 'Agenda', talks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
                         <%= link_to 'Profile / Settings',  user_profile_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline px-6 py-6 mx-6 my-2 italic font-bold text-white bg-secondary whitespace-nowrap' %>
