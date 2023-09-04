@@ -1,18 +1,18 @@
-<div>
+<%= tag.div id: dom_id(talk, :talks_users) do %>
   <%= turbo_frame_tag talk, :talks_users do %>
     <% if talk.selected_by?(current_user) %>
-      <%= button_to talks_user_path(talk.talks_users.find_by(user: current_user)), method: :delete, 
+      <%= button_to talk_my_schedule_path(talk), method: :delete,
       class: "text-secondary" do %>
         <svg width="50" height="50" viewBox="0 0 90 94" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" fill-rule="evenodd" d="M 81.3 8.305 L 72.3 8.305 L 72.3 -4.222 L 66.3 -4.222 L 66.3 8.305 L 24.302 8.305 L 24.302 -4.222 L 18.302 -4.222 L 18.302 8.305 L 9.304 8.305 C 4.33 8.305 0.304 12.513 0.304 17.699 L 0.304 80.335 C 0.304 85.528 4.33 89.731 9.304 89.731 L 81.3 89.731 C 86.267 89.731 90.298 85.528 90.298 80.335 L 90.298 17.699 C 90.298 12.513 86.267 8.305 81.3 8.305 Z M 42.446 66.129 L 65.557 38.551 L 61.044 34.431 L 42.158 56.965 L 32.426 46.8 L 28.179 51.236 L 42.446 66.129 Z" clip-rule="evenodd" style=""></path>
         </svg>
       <% end %>
     <% else %>
-      <%= button_to talks_users_path(talk_id: talk), class: "text-secondary" do %>
+      <%= button_to talk_my_schedule_path(talk), method: :post, class: "text-secondary" do %>
         <svg width="50" height="50" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M 84.604 1.783 L 6.659 1.783 C 4.784 1.783 3.27 3.298 3.27 5.172 L 3.27 83.117 C 3.27 84.991 4.784 86.506 6.659 86.506 L 84.604 86.506 C 86.478 86.506 87.993 84.991 87.993 83.117 L 87.993 5.172 C 87.993 3.298 86.478 1.783 84.604 1.783 Z M 65.965 46.686 C 65.965 47.152 65.583 47.533 65.118 47.533 L 49.021 47.533 L 49.021 63.631 C 49.021 64.097 48.639 64.478 48.172 64.478 L 43.09 64.478 C 42.624 64.478 42.243 64.097 42.243 63.631 L 42.243 47.533 L 26.145 47.533 C 25.679 47.533 25.298 47.152 25.298 46.686 L 25.298 41.603 C 25.298 41.137 25.679 40.756 26.145 40.756 L 42.243 40.756 L 42.243 24.658 C 42.243 24.193 42.624 23.811 43.09 23.811 L 48.172 23.811 C 48.639 23.811 49.021 24.193 49.021 24.658 L 49.021 40.756 L 65.118 40.756 C 65.583 40.756 65.965 41.137 65.965 41.603 L 65.965 46.686 Z" style=""></path>
         </svg>
       <% end %>
     <% end %>
-  <% end %> 
-</div>
+  <% end %>
+<% end %>

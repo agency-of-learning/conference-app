@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   #Talks and Speakers
   resources :speakers, :only => [:show]
-  resources :talks, :only => [:index, :show]
-  resources :talks_users, :only => [:index, :create, :destroy]
+  resources :talks, :only => [:index, :show] do
+    resource :my_schedule, :only => [:index, :create, :destroy], controller: "talks_users"
+  end
 
   #Contributors
   resources :contributors, :only => [:index]
