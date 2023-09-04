@@ -35,19 +35,19 @@
       <div class="flex flex-row justify-between mb-4">
         <% unless contributor.github.empty? %>
           <%= link_to contributor.github, :target => '_blank' do %>
-            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-secondary-100"></i>
+            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
 
         <% unless contributor.linkedin.empty? %>
           <%= link_to contributor.linkedin, :target => '_blank' do %>
-            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-secondary-100"></i>
+            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
         
         <% unless contributor.twitter.empty? %>
           <%= link_to contributor.twitter, :target => '_blank' do %>
-            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-secondary-100"></i>
+            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-primary"></i>
           <% end %>
         <% end %>
       </div>

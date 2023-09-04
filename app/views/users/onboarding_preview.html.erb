@@ -34,21 +34,21 @@
       <div class="field my-1 flex justify-center">
         <%if @user.github != "" %>
             <a href=<%="#{@user.github}"%> target="_blank">
-                <i class="fa-brands fa-github fa-2xl mx-3 h-12"  style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-github fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%> 
         <%if @user.linkedin != "" %> 
             <a href=<%="#{@user.linkedin}"%> target="_blank">
-                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12" style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%>
         <%if @user.twitter != "" %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
-                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%>
         <%if !@user.private %>
-            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12" style="color: #3B1D62;"></i>
+            <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
         <%end%>
       </div>
 
