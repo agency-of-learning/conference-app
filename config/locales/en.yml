@@ -47,14 +47,14 @@ en:
           attributes:
             linkedin:
               blank: "is required"
-              https_only: "fhttps format is required"
-              host_not_allowed: "link is not LinkedIn"
+              https_only: "Full URL required"
+              host_not_allowed: "Host should be LinkedIn"
             github:
               blank: "is required"
-              https_only: "https format is required"
-              host_not_allowed: "link is not github"
+              https_only: "Full URL required"
+              host_not_allowed: "Host should be Github"
             twitter:
               blank: "is required"
-              https_only: "https format is required"
-              host_not_allowed: "link is not Twitter, X, whatever"
+              https_only: "Full URL required"
+              host_not_allowed: "Host should be Twitter/X"
 
