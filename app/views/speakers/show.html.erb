@@ -15,19 +15,19 @@
       <div class="flex flex-row justify-between mb-4">
         <% unless @speaker.github.empty? %>
           <%= link_to @speaker.github, :target => '_blank' do %>
-            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
           <% end %>
         <% end %>
 
         <% unless @speaker.linkedin.empty? %>
           <%= link_to @speaker.linkedin, :target => '_blank' do %>
-            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
           <% end %>
         <% end %>
         
         <% unless @speaker.twitter.empty? %>
           <%= link_to @speaker.twitter, :target => '_blank' do %>
-            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary"></i>
+            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
           <% end %>
         <% end %>
       </div>
@@ -76,7 +76,7 @@
   </div>
 </div>
 
-<%= link_to 'My Schedule', talks_users_path, class: "mx-auto my-2 mt-2 py-4 px-14 bg-secondary text-lg font-bold italic text-white text-center  md:w-2/3 w-full" %>
-<%= link_to 'Back to Agenda', talks_path, class: "mx-auto my-2 py-4 px-14 bg-secondary-100 text-lg font-bold italic text-white text-center md:w-2/3 w-full" %>
+<%= link_to 'My Schedule', talks_users_path, class: "mx-auto my-2 mt-2 py-4 px-14 bg-secondary hover:bg-primary active:bg-primary  text-lg font-bold italic text-white text-center  md:w-2/3 w-full" %>
+<%= link_to 'Back to Agenda', talks_path, class: "mx-auto my-2 py-4 px-14 bg-secondary-100 hover:bg-primary active:bg-primary text-lg font-bold italic text-white text-center md:w-2/3 w-full" %>
 
 
