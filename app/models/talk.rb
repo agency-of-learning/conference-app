@@ -4,7 +4,7 @@ class Talk < ApplicationRecord
 
   has_many :talks_users, dependent: :destroy, class_name: "TalkUser"
   has_many :users, through: :talks_users
-
+  
   has_many :tags_talks, dependent: :destroy, class_name: "TagTalk"
   has_many :tags, through: :tags_talks
 
@@ -49,6 +49,13 @@ class Talk < ApplicationRecord
   }
 
   scope :happening_today, -> {where("DATE(start_time) = ?", Date.current)}
+
+  scope :in_thirty_minutes, -> { where(start_time: Time.current..(Time.current+30.minutes)) }
+
+  def unnotified_users 
+    #return a collection of a talk's users that do not have any notifications related to that talk
+   self.users.reject {|u| u.notifications.any? {|n| n.to_notification.talk == self} }
+  end 
 
   def formatted_start_time
     self.start_time.strftime("%I:%M %p, %a %d, %b %Y") 
