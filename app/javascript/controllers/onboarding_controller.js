@@ -4,6 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["image", "icon"]
   upload(){
-    this.iconTarget.style["filter"] = "drop-shadow(2px 4px 6px red)";
+    this.iconTarget.style["filter"] = "drop-shadow(5px 8px 10px #A386FF)";
   }
 }
