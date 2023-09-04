@@ -4,9 +4,10 @@ class TalksController < ApplicationController
 
   # GET /talks
   def index
-    @day_one_talks = Talk.day_one.in_order
-    @day_two_talks = Talk.day_two.in_order
-    @day_three_talks = Talk.day_three.in_order
+    talk = Talk.includes(:speakers, :tags)
+    @day_one_talks = talk.day_one.in_order
+    @day_two_talks = talk.day_two.in_order
+    @day_three_talks = talk.day_three.in_order
   end
 
   # GET /talks/1
