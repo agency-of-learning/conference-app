@@ -70,6 +70,7 @@ gem "ahoy_captain"
 
 gem "chartkick"
 gem "rack-attack"
+gem "strong_migrations"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
