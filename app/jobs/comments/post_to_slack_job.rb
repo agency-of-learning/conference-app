@@ -2,14 +2,14 @@ class Comments::PostToSlackJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    HTTParty.post(endpoint, body: body, headers: headers)
+    HTTParty.post(endpoint, body: body(comment), headers: headers)
   end
 
   def endpoint
     "https://yov8r.hatchboxapp.com/webhooks/incoming/rails_world_feedback_webhooks"
   end
 
-  def body
+  def body(comment)
     { comment: comment }.to_json
   end
 
