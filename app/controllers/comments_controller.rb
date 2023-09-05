@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to root_url, notice: "Comment was successfully created." }
+        format.html { redirect_to user_root_url, notice: "Feedback was successfully submitted." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

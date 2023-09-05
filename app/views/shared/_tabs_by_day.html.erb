@@ -11,7 +11,7 @@
     </li>
   </ul>
 
-  <div class="hidden py-4 px-4" data-tabs-target="panel">
+  <div class="hidden py-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_one_talks.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="hidden py-4 px-4" data-tabs-target="panel">
+  <div class="hidden py-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_two_talks.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="hidden py-4 px-4" data-tabs-target="panel">
+  <div class="hidden py-4" data-tabs-target="panel">
     <div id="talks" class="min-w-full">
       <% @day_three_talks.each do |talk| %>
         <%= render "shared/my_schedule_talk", talk: talk %>
