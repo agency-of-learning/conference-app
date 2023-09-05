@@ -14,3 +14,4 @@ pin "@fortawesome/free-solid-svg-icons", to: "https://ga.jspm.io/npm:@fortawesom
 pin "stimulus-confetti", to: "https://ga.jspm.io/npm:stimulus-confetti@1.0.1/dist/stimulus_confetti.modern.js"
 pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.6.0/dist/confetti.module.mjs"
 pin "debounce", to: "https://ga.jspm.io/npm:debounce@1.2.1/index.js"
+pin "@rails/activestorage", to: "https://ga.jspm.io/npm:@rails/activestorage@7.0.7-2/app/assets/javascripts/activestorage.esm.js"
