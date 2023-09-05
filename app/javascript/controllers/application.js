@@ -1,6 +1,9 @@
 import { Application } from "@hotwired/stimulus"
 const application = Application.start()
 
+import * as ActiveStorage from "@rails/activestorage"
+ActiveStorage.start()
+
 import { Alert, Autosave, Dropdown, Modal, Tabs, Popover, Toggle, Slideover } from "tailwindcss-stimulus-components"
 import { Confetti } from "stimulus-confetti"
 
