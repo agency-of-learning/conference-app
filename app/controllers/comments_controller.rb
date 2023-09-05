@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        Comments::PostToSlackJob.perform_later(@comment.comment)
         format.html { redirect_to user_root_url, notice: "Feedback was successfully submitted." }
       else
         format.html { render :new, status: :unprocessable_entity }
