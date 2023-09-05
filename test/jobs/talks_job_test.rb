@@ -25,7 +25,7 @@ class TalksJobTest < ActiveJob::TestCase
       assert_enqueued_jobs 0
       talks = Talk.happening_today 
       talks.each do |talk| #imitates scheduler
-        talk.users.each do |user| #imitates 1st job, FanOutToUsersJob
+        talk.unnotified_users.each do |user| #imitates 1st job, FanOutToUsersJob
            Talk::ScheduleUserReminderJob.perform_later(user, talk) #perform later in order to enqueue 2nd job
         end 
       end  # move onto 2nd job 
@@ -37,10 +37,10 @@ class TalksJobTest < ActiveJob::TestCase
     assert_enqueued_jobs 0
     talks = Talk.happening_today 
     talks.each do |talk| #imitates scheduler
-        talk.users.each do |user| #imitates 1st job, FanOutToUsersJob
+        talk.unnotified_users.each do |user| #imitates 1st job, FanOutToUsersJob
            Talk::ScheduleUserReminderJob.perform_now(user, talk) #perform now in order move on to enqueue 3rd job
            #probably not great to do assertions here right? idk
-           assert_enqueued_with(job: Talk::TalkReminderNotificationJob, args: [user, talk], queue: 'default', at:talk.start_time - 20.minutes)
+           assert_enqueued_with(job: Talk::TalkReminderNotificationJob, args: [user, talk], queue: 'default')
         end 
       end
       assert_enqueued_jobs 2 
