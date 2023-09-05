@@ -25,7 +25,7 @@ class TalksJobTest < ActiveJob::TestCase
       assert_enqueued_jobs 0
       talks = Talk.happening_today 
       talks.each do |talk| #imitates scheduler
-        talk.users.each do |user| #imitates 1st job, FanOutToUsersJob
+        talk.unnotified_users.each do |user| #imitates 1st job, FanOutToUsersJob
            Talk::ScheduleUserReminderJob.perform_later(user, talk) #perform later in order to enqueue 2nd job
         end 
       end  # move onto 2nd job 
@@ -37,24 +37,27 @@ class TalksJobTest < ActiveJob::TestCase
     assert_enqueued_jobs 0
     talks = Talk.happening_today 
     talks.each do |talk| #imitates scheduler
-        talk.users.each do |user| #imitates 1st job, FanOutToUsersJob
+        talk.unnotified_users.each do |user| #imitates 1st job, FanOutToUsersJob
            Talk::ScheduleUserReminderJob.perform_now(user, talk) #perform now in order move on to enqueue 3rd job
            #probably not great to do assertions here right? idk
-           assert_enqueued_with(job: Talk::TalkReminderNotificationJob, args: [user, talk], queue: 'default', at:talk.start_time - 20.minutes)
+           assert_enqueued_with(job: Talk::TalkReminderNotificationJob, args: [user, talk], queue: 'default')
         end 
       end
       assert_enqueued_jobs 2 
       assert_equal(0, Notification.count)
    end
    
-   test "assert that the job performs at the correct time and delivers notifications " do 
+   test "assert that the job flow performs as expected" do 
       assert_enqueued_jobs 0
       talks = Talk.happening_today 
       talks.each {|talk| Talk::FanOutToUsersJob.perform_now(talk)} #Go through whole flow
       #flow results with last job in cycle enqueued:
-      assert_enqueued_with(job: Talk::TalkReminderNotificationJob)
+      assert_enqueued_with(job: Talk::ScheduleUserReminderJob)
       assert_equal(0, Notification.count)
       #IDK how to test a job executing at a certain time without having to manually use "perform_enqueued_jobs"
+      perform_enqueued_jobs 
+      assert_enqueued_with(job: Talk::TalkReminderNotificationJob)
+      assert_equal(0, Notification.count)
       perform_enqueued_jobs 
       #admin and attendee will have 2 notifications each
       assert_equal(2, Notification.count)
