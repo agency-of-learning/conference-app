@@ -7,7 +7,7 @@
       <div data-onboarding-target="icon">
         <%= svg "photo" %>
       </div>
-        <%= f.file_field :profile_photo, autofocus: true, data: {onboarding_target: "image", action: "input->onboarding#upload"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+        <%= f.file_field :profile_photo, autofocus: true, direct_upload: true, data: {onboarding_target: "image", action: "input->onboarding#upload"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       <%end %>
       <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= @user.name %></h1>
     </div>
