@@ -1,0 +1,12 @@
+ <div data-controller="preview">
+ <%= f.label(:profile_photo) do %>
+         <div class="image-container">
+            
+                <%= image_tag('', alt:'', data: { preview_target: "preview" }, class: "hidden rounded-full h-[10rem] w-[10rem] object-cover") %>
+           
+                <%= inline_svg_tag("photo", data:{ preview_target: "dummy" }, class: "rounded-full h-[10rem] w-[10rem] object-cover") %>
+         
+        </div>
+          <%= f.file_field :profile_photo, autofocus: true, direct_upload: true, data: {preview_target: "input", action: "change->preview#preview"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+ <%end %>
+ </div>

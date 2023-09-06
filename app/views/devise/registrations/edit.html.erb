@@ -2,14 +2,9 @@
   <h2 class="block text-primary italic font-extrabold text-lg w-full md:text-left mb-2 md:mb-4 md:text-2xl">Edit My Profile</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div  data-controller="onboarding" class="field mb-2 w-full flex flex-col items-center justify-center">
-      <%= f.label(:profile_photo) do %>
-      <div data-onboarding-target="icon">
-        <%= svg "photo" %>
-      </div>
-        <%= f.file_field :profile_photo, autofocus: true, data: {onboarding_target: "image", action: "input->onboarding#upload"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-      <%end %>
-      <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= @user.name %></h1>
+    <div class="field mb-2 w-full flex flex-col items-center justify-center">
+      <%= render "edit_image_preview", f: f, user: resource%>
+      <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= resource.name %></h1>
     </div>
 
     <div class="field mb-2">
