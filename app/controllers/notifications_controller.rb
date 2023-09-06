@@ -14,5 +14,7 @@ class NotificationsController < ApplicationController
   def show 
     @notification = Notification.find(params[:id])
     @notification.mark_as_read!
+  rescue ActiveRecord::RecordNotFound 
+    redirect_to talks_url, notice: "Record or page does not exist"
   end 
 end

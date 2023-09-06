@@ -22,9 +22,13 @@ class UsersController < ApplicationController
     def show 
         #TO DO: After Installing Pundit, utilize it here!!!
         @user = User.find(params[:id])
+        
         if @user.private?
             redirect_to root_path 
         end 
+
+      rescue
+        redirect_to talks_url, notice: "Record or page does not exist"
     end 
 
     private 
