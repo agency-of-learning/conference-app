@@ -7,41 +7,41 @@
       <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= resource.name %></h1>
     </div>
 
-    <div class="field mb-2">
+    <div class="field mb-4">
       <%= f.label :name , class: "block text-primary italic text-sm font-bold mb-2"%>
-      <%= f.text_field :name, autofocus: true, autocomplete: "name",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
-    <div class="field mb-2">
+    <div class="field mb-4">
       <%= f.label :email , class: "block text-primary italic text-sm font-bold mb-2"%>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-      <div class="field mb-2">
+      <div class="field mb-4">
         <%= f.label :bio , class: "block text-primary italic text-sm font-bold mb-2"%>
         <%= f.text_area :bio, autofocus: true, size: "5x4", placeholder: "Short Bio", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
 
-      <div class="field mb-2">
+      <div class="field mb-4">
         <%= f.label :location , class: "block text-primary italic text-sm font-bold mb-2"%>
-        <%= f.text_field :location, autofocus: true, placeholder: "Location",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+        <%= f.text_field :location, autofocus: true, placeholder: "Location",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
 
-      <div class="field mb-2">
+      <div class="field mb-4">
          <%= f.label "Social Links" , class: "block text-primary italic text-sm font-bold mb-2"%>
-          <%= f.text_field :github, autofocus: true, placeholder: "https://github.com/",  class: "shadow appearance-none border rounded w-full py-2 px-3  my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-          <%= f.text_field :linkedin, autofocus: true, placeholder: "https://www.linkedin.com/in/",  class: "shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-          <%= f.text_field :twitter, autofocus: true, placeholder: "https://twitter.com/ OR https://x.com/",  class: "shadow appearance-none border rounded w-full py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+          <%= f.text_field :github, autofocus: true, placeholder: "https://github.com/",  class: "shadow appearance-none border rounded w-full py-4 px-3  my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+          <%= f.text_field :linkedin, autofocus: true, placeholder: "https://www.linkedin.com/in/",  class: "shadow appearance-none border rounded w-full py-4 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+          <%= f.text_field :twitter, autofocus: true, placeholder: "https://twitter.com/ OR https://x.com/",  class: "shadow appearance-none border rounded w-full py-4 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
 
 
     <div class="field mb-2">
       <%= f.label :password, class: "block text-primary italic text-sm font-bold mb-2" %> <i>(leave blank if you don't want to change it)</i>
-      <%= f.password_field :password, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.password_field :password, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       <% if @minimum_password_length %>
         <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
@@ -49,14 +49,14 @@
 
     <div class="field mb-2">
       <%= f.label :password_confirmation, class: "block text-primary italic text-sm font-bold mb-2" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
         <h3 class="my-3 font-bold text-xl text-primary italic"> Preferences </h3>
    
     <div class="flex justify-between mb-2">
           <%= f.label "Keep Profile Private", class: "text-secondary font-extrabold italic" %>
-          <%= f.check_box :private, as: :boolean, class: "#{ !@user.private? ? 'bg-secondary-50' : 'bg-gray-200' } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
+          <%= f.check_box :private, as: :boolean, class: "bg-gray-400 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
             <span class="sr-only">Private</span>
             <span aria-hidden="true" class="translate-x-0 <%= !@user.private? ? 'translate-x-5 bg-primary' : 'translate-x-0' %>  pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
          <% end %>
@@ -64,7 +64,7 @@
 
     <div class="flex justify-between mb-2">
           <%= f.label "Receive Email Notifications", class: "text-secondary font-extrabold italic" %>
-          <%= f.check_box :receive_email_notifications, as: :boolean, class: "#{ !@user.receive_email_notifications? ? 'bg-secondary-50' : 'bg-gray-200' } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
+          <%= f.check_box :receive_email_notifications, as: :boolean, class: "bg-gray-400 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2", role: 'switch', 'aria-checked': false do %> 
             <span class="sr-only">Email Notifications</span>
             <span aria-hidden="true" class="translate-x-0 <%= !@user.receive_email_notifications? ? 'translate-x-5 bg-primary' : 'translate-x-0' %>  pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
          <% end %>
