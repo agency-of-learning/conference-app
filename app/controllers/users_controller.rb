@@ -27,8 +27,8 @@ class UsersController < ApplicationController
             redirect_to root_path 
         end 
 
-      rescue
-        redirect_to talks_url, notice: "Record or page does not exist"
+      rescue ActiveRecord::RecordNotFound
+        redirect_to talks_url, notice: "Record not found"
     end 
 
     private 

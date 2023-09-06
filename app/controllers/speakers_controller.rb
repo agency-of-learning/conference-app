@@ -11,6 +11,8 @@ class SpeakersController < ApplicationController
   # Use with before_action callback for shared use.
   def set_speaker
     @speaker = Speaker.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    redirect_to talks_url, notice: "Record not found"
   end
 
   # Only allow a list of trusted parameters.
