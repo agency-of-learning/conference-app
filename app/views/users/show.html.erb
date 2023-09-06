@@ -2,10 +2,10 @@
     <%= render 'shared/onboarding_header'%>
 <%end%>
 <div class=" text-center">
-  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+  <div  class=" sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
      <div class="field my-2 w-full flex flex-col items-center justify-center">
         <% if @user.profile_photo.attached? %>
-            <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] lg:w-[15rem] lg:h-[15rem] object-cover" %>
+            <%= image_tag @user.profile_photo, class:"rounded-full h-[12rem] w-[12rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
         <% else %>  
             <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
         <% end %>
