@@ -12,7 +12,7 @@ class SpeakersController < ApplicationController
   def set_speaker
     @speaker = Speaker.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-    redirect_to talks_url, notice: "Record not found"
+      redirect_to talks_url, notice: "Record not found"
   end
 
   # Only allow a list of trusted parameters.
