@@ -20,13 +20,13 @@
       <strong class="font-extrabold text-2xl text-primary mb-6 italic"><%= contributor.name%></strong>
     </p>
     <p>
-      <strong class="font-bold text-sm text-secondary"><%= contributor.title %></strong>
+      <strong class="font-bold text-sm text-secondary italic"><%= contributor.title %></strong>
     </p>
 
     <div class="flex flex-col items-center">
 
       <div>
-        <p class="my-4 block font-lg text-secondary">
+        <p class="my-4 block font-lg text-secondary italic">
           <%= contributor.bio %>
         </p>
       </div>
@@ -55,10 +55,10 @@
  <hr class="mb-3 border-secondary">
 <% end %>
 
-<p class="my-4 block font-lg text-secondary mx-auto md:w-2/3 w-full text-lg">This team’s dedication and creativity have been instrumental in making the Rails World Conference app a reality. We are grateful for their time and effort. Please let us know what you think below.</p>
+<p class="my-4 block font-lg text-secondary mx-auto md:w-2/3 w-full text-lg italic">This team’s dedication and creativity have been instrumental in making the Rails World Conference app a reality. We are grateful for their time and effort. Please let us know what you think below.</p>
 
   <%= link_to new_comment_path do%>
-    <div class="mx-auto my-2 mt-4 py-4 px-14 bg-secondary hover:bg-primary  text-lg font-bold text-white text-center md:w-2/3 w-full">
+    <div class="mx-auto my-2 mt-4 py-4 px-14 bg-secondary hover:bg-primary  text-lg font-bold text-white text-center md:w-2/3 w-full italic">
       Send Feedback
     </div>
   <% end %>

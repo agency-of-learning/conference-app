@@ -53,6 +53,8 @@ class TalksController < ApplicationController
 
   def set_talk
     @talk = Talk.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to talks_url, notice: "Record not found"
   end
 
   def talk_params
