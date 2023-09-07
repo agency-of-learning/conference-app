@@ -26,7 +26,7 @@
         <%= @user.bio%>
       </div>
 
-      <div class="field my-1 flex justify-center">
+      <div class="field my-4 flex justify-center">
         <%if @user.github != "" && !@user.github.nil?%>
             <a href=<%="#{@user.github}"%> target="_blank">
                 <i class="fa-brands fa-github fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>

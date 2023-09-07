@@ -1,6 +1,6 @@
 <%= render 'shared/onboarding_header'%>
 <div>
-  <div class=" px-6 mt-4 sm:mx-auto w-full sm:max-w-sm flex flex-col justify-center">
+  <div class="sm:mx-auto w-full sm:max-w-sm flex flex-col justify-center">
     <h2 class="block text-primary italic font-extrabold text-lg w-full md:text-left mb-2 md:mb-0 pr-4">Create Your Profile</h2>
     <%= form_for(@user, url: registration_path(@user), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: @user %>

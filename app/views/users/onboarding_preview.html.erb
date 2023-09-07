@@ -1,5 +1,5 @@
 <%= render 'shared/onboarding_header'%>
-  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+  <div  class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
     <h2 class="block text-primary italic font-extrabold text-lg md:text-2xl md:text-left mb-2 md:mb-0 pr-4">Almost There 🎉</h2>
     <h3 class="text-secondary font-bold text-md md:text-xl italic mb-3 pb-3"> This is how your profile will appear to others</h3>
       <div class="field mb-2 w-full flex flex-col items-center justify-center">
@@ -31,7 +31,7 @@
         <%= @user.bio%>
       </div>
 
-      <div class="field my-1 flex justify-center">
+      <div class="field my-4 flex justify-center">
         <%if @user.github != "" %>
             <a href=<%="#{@user.github}"%> target="_blank">
                 <i class="fa-brands fa-github fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
@@ -53,7 +53,7 @@
       </div>
 
    
-   <div class="flex flex-col text-center" data-controller="decorator">
+   <div id="buttons" class="flex flex-col text-center" data-controller="decorator">
     <%= button_to "Save", user_profile_path, method: :get, data:{"decorator-target": "anchor", controller: "confetti", action:"click->confetti#schoolPride click->decorator#submit", "confetti-animation-value":"10", "confetti-first-color-value": "#CC0000", "confetti-second-color-value": "#3B1D62", "confetti-follow-value": "false"}, class: "bg-secondary hover:bg-primary active:bg-primary  text-white font-bold py-4 px-4 w-full italic my-3 mx-auto md:w-3/4"%>
    
     <%= link_to "Back", :back, data: { turbo_frame: "_top" }, :class => "bg-secondary-100 hover:bg-primary active:bg-primary  text-white font-bold py-4 px-4 w-full italic my-3 mx-auto md:w-3/4" %>

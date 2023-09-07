@@ -36,7 +36,10 @@
     </div>
     <%# Else Yield the Non-Signed-In User View %>
     <% else %>
+
+    <div class=<%= controller.controller_name == "users" ?  "px-6" : ""%>>
       <%= yield %>
+    </div>  
     <% end %> 
   </body>
 </html>
