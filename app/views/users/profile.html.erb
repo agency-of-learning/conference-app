@@ -1,17 +1,17 @@
-<div class="container text-center mt-8 ">
+<div class="container text-center ">
   <% if notice.present? %>
     <%= render "shared/alert_message", notice: notice %>
   <% end %> 
-  <div  class=" px-6 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+  <div  class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
     <h2 class="block text-primary italic font-extrabold text-2xl mb-4  pr-4 sm:text-left lg:text-4xl text-left lg:text-left">My Profile</h2>
       <div class="field my-2 w-full flex flex-col items-center justify-center">
         <% if @user.profile_photo.attached? %>
         <a data-controller="confetti" data-action="click->confetti#schoolPride" data-animation-value="school-pride" data-confetti-first-color-value="#CC0000" 
         data-confetti-second-color-value="#3B1D62" data-duration-value="10" data-confetti-debug-value="true">
-            <%= image_tag @user.profile_photo, class:"rounded-full h-[12rem] w-[12rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
+            <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
         </a>
         <% else %>  
-            <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
+            <i class="fa-solid fa-user-secret fa-2xl w-[5rem] h-[5rem] lg:w-[5rem] lg:h-[5rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
         <% end %>
 
         <h1 class="mt-2 text-primary italic font-extrabold text-xl lg:text-2xl">
@@ -34,25 +34,25 @@
         <%= @user.bio%>
       </div>
 
-      <div class="field my-2 flex justify-center">
-        <%if @user.github != "" %>
+      <div class="field flex justify-center">
+        <%if @user.github != "" && !@user.github.nil? %>
             <a href=<%="#{@user.github}"%> target="_blank">
-                <i class="fa-brands fa-github fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-github fa-2xl mx-3 h-12 lg:h-18 mb-4  text-secondary hover:text-primary"></i>
             </a>
         <%end%> 
-        <%if @user.linkedin != "" %> 
+        <%if @user.linkedin != "" && !@user.linkedin.nil? %> 
             <a href=<%="#{@user.linkedin}"%> target="_blank">
-                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 lg:h-18 mb-4  text-secondary hover:text-primary"></i>
             </a>
         <%end%>
-        <%if @user.twitter != "" %>
+        <%if @user.twitter != "" && !@user.twitter.nil? %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
-                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
+                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 lg:h-18 mb-4  text-secondary hover:text-primary"></i>
             </a>
         <%end%>
         <%if !@user.private && @user.qrcode.attached? %>
         <div data-controller="dialog">
-          <button data-action="click->dialog#open">
+          <button data-action="click->dialog#open" class="mb-4 ">
             <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
           </button>
           <dialog data-dialog-target="modal" class="backdrop:bg-white backdrop:opacity-80 w-full md:w-1/4">
@@ -97,4 +97,3 @@
     </div>
   </div>
 </div>
-
