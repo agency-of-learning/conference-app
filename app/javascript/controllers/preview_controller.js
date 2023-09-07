@@ -4,11 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["input", "dummy", "preview"]
 
-  connect(){
-    console.log("Hello!", this.element)
-  }
   preview() {
-    const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/heic'];
 
     let input = this.inputTarget;
     let preview = this.previewTarget;
@@ -20,7 +16,7 @@ export default class extends Controller {
       preview.src = reader.result;
     };
 
-    if (file && acceptedImageTypes.includes(file['type'])) {
+    if (file) {
       dummy.style.display = "none"
       preview.style.display = "flex"
       reader.readAsDataURL(file);
