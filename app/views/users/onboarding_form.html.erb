@@ -1,18 +1,13 @@
 <%= render 'shared/onboarding_header'%>
-<div class="" data-controller="onboarding">
-  <div class=" px-6 mt-4 sm:mx-auto w-full sm:max-w-sm flex flex-col justify-center">
+<div>
+  <div class="px-6 mt-4 sm:mx-auto w-full sm:max-w-sm flex flex-col justify-center">
     <h2 class="block text-primary italic font-extrabold text-lg w-full md:text-left mb-2 md:mb-0 pr-4">Create Your Profile</h2>
     <%= form_for(@user, url: registration_path(@user), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: @user %>
 
       <label class="text-secondary italic font-bold">Upload a photo</label>
       <div class="field mb-2 w-full flex flex-col items-center justify-center">
-        <%= f.label(:profile_photo) do %>
-        <div data-onboarding-target="icon">
-          <%= svg "photo" %>
-        </div>
-          <%= f.file_field :profile_photo, autofocus: true, direct_upload: true, data: {onboarding_target: "image", action: "input->onboarding#upload"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-        <%end %>
+        <%= render "image_preview", f: f, user: @user%>
         <h1 class="mt-4 text-primary italic font-extrabold text-xl"><%= @user.name %></h1>
       </div>
      
@@ -23,7 +18,7 @@
 
       <div class="field mb-2">
         <%= f.label :location , class: "block text-primary italic text-sm font-bold mb-2"%>
-        <%= f.text_field :location, autofocus: true, placeholder: "Location",  class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+        <%= f.text_field :location, autofocus: true, placeholder: "Location",  class: "shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
 
       <div class="field mb-2">
