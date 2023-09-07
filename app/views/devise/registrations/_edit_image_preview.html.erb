@@ -1,8 +1,7 @@
  <div data-controller="preview" class="">
  <%= f.label(:profile_photo, class:"mx-atuo") do %>
          <div class="image-container mx-auto flex flex-col justify-center">
-            
-                <%= image_tag('', alt:'', data: { preview_target: "preview" }, class: "hidden rounded-full h-[10rem] w-[10rem] object-cover mx-atuo hover:hover:shadow-xl hover:shadow-secondary hover:ease-in duration-300") %>
+            <%= image_tag('', alt:'', data: { preview_target: "preview" }, class: "hidden rounded-full h-[10rem] w-[10rem] object-cover mx-atuo hover:hover:shadow-xl hover:shadow-secondary hover:ease-in duration-300") %>
             <% if user.profile_photo.attached? %>
                 <%= image_tag user.profile_photo, alt:'', data: { preview_target: "dummy" }, class: "rounded-full h-[10rem] w-[10rem] object-cover mx-atuo hover:hover:shadow-xl hover:shadow-secondary hover:ease-in duration-300" %>
             <% else %>  
@@ -11,6 +10,4 @@
         </div>
           <%= f.file_field :profile_photo, autofocus: true, direct_upload: true, accept: "image/*, image/heic", data: {preview_target: "input", action: "change->preview#preview"},  class: " hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
  <%end %>
-  <p data-preview-target="error" class="hidden bg-primary text-white px-3 py-2 font-medium rounded-lg mt-3">Please upload a true image file.</p>
-
  </div>
