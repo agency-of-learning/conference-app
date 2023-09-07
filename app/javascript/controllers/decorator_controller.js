@@ -24,7 +24,7 @@ export default class extends Controller {
   }
   
   submit(e){
-    let element = document.querySelector("body > div:nth-child(2) > div > form:nth-child(1)")
+    let element = document.querySelector("#buttons > form")
     console.log(element)
     element.requestSubmit(this.anchorTarget)
   }

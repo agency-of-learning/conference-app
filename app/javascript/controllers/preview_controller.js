@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="preview"
 export default class extends Controller {
-  static targets = ["input", "dummy", "preview", "error"]
+  static targets = ["input", "dummy", "preview"]
 
   connect(){
     console.log("Hello!", this.element)
@@ -14,11 +14,8 @@ export default class extends Controller {
     let preview = this.previewTarget;
     let dummy = this.dummyTarget
     let file = input.files[0];
-    let error = this.errorTarget;
     let reader = new FileReader();
 
-    console.log(input, preview, file)
-    error.style.visibility = "hidden"
     reader.onloadend = function () {
       preview.src = reader.result;
     };
@@ -29,7 +26,6 @@ export default class extends Controller {
       reader.readAsDataURL(file);
     } else {
       console.log("Not an image file!")
-      error.style.visibility = "visible"
     }
   }
 }
