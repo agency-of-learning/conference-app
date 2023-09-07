@@ -2,12 +2,12 @@
     <%= render 'shared/onboarding_header'%>
 <%end%>
 <div class=" text-center">
-  <div  class=" px-6 mt-4 sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
+  <div  class=" sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
      <div class="field my-2 w-full flex flex-col items-center justify-center">
         <% if @user.profile_photo.attached? %>
-            <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] lg:w-[15rem] lg:h-[15rem] object-cover" %>
+            <%= image_tag @user.profile_photo, class:"rounded-full h-[10rem] w-[10rem] lg:w-[12rem] lg:h-[12rem] object-cover" %>
         <% else %>  
-            <i class="fa-solid fa-user-secret fa-2xl w-[4rem] h-[4rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
+            <i class="fa-solid fa-user-secret fa-2xl w-[5rem] h-[5rem] lg:w-[6rem] lg:h-[6rem] p-10 bg-secondary-50 rounded-full object-cover"></i>
         <% end %>
 
         <h1 class="mt-4 text-primary italic font-extrabold text-xl lg:text-2xl">
@@ -26,18 +26,18 @@
         <%= @user.bio%>
       </div>
 
-      <div class="field my-1 flex justify-center">
-        <%if @user.github != "" %>
+      <div class="field my-4 flex justify-center">
+        <%if @user.github != "" && !@user.github.nil?%>
             <a href=<%="#{@user.github}"%> target="_blank">
                 <i class="fa-brands fa-github fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%> 
-        <%if @user.linkedin != "" %> 
+        <%if @user.linkedin != "" && !@user.linkedin.nil?%> 
             <a href=<%="#{@user.linkedin}"%> target="_blank">
                 <i class="fa-brands fa-linkedin fa-2xl mx-3  h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%>
-        <%if @user.twitter != "" %>
+        <%if @user.twitter != "" && !@user.twitter.nil? %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
                 <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
             </a>
@@ -59,8 +59,5 @@
           </div>
         <%end%>
       </div>
-
-   
-
   </div>
 </div>

@@ -24,7 +24,7 @@
         <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
         <%= turbo_stream_from dom_id(current_user, :menu_to) %>
       <%= render "shared/navbar" %>
-    <div class="container mx-auto px-6 pt-20 min-h-[90vh]">
+    <div class="container mx-auto px-6 pt-16 min-h-[90vh]">
       <div class="flex min-h-full w-full flex-col justify-center lg:px-8">
         <%= yield %>
       </div>
