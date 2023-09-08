@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWorldConf</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <% title = content_for(:title) || 'Rails World 2023 Official Conference App' %>
+    <title><%= title %></title>
+    <meta property="og:title" content="<%= title %>" />
+
+    <meta name="description" content="<%= content_for(:description) || 'Build your schedule and get ready for Amsterdam!' %>" />
+    <meta property="og:image" content="<%= image_url('rw_conference_app.png') %>" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:type" content="<%= content_for(:page_type) || 'website' %>" /> 
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://railsworld.agencyoflearning.com/" />
+    <meta property="twitter:title" content="Rails World 2023 Official Conference App" />
+    <meta property="twitter:description" content="Build your schedule and get ready for Amsterdam!" />
+    <meta property="twitter:image" content="<%= image_url('rw_conference_app.png') %>" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -20,7 +37,7 @@
 
   <body>
     <% if current_user && !controller.action_name.include?("onboarding")%>
-        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %> <%# TODDO MOVE THESE SOMEWHERE ELSE%>
+        <%= turbo_stream_from dom_id(current_user, :broadcast_to) %> <%# TODO MOVE THESE SOMEWHERE ELSE%>
         <%= turbo_stream_from dom_id(current_user, :mobile_to) %>
         <%= turbo_stream_from dom_id(current_user, :menu_to) %>
       <%= render "shared/navbar" %>
