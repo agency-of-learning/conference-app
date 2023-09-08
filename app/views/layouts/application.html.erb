@@ -13,6 +13,13 @@
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:type" content="<%= content_for(:page_type) || 'website' %>" /> 
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://railsworld.agencyoflearning.com/" />
+    <meta property="twitter:title" content="Rails World 2023 Official Conference App" />
+    <meta property="twitter:description" content="Build your schedule and get ready for Amsterdam!" />
+    <meta property="twitter:image" content="<%= image_url('rw_conference_app.png') %>" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
