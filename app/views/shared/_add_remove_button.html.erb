@@ -9,3 +9,5 @@
           <% end %>
         <% end %>
       <% end %> 
+      <%= link_to "Add to Google Calendar", talk.add_to_cal_object.google_url, class: "btn btn-primary", target: "_blank" %>
+      <%= link_to "Add to iCal", talk.add_to_cal_object.ical_url, class: "btn btn-primary", target: "_blank" %>
