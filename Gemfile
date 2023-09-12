@@ -72,6 +72,8 @@ gem "chartkick"
 gem "rack-attack"
 gem "strong_migrations"
 
+gem "add_to_calendar"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
