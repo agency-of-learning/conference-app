@@ -1,4 +1,4 @@
-<div id="<%= dom_id talk %>" class="border-secondary-50 border-2 my-4 rounded p-4">
+<div id="<%= dom_id talk %>" class="border-secondary-50 border-2 my-4 rounded pl-4 pt-4 pr-4 pb-1">
   <div class="flex flex-col align-content-start">
     <div class="flex flex-row justify-between relative">
       <div>
@@ -51,6 +51,10 @@
       <span class= " py-2 px-2 mb-1 rounded bg-secondary-100 inline-block text-sm font-semibold italic text-white text-center"><%= t.name %> </span>
     <% end %>
   </div>
+
+  <%= link_to "Add to Google Calendar", talk.add_to_cal_object.google_url, class: "btn btn-primary italic text-xs", target: "_blank" %> /
+  <%= link_to "Add to iCal", talk.add_to_cal_object.ical_url, class: "btn btn-primary italic text-xs", target: "_blank" %>
+  
 
 </div>
 

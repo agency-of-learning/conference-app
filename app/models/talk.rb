@@ -65,6 +65,17 @@ class Talk < ApplicationRecord
 
   def full_time
     "#{self.start_time.to_fs(:twenty_four_hour_and_minutes)} - #{self.add_duration.to_fs(:twenty_four_hour_and_minutes)}"
-  end 
+  end
+
+  def add_to_cal_object
+    AddToCalendar::URLs.new(
+      start_datetime: self.start_time.to_time,
+      end_datetime: self.add_duration.to_time,
+      title: self.title,
+      description: self.description,
+      location: self.location,
+      timezone: 'Europe/Amsterdam'
+    )
+  end
 
 end
