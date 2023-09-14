@@ -1,5 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
+<div class="flex flex-col w-full md:w-2/3">
+  <div>
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
@@ -79,7 +79,7 @@
           <p class="my-2">
             <% @talk.speakers.each do |s| %>
               <div class="flex flex-row text-white my-6 py-4 px-5 bg-secondary">
-                <div class="flex-none">
+                <div>
                   <%= image_tag(s.image_filename, class: "rounded-full h-16 w-16 object-cover mr-5 border-2 border-white") %>
                 </div>
                 <div>
@@ -97,7 +97,7 @@
     </p>
     
 
-    <div class="flex flex-row justify-end items-center">
+    <div class="flex flex-row w-full justify-end">
       <div>
         <%= render partial: "shared/add_remove_button", locals: {talk: @talk} %>
       </div>
@@ -105,4 +105,4 @@
   </div>
 </div>
 
-<%= link_to 'Back to Session', 'javascript:history.back()', class: "mx-auto my-2 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full rounded italic" %>
+<%= link_to 'Back to Session', 'javascript:history.back()', class: "my-2 py-4 px-14 bg-secondary text-lg font-bold text-white text-center md:w-2/3 w-full rounded italic" %>
