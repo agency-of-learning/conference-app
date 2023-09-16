@@ -56,5 +56,5 @@ en:
             twitter:
               blank: "is required"
               https_only: "Full URL required"
-              host_not_allowed: "Host should be Twitter/X"
+              host_not_allowed: "Host should be Twitter/X OR Mastodon"
 
