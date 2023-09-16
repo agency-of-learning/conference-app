@@ -44,7 +44,7 @@
         <%end%>
         <%if @user.twitter != "" %>
             <a href=<%="#{@user.twitter}"%> target="_blank">
-                <i class="fa-brands fa-twitter fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
+                <i class="fa-brands <%=@user.twitter.include?("mastodon") ? "fa-mastodon" : "fa-twitter" %> fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
             </a>
         <%end%>
         <%if !@user.private %>
