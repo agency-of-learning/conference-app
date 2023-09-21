@@ -4,6 +4,9 @@
 #    t.string "title"
 #    t.text "bio"
 #    t.string "image_filename", default: "placeholder.png"
+#    t.string "github"
+#    t.string "linkedin"
+#    t.string "twitter"
 #    t.datetime "created_at", null: false
 #    t.datetime "updated_at", null: false
 #  end
@@ -14,6 +17,9 @@ speaker_one:
   title: Deputy Director of Parks and Rec
   bio: Oh, boy, Hold on. The floor and wall just switched
   image_filename: a-patterson.jpeg
+  github: https://github.com/user
+  linkedin: https://www.linkedin.com/in/user/
+  twitter: https://twitter.com/user
 
 speaker_two:
   id: 2
@@ -21,6 +27,9 @@ speaker_two:
   title: Regional Manager of Dunder Mifflin
   bio: I DECLARE BANKRUPCTY 
   image_filename: a-patterson.jpeg
+  github: https://github.com/user
+  linkedin: https://www.linkedin.com/in/user/
+  twitter: https://twitter.com/user
 
 speaker_three:
   id: 3
@@ -28,4 +37,8 @@ speaker_three:
   title: Principal of Abbott Elementary
   bio: Does school end at 2:30 or 3:00?
   image_filename: a-patterson.jpeg
+  github: https://github.com/user
+  linkedin: https://www.linkedin.com/in/user/
+  twitter: https://twitter.com/user
+  
 
