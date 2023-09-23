@@ -1,82 +1,82 @@
-<div class="md:w-2/3">
-  <div class="mx-auto">
-    <h1 class="font-black italic text-2xl text-primary mb-6">Speaker Details</h1>
+<div class="w-full flex flex-row justify-center">
+  <div class="flex flex-col w-full md:w-2/3">
+    <div class="mx-auto">
+      <h1 class="font-black italic text-2xl text-primary mb-6">Speaker Details</h1>
 
-    <%= render @speaker %>
+      <%= render @speaker %>
 
-    <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center">
 
-      <div>
-        <p class="my-4 block text-lg text-secondary italic">
-          <%= @speaker.bio %>
+        <div>
+          <p class="my-4 block text-lg text-secondary italic">
+            <%= @speaker.bio %>
+          </p>
+        </div>
+
+        <div class="flex flex-row justify-between mb-4">
+          <% unless @speaker.github.empty? %>
+            <%= link_to @speaker.github, :target => '_blank' do %>
+              <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
+            <% end %>
+          <% end %>
+
+          <% unless @speaker.linkedin.empty? %>
+            <%= link_to @speaker.linkedin, :target => '_blank' do %>
+              <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
+            <% end %>
+          <% end %>
+          
+          <% unless @speaker.twitter.empty? %>
+            <%= link_to @speaker.twitter, :target => '_blank' do %>
+              <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mx-auto">
+        <p class="my-4">
+          <strong class="font-black italic text-2xl text-primary">Sessions</strong>
+        </p>
+        <p class="my-5">
+          <% @speaker.talks.each do |talk| %>
+            <%= link_to talk do %>
+              <div class="border-secondary-50 border-2 my-4 rounded">
+                <div class="flex flex-row items-center p-2">
+                  <div class="flex-grow">
+                    <p class="font-black italic text-secondary">
+                      <%= talk.start_time.to_fs(:weekday_month_date) %>  
+                    </p>
+                    <p class="my-1">
+                      <strong class="block font-black italic mb-1 text-lg text-primary">
+                      <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
+                      </strong>
+                    </p>
+                    
+                    <p>
+                      <strong class="block font-bold italic text-secondary pr-4"> <%= talk.title %> </strong>
+                    </p>
+
+                    <p>
+                      <strong class="block font-extrabold italic my-2 text-primary"><%= talk.location %></strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <% talk.tags.each do |t| %>
+                    <span class= "ml-2 py-2 rounded px-2 mb-3 bg-secondary-100 inline-block text-sm font-semibold italic text-white text-center"><%= t.name %> </span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </p>
       </div>
 
-      <div class="flex flex-row justify-between mb-4">
-        <% unless @speaker.github.empty? %>
-          <%= link_to @speaker.github, :target => '_blank' do %>
-            <i class="fa-brands fa-github w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
-          <% end %>
-        <% end %>
-
-        <% unless @speaker.linkedin.empty? %>
-          <%= link_to @speaker.linkedin, :target => '_blank' do %>
-            <i class="fa-brands fa-linkedin w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
-          <% end %>
-        <% end %>
-        
-        <% unless @speaker.twitter.empty? %>
-          <%= link_to @speaker.twitter, :target => '_blank' do %>
-            <i class="fa-brands fa-twitter w-12 h-12 mx-4 text-secondary hover:text-primary active:text-primary"></i>
-          <% end %>
-        <% end %>
-      </div>
     </div>
-
-    <div class="mx-auto">
-      <p class="my-4">
-        <strong class="font-black italic text-2xl text-primary">Sessions</strong>
-      </p>
-      <p class="my-5">
-        <% @speaker.talks.each do |talk| %>
-          <%= link_to talk do %>
-            <div class="border-secondary-50 border-2 my-4 rounded">
-              <div class="flex flex-row items-center p-2">
-                <div class="flex-grow">
-                  <p class="font-black italic text-secondary">
-                    <%= talk.start_time.to_fs(:weekday_month_date) %>  
-                  </p>
-                  <p class="my-1">
-                    <strong class="block font-black italic mb-1 text-lg text-primary">
-                    <%= talk.start_time.to_fs(:twenty_four_hour_and_minutes) %> - <%= talk.add_duration.to_fs(:twenty_four_hour_and_minutes) %>
-                    </strong>
-                  </p>
-                  
-                  <p>
-                    <strong class="block font-bold italic text-secondary pr-4"> <%= talk.title %> </strong>
-                  </p>
-
-                  <p>
-                    <strong class="block font-extrabold italic my-2 text-primary"><%= talk.location %></strong>
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <% talk.tags.each do |t| %>
-                  <span class= "ml-2 py-2 rounded px-2 mb-3 bg-secondary-100 inline-block text-sm font-semibold italic text-white text-center"><%= t.name %> </span>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </p>
-    </div>
+    <%= link_to 'My Schedule', user_root_path, class: "my-2 mt-2 py-4 px-14 bg-secondary text-lg font-bold italic text-white text-center  w-full rounded" %>
+    <%= link_to 'Back to Session', 'javascript:history.back()', class: "my-2 py-4 px-14 bg-secondary-100 text-lg font-bold italic text-white text-center w-full rounded" %>
 
   </div>
 </div>
-
-<%= link_to 'My Schedule', user_root_path, class: "my-2 mt-2 py-4 px-14 bg-secondary text-lg font-bold italic text-white text-center  md:w-2/3 w-full rounded" %>
-<%= link_to 'Back to Session', 'javascript:history.back()', class: "my-2 py-4 px-14 bg-secondary-100 text-lg font-bold italic text-white text-center md:w-2/3 w-full rounded" %>
-
-
