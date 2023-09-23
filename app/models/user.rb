@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_one_attached :profile_photo, dependent: :destroy 
   has_one_attached :qrcode, dependent: :destroy 
 
+  scope :public_users, -> {where(private: false)}
+
   enum :role, attendee: 0, admin: 1
 
   def unread_notifications_count 

@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show'
 
-  resources :users, :only =>[:show]
+  resources :users, :only =>[:show, :index]
 
   get '/user_profile', to: 'users#profile'
 

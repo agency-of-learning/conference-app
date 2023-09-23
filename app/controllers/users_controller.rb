@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:onboarding, :onboarding_form, :onboarding_preview, :profile]
     before_action :authenticate_user!, except: %i[show]
+    before_action :no_creeps, only: [:index]
 
     def onboarding 
     end 
@@ -19,6 +20,10 @@ class UsersController < ApplicationController
         end 
     end 
 
+    def index 
+        @users = User.public_users.includes(profile_photo_attachment: :blob)
+    end 
+
     def show 
         #TO DO: After Installing Pundit, utilize it here!!!
         @user = User.find(params[:id])
@@ -35,4 +40,10 @@ class UsersController < ApplicationController
     def set_user 
         @user = current_user
     end
+
+    def no_creeps
+        if current_user.private?
+            redirect_to root_path
+        end 
+    end 
 end
