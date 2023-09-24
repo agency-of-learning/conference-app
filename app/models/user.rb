@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   validates :linkedin, url: { host: /linkedin\.com\Z/ }
   validates :github, url: { host: /github\.com\Z/ }
+  validates :twitter, url: { host: /.\Z/}
   
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
