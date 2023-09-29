@@ -1230,173 +1230,173 @@ puts "Finished creating talks"
 
 puts "Creating speakers_talks relationships"
 
-  SpeakerTalk.create!([
-    {
-      speaker_id: 1,
-      talk_id: 39
-    },
+  # SpeakerTalk.create!([
+  #   {
+  #     speaker_id: 1,
+  #     talk_id: 39
+  #   },
 
-    {
-      speaker_id: 2,
-      talk_id: 34
-    },
+  #   {
+  #     speaker_id: 2,
+  #     talk_id: 34
+  #   },
 
-    {
-      speaker_id: 3,
-      talk_id: 11
-    },
+  #   {
+  #     speaker_id: 3,
+  #     talk_id: 11
+  #   },
 
-    {
-      speaker_id: 4,
-      talk_id: 13
-    },
+  #   {
+  #     speaker_id: 4,
+  #     talk_id: 13
+  #   },
 
-    {
-      speaker_id: 5,
-      talk_id: 19
-    },
+  #   {
+  #     speaker_id: 5,
+  #     talk_id: 19
+  #   },
 
-    {
-      speaker_id: 6,
-      talk_id: 38
-    },
+  #   {
+  #     speaker_id: 6,
+  #     talk_id: 38
+  #   },
 
-    {
-      speaker_id: 7,
-      talk_id: 25
-    },
+  #   {
+  #     speaker_id: 7,
+  #     talk_id: 25
+  #   },
 
-    {
-      speaker_id: 8,
-      talk_id: 12
-    },
+  #   {
+  #     speaker_id: 8,
+  #     talk_id: 12
+  #   },
 
-    {
-      speaker_id: 8,
-      talk_id: 41
-    },
+  #   {
+  #     speaker_id: 8,
+  #     talk_id: 41
+  #   },
 
-    {
-      speaker_id: 9,
-      talk_id: 15
-    },
+  #   {
+  #     speaker_id: 9,
+  #     talk_id: 15
+  #   },
 
-    {
-      speaker_id: 9,
-      talk_id: 32
-    },
+  #   {
+  #     speaker_id: 9,
+  #     talk_id: 32
+  #   },
 
-    {
-      speaker_id: 10,
-      talk_id: 4
-    },
+  #   {
+  #     speaker_id: 10,
+  #     talk_id: 4
+  #   },
 
-    {
-      speaker_id: 11,
-      talk_id: 6
-    },
+  #   {
+  #     speaker_id: 11,
+  #     talk_id: 6
+  #   },
 
-    {
-      speaker_id: 12,
-      talk_id: 20
-    },
+  #   {
+  #     speaker_id: 12,
+  #     talk_id: 20
+  #   },
 
-    {
-      speaker_id: 13,
-      talk_id: 36
-    },
+  #   {
+  #     speaker_id: 13,
+  #     talk_id: 36
+  #   },
 
-    {
-      speaker_id: 14,
-      talk_id: 37
-    },
+  #   {
+  #     speaker_id: 14,
+  #     talk_id: 37
+  #   },
 
-    {
-      speaker_id: 15,
-      talk_id: 5
-    },
+  #   {
+  #     speaker_id: 15,
+  #     talk_id: 5
+  #   },
 
-    {
-      speaker_id: 16,
-      talk_id: 28
-    },
+  #   {
+  #     speaker_id: 16,
+  #     talk_id: 28
+  #   },
 
-    {
-      speaker_id: 17,
-      talk_id: 30
-    },
+  #   {
+  #     speaker_id: 17,
+  #     talk_id: 30
+  #   },
 
-    {
-      speaker_id: 18,
-      talk_id: 7
-    },
+  #   {
+  #     speaker_id: 18,
+  #     talk_id: 7
+  #   },
 
-    {
-      speaker_id: 19,
-      talk_id: 18
-    },
+  #   {
+  #     speaker_id: 19,
+  #     talk_id: 18
+  #   },
 
-    {
-      speaker_id: 20,
-      talk_id: 8
-    },
+  #   {
+  #     speaker_id: 20,
+  #     talk_id: 8
+  #   },
 
-    {
-      speaker_id: 21,
-      talk_id: 10
-    },
+  #   {
+  #     speaker_id: 21,
+  #     talk_id: 10
+  #   },
 
-    {
-      speaker_id: 22,
-      talk_id: 27
-    },
+  #   {
+  #     speaker_id: 22,
+  #     talk_id: 27
+  #   },
 
-    {
-      speaker_id: 23,
-      talk_id: 14
-    },
+  #   {
+  #     speaker_id: 23,
+  #     talk_id: 14
+  #   },
 
-    {
-      speaker_id: 24,
-      talk_id: 16
-    },
+  #   {
+  #     speaker_id: 24,
+  #     talk_id: 16
+  #   },
 
-    {
-      speaker_id: 25,
-      talk_id: 26
-    },
+  #   {
+  #     speaker_id: 25,
+  #     talk_id: 26
+  #   },
 
-    {
-      speaker_id: 26,
-      talk_id: 31
-    },
+  #   {
+  #     speaker_id: 26,
+  #     talk_id: 31
+  #   },
 
-    {
-      speaker_id: 27,
-      talk_id: 15
-    },
+  #   {
+  #     speaker_id: 27,
+  #     talk_id: 15
+  #   },
 
-    {
-      speaker_id: 27,
-      talk_id: 32
-    },
+  #   {
+  #     speaker_id: 27,
+  #     talk_id: 32
+  #   },
 
-    {
-      speaker_id: 28,
-      talk_id: 33
-    },
+  #   {
+  #     speaker_id: 28,
+  #     talk_id: 33
+  #   },
 
-    {
-      speaker_id: 29,
-      talk_id: 17
-    },
+  #   {
+  #     speaker_id: 29,
+  #     talk_id: 17
+  #   },
 
-    {
-      speaker_id: 30,
-      talk_id: 35
-    }
+  #   {
+  #     speaker_id: 30,
+  #     talk_id: 35
+  #   }
 
-    ])
+  #   ])
 
 
 
@@ -1567,358 +1567,358 @@ puts "Finished Creating tags list"
 
 puts "Creating TagTalk Relationships"
 
-TagTalk.create!([
-
-  {
-    talk_id: 4, 
-    tag_id: 2
-  },
-
-  {
-    talk_id: 5, 
-    tag_id: 3
-  },
-
-  {
-    talk_id: 5, 
-    tag_id: 4
-  },
-
-  {
-    talk_id: 5, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 6, 
-    tag_id: 6
-  },
-
-  {
-    talk_id: 7, 
-    tag_id: 7
-  },
-
-  {
-    talk_id: 7, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 8, 
-    tag_id: 8
-  },
-
-  {
-    talk_id: 8, 
-    tag_id: 9
-  },
-
-  {
-    talk_id: 8, 
-    tag_id: 10
-  },
-
-  {
-    talk_id: 10,
-    tag_id: 5
-  },
-
-  {
-    talk_id: 10,
-    tag_id: 7
-  },
-
-  {
-    talk_id: 10,
-    tag_id: 11
-  },
-
-  {
-    talk_id: 11, 
-    tag_id: 12
-  },
-
-  {
-    talk_id: 11, 
-    tag_id: 13
-  },
-
-  {
-    talk_id: 11, 
-    tag_id: 9
-  },
-
-  {
-    talk_id: 12,
-    tag_id: 14
-  },
-
-  {
-    talk_id: 13, 
-    tag_id: 15
-  },
-
-  {
-    talk_id: 13, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 14, 
-    tag_id: 16
-  },
-
-  {
-    talk_id: 15, 
-    tag_id: 17
-  },
-
-  {
-    talk_id: 16, 
-    tag_id: 13
-  },
-
-  {
-    talk_id: 16, 
-    tag_id: 9
-  },
-
-  {
-    talk_id: 16, 
-    tag_id: 18
-  },
-
-  {
-    talk_id: 17, 
-    tag_id: 19
-  },
-
-  {
-    talk_id: 17, 
-    tag_id: 20
-  },
-
-  {
-    talk_id: 17, 
-    tag_id: 21
-  },
-
-  {
-    talk_id: 18, 
-    tag_id: 9
-  },
-
-  {
-    talk_id: 19, 
-    tag_id: 22
-  },
-
-  {
-    talk_id: 19, 
-    tag_id: 21
-  },
-
-  {
-    talk_id: 20, 
-    tag_id: 23
-  },
-
-  {
-    talk_id: 20, 
-    tag_id: 24
-  },
-
-  {
-    talk_id: 20, 
-    tag_id: 16
-  },
-
-  {
-    talk_id: 24, 
-    tag_id: 23
-  },
-
-  {
-    talk_id: 24, 
-    tag_id: 24
-  },
-
-  {
-    talk_id: 24, 
-    tag_id: 16
-  },
-
-  {
-    talk_id: 25, 
-    tag_id: 18
-  },
-
-  {
-    talk_id: 25, 
-    tag_id: 2
-  },
-
-  {
-    talk_id: 26, 
-    tag_id: 25
-  },
-
-  {
-    talk_id: 27, 
-    tag_id: 18
-  },
-
-  {
-    talk_id: 27, 
-    tag_id: 8
-  },
-
-  {
-    talk_id: 27, 
-    tag_id: 26
-  },
-
-  {
-    talk_id: 28, 
-    tag_id: 27
-  },
-
-  {
-    talk_id: 28, 
-    tag_id: 21
-  },
-
-  {
-    talk_id: 28, 
-    tag_id: 8
-  },
-
-  {
-    talk_id: 30, 
-    tag_id: 4
-  },
-
-  {
-    talk_id: 30, 
-    tag_id: 28
-  },
-
-  {
-    talk_id: 30, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 31, 
-    tag_id: 29
-  },
-
-  {
-    talk_id: 31, 
-    tag_id: 30
-  },
-
-  {
-    talk_id: 31, 
-    tag_id: 31
-  },
-
-  {
-    talk_id: 32, 
-    tag_id: 17
-  },
-
-  {
-    talk_id: 33, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 33, 
-    tag_id: 32
-  },
-
-  {
-    talk_id: 34, 
-    tag_id: 33
-  },
-
-  {
-    talk_id: 34, 
-    tag_id: 34
-  },
-
-  {
-    talk_id: 34, 
-    tag_id: 35
-  },
-
-  {
-    talk_id: 35, 
-    tag_id: 5
-  },
-
-  {
-    talk_id: 35, 
-    tag_id: 11
-  },
-
-  {
-    talk_id: 35, 
-    tag_id: 7
-  },
-
-  {
-    talk_id: 36, 
-    tag_id: 23
-  },
-
-  {
-    talk_id: 36, 
-    tag_id: 36
-  },
-
-  {
-    talk_id: 36, 
-    tag_id: 31
-  },
-
-  {
-    talk_id: 37, 
-    tag_id: 2
-  },
-
-  {
-    talk_id: 37, 
-    tag_id: 37
-  },
-
-  {
-    talk_id: 38, 
-    tag_id: 16
-  },
-
-  {
-    talk_id: 38, 
-    tag_id: 38
-  },
-
-  {
-    talk_id: 38, 
-    tag_id: 39 
-  },
-
-  {
-    talk_id: 39, 
-    tag_id: 2
-  },
-
-  {
-    talk_id: 41, 
-    tag_id: 14
-  }
-])
+# TagTalk.create!([
+
+#   {
+#     talk_id: 4, 
+#     tag_id: 2
+#   },
+
+#   {
+#     talk_id: 5, 
+#     tag_id: 3
+#   },
+
+#   {
+#     talk_id: 5, 
+#     tag_id: 4
+#   },
+
+#   {
+#     talk_id: 5, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 6, 
+#     tag_id: 6
+#   },
+
+#   {
+#     talk_id: 7, 
+#     tag_id: 7
+#   },
+
+#   {
+#     talk_id: 7, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 8, 
+#     tag_id: 8
+#   },
+
+#   {
+#     talk_id: 8, 
+#     tag_id: 9
+#   },
+
+#   {
+#     talk_id: 8, 
+#     tag_id: 10
+#   },
+
+#   {
+#     talk_id: 10,
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 10,
+#     tag_id: 7
+#   },
+
+#   {
+#     talk_id: 10,
+#     tag_id: 11
+#   },
+
+#   {
+#     talk_id: 11, 
+#     tag_id: 12
+#   },
+
+#   {
+#     talk_id: 11, 
+#     tag_id: 13
+#   },
+
+#   {
+#     talk_id: 11, 
+#     tag_id: 9
+#   },
+
+#   {
+#     talk_id: 12,
+#     tag_id: 14
+#   },
+
+#   {
+#     talk_id: 13, 
+#     tag_id: 15
+#   },
+
+#   {
+#     talk_id: 13, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 14, 
+#     tag_id: 16
+#   },
+
+#   {
+#     talk_id: 15, 
+#     tag_id: 17
+#   },
+
+#   {
+#     talk_id: 16, 
+#     tag_id: 13
+#   },
+
+#   {
+#     talk_id: 16, 
+#     tag_id: 9
+#   },
+
+#   {
+#     talk_id: 16, 
+#     tag_id: 18
+#   },
+
+#   {
+#     talk_id: 17, 
+#     tag_id: 19
+#   },
+
+#   {
+#     talk_id: 17, 
+#     tag_id: 20
+#   },
+
+#   {
+#     talk_id: 17, 
+#     tag_id: 21
+#   },
+
+#   {
+#     talk_id: 18, 
+#     tag_id: 9
+#   },
+
+#   {
+#     talk_id: 19, 
+#     tag_id: 22
+#   },
+
+#   {
+#     talk_id: 19, 
+#     tag_id: 21
+#   },
+
+#   {
+#     talk_id: 20, 
+#     tag_id: 23
+#   },
+
+#   {
+#     talk_id: 20, 
+#     tag_id: 24
+#   },
+
+#   {
+#     talk_id: 20, 
+#     tag_id: 16
+#   },
+
+#   {
+#     talk_id: 24, 
+#     tag_id: 23
+#   },
+
+#   {
+#     talk_id: 24, 
+#     tag_id: 24
+#   },
+
+#   {
+#     talk_id: 24, 
+#     tag_id: 16
+#   },
+
+#   {
+#     talk_id: 25, 
+#     tag_id: 18
+#   },
+
+#   {
+#     talk_id: 25, 
+#     tag_id: 2
+#   },
+
+#   {
+#     talk_id: 26, 
+#     tag_id: 25
+#   },
+
+#   {
+#     talk_id: 27, 
+#     tag_id: 18
+#   },
+
+#   {
+#     talk_id: 27, 
+#     tag_id: 8
+#   },
+
+#   {
+#     talk_id: 27, 
+#     tag_id: 26
+#   },
+
+#   {
+#     talk_id: 28, 
+#     tag_id: 27
+#   },
+
+#   {
+#     talk_id: 28, 
+#     tag_id: 21
+#   },
+
+#   {
+#     talk_id: 28, 
+#     tag_id: 8
+#   },
+
+#   {
+#     talk_id: 30, 
+#     tag_id: 4
+#   },
+
+#   {
+#     talk_id: 30, 
+#     tag_id: 28
+#   },
+
+#   {
+#     talk_id: 30, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 31, 
+#     tag_id: 29
+#   },
+
+#   {
+#     talk_id: 31, 
+#     tag_id: 30
+#   },
+
+#   {
+#     talk_id: 31, 
+#     tag_id: 31
+#   },
+
+#   {
+#     talk_id: 32, 
+#     tag_id: 17
+#   },
+
+#   {
+#     talk_id: 33, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 33, 
+#     tag_id: 32
+#   },
+
+#   {
+#     talk_id: 34, 
+#     tag_id: 33
+#   },
+
+#   {
+#     talk_id: 34, 
+#     tag_id: 34
+#   },
+
+#   {
+#     talk_id: 34, 
+#     tag_id: 35
+#   },
+
+#   {
+#     talk_id: 35, 
+#     tag_id: 5
+#   },
+
+#   {
+#     talk_id: 35, 
+#     tag_id: 11
+#   },
+
+#   {
+#     talk_id: 35, 
+#     tag_id: 7
+#   },
+
+#   {
+#     talk_id: 36, 
+#     tag_id: 23
+#   },
+
+#   {
+#     talk_id: 36, 
+#     tag_id: 36
+#   },
+
+#   {
+#     talk_id: 36, 
+#     tag_id: 31
+#   },
+
+#   {
+#     talk_id: 37, 
+#     tag_id: 2
+#   },
+
+#   {
+#     talk_id: 37, 
+#     tag_id: 37
+#   },
+
+#   {
+#     talk_id: 38, 
+#     tag_id: 16
+#   },
+
+#   {
+#     talk_id: 38, 
+#     tag_id: 38
+#   },
+
+#   {
+#     talk_id: 38, 
+#     tag_id: 39 
+#   },
+
+#   {
+#     talk_id: 39, 
+#     tag_id: 2
+#   },
+
+#   {
+#     talk_id: 41, 
+#     tag_id: 14
+#   }
+# ])
 
 puts "Finished creating TagTalk relationships"
 
