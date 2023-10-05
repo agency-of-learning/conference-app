@@ -4,8 +4,12 @@ class TalksUsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_talk, only: %i[create destroy]
 
-  def index 
+  def index
     talks = current_user.talks.includes(:speakers, :tags)
+    @day_one_talks_upcoming = talks.day_one.upcoming.in_order
+    @day_two_talks_upcomimg = talks.day_two.upcoming.in_order
+    @day_three_talks_upcoming = talks.day_three.upcoming.in_order
+
     @day_one_talks_past = talks.day_one.select {|talk| (talk.start_time + talk.duration.minutes).past?}
     @day_two_talks_past = talks.day_two.select {|talk| (talk.start_time + talk.duration.minutes).past?}
     @day_three_talks_past = talks.day_three.select {|talk| (talk.start_time + talk.duration.minutes).past?}
