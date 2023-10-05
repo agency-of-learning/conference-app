@@ -6,9 +6,9 @@ class TalksUsersController < ApplicationController
 
   def index 
     talks = current_user.talks.includes(:speakers, :tags)
-    @day_one_talks_past = talks.day_one.select {|talk| (talk.start_time + duration.minutes).past?}
-    @day_two_talks_past = talks.day_two.select {|talk| (talk.start_time + duration.minutes).past?}
-    @day_three_talks_past = talks.day_three.select {|talk| (talk.start_time + duration.minutes).past?}
+    @day_one_talks_past = talks.day_one.select {|talk| (talk.start_time + talk.duration.minutes).past?}
+    @day_two_talks_past = talks.day_two.select {|talk| (talk.start_time + talk.duration.minutes).past?}
+    @day_three_talks_past = talks.day_three.select {|talk| (talk.start_time + talk.duration.minutes).past?}
   end
 
   def create
