@@ -4,25 +4,29 @@ talk:
   id: 1
   title: Talk
   description: I am a the first talk session!
-  start_time: <%= "#{Time.current + 30.minutes}" %>
+  start_time: <%= 30.minutes.from_now %>
   location: Pawnee, Indiana 
   talk_format: talk
   duration: 120
+  end_time: <%= 30.minutes.from_now + 120.minutes %>
 
 workshop:
   id: 2
   title: Workshop
   description: I happen at the same time as first talk!
-  start_time: <%= "#{Time.current + 30.minutes}" %>
+  start_time: <%= 30.minutes.from_now %>
   location: Scranton, New Jersey
   talk_format: workshop
   duration: 60
+  end_time: <%= 30.minutes.from_now + 60.minutes %>
 
 key_note:
   id: 3
   title: Keynote
   description: I am the Keynote...happening the next day
-  start_time: <%= "#{Time.current + 1.day}" %>
+  start_time: <%= 1.day.from_now %>
   location: Philadelphia, Pennsylvania
   talk_format: keynote
   duration: 30
+  end_time: <%= 1.day.from_now + 30.minutes %>
+
