@@ -468,7 +468,7 @@ puts "Creating talks list"
     {
       title: "Registration Opens",
       location: "Beurs van Berlage",
-      start_time: Time.zone.parse("2023-10-04 16:00:00"),
+      start_time: Time.zone.parse("2023-10-18 16:00:00"),
       talk_format: "social",
       duration: 180,
       description: 
@@ -480,7 +480,7 @@ puts "Creating talks list"
     {
       title: "Pre-Event Drinks sponsored by Clear Code Wizards",
       location: "Bar Jones, Nes 33",
-      start_time: Time.zone.parse("2023-10-04 17:00:00"),
+      start_time: Time.zone.parse("2023-10-18 17:00:00"),
       talk_format: "social",
       duration: 180,
       description: 
@@ -492,7 +492,7 @@ puts "Creating talks list"
     {
       title: "Doors Open",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-05 09:00:00"),
+      start_time: Time.zone.parse("2023-10-19 09:00:00"),
       talk_format: "social",
       duration: 45,
       description: 
@@ -503,7 +503,7 @@ puts "Creating talks list"
     {
       title: "Opening Keynote",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 09:45:00"),
+      start_time: Time.zone.parse("2023-10-19 09:45:00"),
       talk_format: "keynote",
       duration: 75,
       description: 
@@ -514,7 +514,7 @@ puts "Creating talks list"
     {
       title: "Strada: Bridging the Web and Native Worlds",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 11:00:00"),
+      start_time: Time.zone.parse("2023-10-19 11:00:00"),
       talk_format: "talk",
       duration: 40,
       description: 
@@ -531,7 +531,7 @@ puts "Creating talks list"
     {
       title: "SolidCache: A Disk Backed Rails Cache",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 11:00:00"),
+      start_time: Time.zone.parse("2023-10-19 11:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -547,7 +547,7 @@ puts "Creating talks list"
     {
       title: "Making a Difference with Turbo",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 11:45:00"),
+      start_time: Time.zone.parse("2023-10-19 11:45:00"),
       talk_format: "talk",
       duration: 40,
       description: 
@@ -564,7 +564,7 @@ puts "Creating talks list"
     {
       title: "Everything We Learned While Implementing ActiveRecord::Encryption",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 11:45:00"),
+      start_time: Time.zone.parse("2023-10-19 11:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -581,7 +581,7 @@ puts "Creating talks list"
     {
       title: "Lunch",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-05 12:30:00"),
+      start_time: Time.zone.parse("2023-10-19 12:30:00"),
       talk_format: "social",
       duration: 60,
       description: "" 
@@ -590,7 +590,7 @@ puts "Creating talks list"
     {
       title: "The Future of Rails as a Full-stack Framework Powered by Hotwire",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 13:30:00"),
+      start_time: Time.zone.parse("2023-10-19 13:30:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -614,7 +614,7 @@ puts "Creating talks list"
     {
       title: "Migrating Shopify's Core Rails Monolith to Trilogy",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 13:30:00"),
+      start_time: Time.zone.parse("2023-10-19 13:30:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -633,7 +633,7 @@ puts "Creating talks list"
     {
       title: "Test Smarter, Not Harder: Crafting a Test Selection Framework from Scratch",
       location: "Workshop Hall",
-      start_time: Time.zone.parse("2023-10-05 13:30:00"),
+      start_time: Time.zone.parse("2023-10-19 13:30:00"),
       talk_format: "workshop",
       duration: 60,
       description: 
@@ -656,7 +656,7 @@ puts "Creating talks list"
     {
       title: "Building an Offline Experience with a Rails-powered PWA",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 14:15:00"),
+      start_time: Time.zone.parse("2023-10-19 14:15:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -693,7 +693,7 @@ puts "Creating talks list"
     {
       title: "Guardrails: Keeping Customer Data Separate in a Multi Tenant System",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 14:15:00"),
+      start_time: Time.zone.parse("2023-10-19 14:15:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -716,7 +716,7 @@ puts "Creating talks list"
     {
       title: "AI Driven Development",
       location: "Workshop Hall",
-      start_time: Time.zone.parse("2023-10-05 14:45:00"),
+      start_time: Time.zone.parse("2023-10-19 14:45:00"),
       talk_format: "workshop",
       duration: 90,
       description: 
@@ -743,7 +743,7 @@ puts "Creating talks list"
     {
       title: "Implementing Native Composite Primary Key Support in Rails 7.1",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 15:00:00"),
+      start_time: Time.zone.parse("2023-10-19 15:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -769,7 +769,7 @@ puts "Creating talks list"
     {
       title: "Zeitwerk Internals",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 15:00:00"),
+      start_time: Time.zone.parse("2023-10-19 15:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -788,7 +788,7 @@ puts "Creating talks list"
     {
       title: "Using Multiple Databases with Active Record",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 15:45:00"),
+      start_time: Time.zone.parse("2023-10-19 15:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -803,7 +803,7 @@ puts "Creating talks list"
     {
       title: "Propshaft and the Modern Asset Pipeline",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-05 15:45:00"),
+      start_time: Time.zone.parse("2023-10-19 15:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -829,7 +829,7 @@ puts "Creating talks list"
     {
       title: "Day 1 Closing Keynote - The Magic of Rails",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-05 16:30:00"),
+      start_time: Time.zone.parse("2023-10-19 16:30:00"),
       talk_format: "keynote",
       duration: 30,
       description: 
@@ -846,7 +846,7 @@ puts "Creating talks list"
     {
       title: "Day 1 Happy Hour",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-05 17:00:00"),
+      start_time: Time.zone.parse("2023-10-19 17:00:00"),
       talk_format: "social",
       duration: 60,
       description: 
@@ -857,7 +857,7 @@ puts "Creating talks list"
     {
       title: "WNB.rb Breakfast Meetup",
       location: "TBD",
-      start_time: Time.zone.parse("2023-10-06 08:00:00"),
+      start_time: Time.zone.parse("2023-10-20 08:00:00"),
       talk_format: "social",
       duration: 90,
       description: 
@@ -870,7 +870,7 @@ puts "Creating talks list"
     {
       title: "Doors Open",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-06 09:00:00"),
+      start_time: Time.zone.parse("2023-10-20 09:00:00"),
       talk_format: "social",
       duration: 45,
       description: 
@@ -881,7 +881,7 @@ puts "Creating talks list"
     {
       title: "Day 2 Opening Session - Rails Core AMA",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 09:45:00"),
+      start_time: Time.zone.parse("2023-10-20 09:45:00"),
       talk_format: "keynote",
       duration: 75,
       description: 
@@ -896,7 +896,7 @@ puts "Creating talks list"
     {
       title: "Powerful Rails Features You Might Not Know",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 11:00:00"),
+      start_time: Time.zone.parse("2023-10-20 11:00:00"),
       talk_format: "talk",
       duration: 40,
       description: 
@@ -921,7 +921,7 @@ puts "Creating talks list"
     {
       title: "Rails and the Ruby Garbage Collector: How to Speed Up Your Rails App",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 11:00:00"),
+      start_time: Time.zone.parse("2023-10-20 11:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -938,7 +938,7 @@ puts "Creating talks list"
     {
       title: "Rails::HTML5: the Strange and Remarkable Three-Year Journey",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 11:45:00"),
+      start_time: Time.zone.parse("2023-10-20 11:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -957,7 +957,7 @@ puts "Creating talks list"
     {
       title: "Demystifying the Ruby Package Ecosystem",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 11:45:00"),
+      start_time: Time.zone.parse("2023-10-20 11:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -977,7 +977,7 @@ puts "Creating talks list"
     {
       title: "Lunch",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-06 12:30:00"),
+      start_time: Time.zone.parse("2023-10-20 12:30:00"),
       talk_format: "social",
       duration: 60,
       description: ""
@@ -986,7 +986,7 @@ puts "Creating talks list"
     {
       title: "Just Enough Turbo Native to Be Dangerous",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 13:30:00"),
+      start_time: Time.zone.parse("2023-10-20 13:30:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1007,7 +1007,7 @@ puts "Creating talks list"
     {
       title: "Applying Shape Up in the Real World",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 13:30:00"),
+      start_time: Time.zone.parse("2023-10-20 13:30:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1030,7 +1030,7 @@ puts "Creating talks list"
     {
       title: "AI Driven Development",
       location: "Workshop Hall",
-      start_time: Time.zone.parse("2023-10-06 13:30:00"),
+      start_time: Time.zone.parse("2023-10-20 13:30:00"),
       talk_format: "workshop",
       duration: 90,
       description: 
@@ -1057,7 +1057,7 @@ puts "Creating talks list"
     {
       title: "Untangling Cables and Demystifying Twisted Transistors",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 14:15:00"),
+      start_time: Time.zone.parse("2023-10-20 14:15:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1078,7 +1078,7 @@ puts "Creating talks list"
     {
       title: "Tailwind CSS: It looks awful, and it works.",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 14:15:00"),
+      start_time: Time.zone.parse("2023-10-20 14:15:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1096,7 +1096,7 @@ puts "Creating talks list"
     {
       title: "Hotwire Cookbook: Common Use Cases, Essential Patterns and Best Practices",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 15:00:00"),
+      start_time: Time.zone.parse("2023-10-20 15:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1117,7 +1117,7 @@ puts "Creating talks list"
     {
       title: "Wildest Dreams of Making Profit on Open Source",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 15:00:00"),
+      start_time: Time.zone.parse("2023-10-20 15:00:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1138,7 +1138,7 @@ puts "Creating talks list"
     {
       title: "Don't Call It a Comeback",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 15:45:00"),
+      start_time: Time.zone.parse("2023-10-20 15:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1162,7 +1162,7 @@ puts "Creating talks list"
     {
       title: "Monolith-ifying Perfectly Good Microservices",
       location: "Track 2",
-      start_time: Time.zone.parse("2023-10-06 15:45:00"),
+      start_time: Time.zone.parse("2023-10-20 15:45:00"),
       talk_format: "talk",
       duration: 30,
       description: 
@@ -1178,7 +1178,7 @@ puts "Creating talks list"
     {
       title: "Closing Keynote: Future of Developer Acceleration with Rails",
       location: "Track 1",
-      start_time: Time.zone.parse("2023-10-06 16:30:00"),
+      start_time: Time.zone.parse("2023-10-20 16:30:00"),
       talk_format: "keynote",
       duration: 45,
       description: 
@@ -1193,7 +1193,7 @@ puts "Creating talks list"
     {
       title: "Rails 20th Anniversary Celebration",
       location: "Sponsor Lounge",
-      start_time: Time.zone.parse("2023-10-06 17:15:00"),
+      start_time: Time.zone.parse("2023-10-20 17:15:00"),
       talk_format: "social",
       duration: 135,
       description: 
@@ -1205,7 +1205,7 @@ puts "Creating talks list"
     {
       title: "Test Smarter, Not Harder: Crafting a Test Selection Framework from Scratch",
       location: "Workshop Hall",
-      start_time: Time.zone.parse("2023-10-06 15:00:00"),
+      start_time: Time.zone.parse("2023-10-20 15:00:00"),
       talk_format: "workshop",
       duration: 60,
       description: 

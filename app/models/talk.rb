@@ -25,38 +25,38 @@ class Talk < ApplicationRecord
     talks_users.where(user: user).any?
   end
  
-  def add_duration
-    self.start_time + self.duration.minutes
+  before_save do
+    self.end_time = start_time + duration.minutes
   end
   
   scope :in_order, -> { order(:start_time) }
 
-  scope :upcoming, -> { where(start_time: Time.now..) }
+  scope :upcoming, -> { where(end_time: Time.now..) }
   
-  scope :past, -> { where(start_time: ..Time.now) }
+  scope :past, -> { where(end_time: ...Time.now) }
 
   scope :day_one, -> { 
-    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 04), 
-    Date.new(2023, 10, 05)) 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 18), 
+    Date.new(2023, 10, 19)) 
   }
     
   scope :day_two, -> { 
-    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 05), 
-    Date.new(2023, 10, 06)) 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 19), 
+    Date.new(2023, 10, 20)) 
   }
 
   scope :day_three, -> { 
-    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 06), 
-    Date.new(2023, 10, 07)) 
+    where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 20), 
+    Date.new(2023, 10, 21)) 
   }
 
   scope :happening_today, -> {where("DATE(start_time) = ?", Date.current)}
 
-  scope :in_thirty_minutes, -> { where(start_time: Time.current..(Time.current+30.minutes)) }
+  scope :in_thirty_minutes, -> { where( start_time: Time.current..30.minutes.from_now ) }
 
   def unnotified_users
-    notified_user_ids = self.notifications_as_talk.pluck(:recipient_id)
-    self.users.where.not(id: notified_user_ids)
+    notified_user_ids = notifications_as_talk.pluck(:recipient_id)
+    users.where.not(id: notified_user_ids)
   end
 
   def formatted_start_time
@@ -64,16 +64,16 @@ class Talk < ApplicationRecord
   end 
 
   def full_time
-    "#{self.start_time.to_fs(:twenty_four_hour_and_minutes)} - #{self.add_duration.to_fs(:twenty_four_hour_and_minutes)}"
+    "#{start_time.to_fs(:twenty_four_hour_and_minutes)} - #{end_time.to_fs(:twenty_four_hour_and_minutes)}"
   end
 
   def add_to_cal_object
     AddToCalendar::URLs.new(
-      start_datetime: self.start_time.to_time,
-      end_datetime: self.add_duration.to_time,
-      title: self.title,
-      description: self.description,
-      location: self.location,
+      start_datetime: start_time.to_time,
+      end_datetime: end_time.to_time,
+      title: title,
+      description: description,
+      location: location,
       timezone: 'Europe/Amsterdam'
     )
   end
