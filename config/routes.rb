@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   authenticate :user, lambda { |u| u.role == "admin" } do
     mount AhoyCaptain::Engine => '/ahoy_captain'
+    mount Flipper::UI.app(Flipper) => '/flipper'
   end
   mount Avo::Engine, at: Avo.configuration.root_path
 
