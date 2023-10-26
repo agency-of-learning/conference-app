@@ -4,6 +4,7 @@
   <% end %> 
   <div  class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col lg:w-full lg:max-w-lg justify-center">
     <h2 class="block text-primary italic font-extrabold text-2xl mb-4  pr-4 sm:text-left lg:text-4xl text-left lg:text-left">My Profile</h2>
+      <p><%= @user.qr_code.html_safe %></p>
       <div class="field my-2 w-full flex flex-col items-center justify-center">
         <% if @user.profile_photo.attached? %>
         <a data-controller="confetti" data-action="click->confetti#schoolPride" data-animation-value="school-pride" data-confetti-first-color-value="#CC0000" 

@@ -42,7 +42,8 @@
                 <i class="fa-brands <%=(@user.twitter.include?("twitter") || @user.twitter.include?("x")) ? "fa-twitter" : "fa-mastodon"%> fa-2xl mx-3 h-12 text-secondary hover:text-primary"></i>
              </a>
         <%end%>
-        <%if !@user.private && @user.qrcode.attached?  %>
+        <%# <%if !@user.private && @user.qrcode.attached?  %1> %>
+        <%if !@user.private %>
         <div data-controller="dialog">
             <button data-action="click->dialog#open">
               <i class="fa-solid fa-share-nodes fa-2xl mx-3 h-12 lg:h-18 text-secondary hover:text-primary"></i>
@@ -51,6 +52,7 @@
               <div class="p-4 bg-secondary justify-center">
                 <h3 class="text-white italic font-extrabold text-2xl mb-4">Share Your Profile!</h3>
                 <p><%= image_tag(url_for(@user.qrcode), class:"mx-auto w-full px-2")%></p>
+                <p><%= @user.qr_code.html_safe, class:"mx-auto w-full px-2")%></p>
                 <form>
                   <button formmethod="dialog" class="text-center bg-secondary-100 hover:bg-primary text-white italic font-extrabold text-2xl mt-4 py-2 px-6">Close</button>
                 </form>
