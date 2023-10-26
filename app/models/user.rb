@@ -21,4 +21,15 @@ class User < ApplicationRecord
   def unread_notifications_count 
     self.notifications.unread.count
   end 
+
+  def qr_code
+    # qrcode = RQRCode::QRCode.new("")
+
+    RQRCode::QRCode.new("localhost:3000/users/#{self.id}").as_svg(
+      color: "3b1d62",
+      shape_rendering: "crispEdges",
+      standalone: true,
+      use_path: true
+    )
+  end
 end
