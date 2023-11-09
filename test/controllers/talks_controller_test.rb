@@ -29,4 +29,9 @@ class TalksControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
+  # test "sets instance variables" do
+  #   get talk_url(@talk)
+  #   debugger
+  # end
+
 end
