@@ -14,8 +14,8 @@ require "airbrake/sidekiq"
 # if (project_id = ENV['AIRBRAKE_PROJECT_ID']) &&
 #    project_key = (ENV['AIRBRAKE_PROJECT_KEY'] || ENV['AIRBRAKE_API_KEY'])
 
-if Rails.application.credentials.dig(:airbrake)[:project_id] &&
-    Rails.application.credentials.dig(:airbrake)[:project_key]
+if Rails.application.credentials.dig(:airbrake, :project_id) &&
+    Rails.application.credentials.dig(:airbrake, :project_id)
   Airbrake.configure do |c|
     # You must set both project_id & project_key. To find your project_id and
     # project_key navigate to your project's General Settings and copy the
@@ -24,8 +24,8 @@ if Rails.application.credentials.dig(:airbrake)[:project_id] &&
     # c.project_id = project_id
     # c.project_key = project_key
 
-    c.project_id = Rails.application.credentials.dig(:airbrake)[:project_id]
-    c.project_key = Rails.application.credentials.dig(:airbrake)[:project_key]
+    c.project_id = Rails.application.credentials.dig(:airbrake, :project_id)
+    c.project_key = Rails.application.credentials.dig(:airbrake, :project_id)
 
     # Configures the root directory of your project. Expects a String or a
     # Pathname, which represents the path to your project. Providing this option
