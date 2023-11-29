@@ -1,24 +1,32 @@
-# README
+# 🎤 Conference app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The conference app is used help conference attendees to be informed about the talks and speakers, to build a schedule of talks they would like to attend and get notified of updates. 
 
-Things you may want to cover:
+## Contribute
 
-* Ruby version
+### Step 1:
 
-* System dependencies
+`git clone git@github.com:agency-of-learning/conference-app.git`
 
-* Configuration
+or
 
-* Database creation
+Fork repository
 
-* Database initialization
 
-* How to run the test suite
+### Step 2:
 
-* Services (job queues, cache servers, search engines, etc.)
+`cd conference-app`
 
-* Deployment instructions
+### Step 3:
 
-* ...
+`bundle install`
+
+### Step 4:
+
+`bin/rails db:setup`
+
+### Step 5 (Note: this may fail if master.key is needed):
+
+Open terminal in the conference-app directory run:
+
+`bin/dev`
