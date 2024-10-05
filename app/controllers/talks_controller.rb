@@ -4,10 +4,17 @@ class TalksController < ApplicationController
 
   # GET /talks
   def index
-    talk = Talk.includes(:speakers, :tags)
-    @day_one_talks = talk.day_one.in_order
-    @day_two_talks = talk.day_two.in_order
-    @day_three_talks = talk.day_three.in_order
+    conference_start_date = Date.new(2023, 10, 18) # Start of conference
+    conference_end_date = Date.new(2023, 10, 20) # End of conference
+
+    talks_by_day = Talk.includes(:speakers, :tags)
+    .where(start_time: conference_start_date.beginning_of_day..conference_end_date.end_of_day)
+    .order(:start_time)
+    .group_by { |talk| talk.start_time.to_date }
+
+    @day_one_talks = talks_by_day[conference_start_date] || []
+    @day_two_talks = talks_by_day[conference_start_date + 1.day] || []
+    @day_three_talks = talks_by_day[conference_start_date + 2.day] || []
   end
 
   # GET /talks/1
