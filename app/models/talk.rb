@@ -29,26 +29,9 @@ class Talk < ApplicationRecord
     self.end_time = start_time + duration.minutes
   end
   
-  # scope :in_order, -> { order(:start_time) }
-
   scope :upcoming, -> { where(end_time: Time.now..) }
   
   scope :past, -> { where(end_time: ...Time.now) }
-
-  # scope :day_one, -> { 
-  #   where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 18), 
-  #   Date.new(2023, 10, 19)) 
-  # }
-    
-  # scope :day_two, -> { 
-  #   where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 19), 
-  #   Date.new(2023, 10, 20)) 
-  # }
-
-  # scope :day_three, -> { 
-  #   where("start_time BETWEEN ? AND ?", Date.new(2023, 10, 20), 
-  #   Date.new(2023, 10, 21)) 
-  # }
 
   scope :happening_today, -> {where("DATE(start_time) = ?", Date.current)}
 

@@ -8,96 +8,37 @@
     </li>
   </ul>
 
-  <div class="hidden py-4" data-tabs-target="panel">
-
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_one_talks_upcoming)&.any? %>
-          <h2 class="font-extrabold italic text-xl text-secondary">Wed, Oct 18</h2>
-        <% end %>
-      </div>
+  <% @talks_by_day.each do | day, talks | %>
+    <% upcoming_talks = talks.select { |talk| talk.end_time >= Time.current } %>
+    <% past_talks = talks.select { |talk| talk.end_time < Time.current } %>
+    <div class="hidden py-4" data-tabs-target="panel">
+      <% if upcoming_talks.any? %>
+        <div class="flex flex-row justify-center">
+          <div>
+            <h2 class="font-extrabold italic text-xl text-secondary"><%= day %></h2>
+          </div>
+        </div>
+        <div id="talks" class="min-w-full">
+          <% upcoming_talks.each do |talk| %>
+            <%= render "shared/my_schedule_talk", talk: talk %>
+          <% end %>
+        </div>
+     <% end %>
     </div>
 
-    <div id="talks" class="min-w-full">
-      <% @day_one_talks_upcoming&.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
+    <div class="hidden py-4" data-tabs-target="panel">
+     <% if past_talks.any? %>
+        <div class="flex flex-row justify-center">
+          <div>
+            <h2 class="font-extrabold italic text-xl text-secondary"><%= day %></h2>
+          </div>
+        </div>
+        <div id="talks" class="min-w-full">
+          <% past_talks.each do |talk| %>
+            <%= render "shared/my_schedule_talk", talk: talk %>
+          <% end %>
+        </div>
+     <% end %>
     </div>
-
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_two_talks_upcomimg)&.any? %>
-          <h2 class="font-extrabold italic text-xl text-secondary">Thurs, Oct 19</h2>
-        <% end %>
-      </div>
-    </div>
-
-    <div id="talks" class="min-w-full">
-      <% @day_two_talks_upcomimg&.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
-    </div>
-
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_three_talks_upcoming)&.any? %>
-          <h2 class="font-extrabold itlic text-xl text-secondary">Fri, Oct 20</h2>
-        <% end %>
-      </div>
-    </div>
-    
-    <div id="talks" class="min-w-full">
-      <% @day_three_talks_upcoming&.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
-    </div>
-
-  </div>
-  
-  <div class="hidden py-4" data-tabs-target="panel">
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_one_talks_past)&.any? %>
-          <h2 class="font-extrabold italic text-xl text-secondary">Wed, Oct 4</h2>
-        <% end %>
-      </div>
-    </div>
-
-    <div id="talks" class="min-w-full">
-      <% @day_one_talks_past&.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
-    </div>
-
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_two_talks_past)&.any? %>
-          <h2 class="font-extrabold italic text-xl text-secondary">Thurs, Oct 5</h2>
-        <% end %>
-      </div>
-    </div>
-
-    <div id="talks" class="min-w-full">
-      <% @day_two_talks_past&.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
-    </div>
-
-    <div class="flex flex-row justify-center">
-      <div>
-        <% if (@day_three_talks_past)&.any? %>
-          <h2 class="font-extrabold italic text-xl text-secondary">Fri, Oct 6</h2>
-        <% end %>
-      </div>
-    </div>
-    
-    <div id="talks" class="min-w-full">
-      <% @day_three_talks_past  &.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
-    </div>
-
-
-  </div>
-
+  <% end %>
 </div>
