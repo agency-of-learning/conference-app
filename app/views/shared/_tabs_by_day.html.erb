@@ -1,23 +1,19 @@
 <div data-controller="tabs" data-tabs-active-tab="bg-secondary focus:bg-secondary text-white text-l" data-tabs-inactive-tab="bg-secondary-50 text-secondary">
   <ul class="list-reset flex justify-center mb-5">
-    <li class="w-full text-center rounded" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
-      <a class="inline-block py-4 px-1 text-base font-black italic no-underline" href="#">Wed, Oct 18</a>
-    </li>
-    <li class="w-full text-center rounded" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-4 px-1 text-base font-black italic no-underline" href="#">Thurs, Oct 19</a>
-    </li>
-    <li class="w-full text-center rounded mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-      <a class="inline-block py-4 px-1 text-base font-black italic no-underline" href="#">Fri, Oct 20</a>
-    </li>
+    <% @talks_by_day.each do | day, _ | %>
+      <li class="w-full text-center rounded" data-tabs-target="tab" data-action="click->tabs#change" data-tabs-index-value="1">
+        <a class="inline-block py-4 px-1 text-base font-black italic no-underline" href="#"><%= day %></a>
+      </li>
+    <% end %>
   </ul>
 
-<% @talks_by_day.each do | day, talks | %>
-  <div class="hidden py-4" data-tabs-target="panel">
-    <div id="talks" class="min-w-full">
-      <% talks.each do |talk| %>
-        <%= render "shared/my_schedule_talk", talk: talk %>
-      <% end %>
+  <% @talks_by_day.each do | _, talks | %>
+    <div class="hidden py-4" data-tabs-target="panel">
+      <div id="talks" class="min-w-full">
+        <% talks.each do |talk| %>
+          <%= render "shared/my_schedule_talk", talk: talk %>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
