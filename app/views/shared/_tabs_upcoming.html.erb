@@ -8,10 +8,9 @@
     </li>
   </ul>
 
-  <% @talks_by_day.each do | day, talks | %>
-    <% upcoming_talks = talks.select { |talk| talk.end_time >= Time.current } %>
-    <% past_talks = talks.select { |talk| talk.end_time < Time.current } %>
-    <div class="hidden py-4" data-tabs-target="panel">
+  <div class="hidden py-4" data-tabs-target="panel">
+    <% @talks_by_day.each do | day, talks | %>
+      <% upcoming_talks = talks.select { |talk| talk.end_time >= Time.current } %>
       <% if upcoming_talks.any? %>
         <div class="flex flex-row justify-center">
           <div>
@@ -20,14 +19,17 @@
         </div>
         <div id="talks" class="min-w-full">
           <% upcoming_talks.each do |talk| %>
-            <%= render "shared/my_schedule_talk", talk: talk %>
+              <%= render "shared/my_schedule_talk", talk: talk %>
           <% end %>
         </div>
-     <% end %>
-    </div>
+      <% end %>
+   <% end %>
+  </div>
 
-    <div class="hidden py-4" data-tabs-target="panel">
-     <% if past_talks.any? %>
+  <div class="hidden py-4" data-tabs-target="panel">
+    <% @talks_by_day.each do | day, talks | %>
+      <% past_talks = talks.select { |talk| talk.end_time < Time.current } %>
+      <% if past_talks.any? %>
         <div class="flex flex-row justify-center">
           <div>
             <h2 class="font-extrabold italic text-xl text-secondary"><%= day %></h2>
@@ -35,10 +37,11 @@
         </div>
         <div id="talks" class="min-w-full">
           <% past_talks.each do |talk| %>
-            <%= render "shared/my_schedule_talk", talk: talk %>
+              <%= render "shared/my_schedule_talk", talk: talk %>
           <% end %>
         </div>
-     <% end %>
-    </div>
-  <% end %>
+      <% end %>
+   <% end %>
+  </div>
+
 </div>
